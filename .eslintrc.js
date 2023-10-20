@@ -10,9 +10,13 @@ module.exports = {
     'plugin:react/recommended',
   ],
   'parserOptions': {
+    'ecmaVersion': 2020,
     'sourceType': 'module',
     'ecmaFeatures': {
       'jsx': true,
     },
+  },
+  'rules': {
+    'max-len': ['error', {'code': 100}],
   },
 };
