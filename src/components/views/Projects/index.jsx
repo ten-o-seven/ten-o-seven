@@ -5,9 +5,7 @@ import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
 import './styles.css';
 
 /**
- * Creates react context for children
- * @param {Node} children The first number.
- * @return {Node} The sum of the two numbers.
+ * @return {Node} the project collection view
  */
 export default function Projects() {
   const [pageOpacity, setPageOpacity] = useState(0);
@@ -74,7 +72,7 @@ export default function Projects() {
 
   return (
     <div
-      className="flex flex-column full-vh"
+      className="flex flex-column full-vh relative"
       style={{
         width: 'calc(100vw - 100px)',
         transition: '0.75s ease-out',

@@ -23,7 +23,8 @@
     "gatsby-plugin-emotion": "^8.12.0",
     "gatsby-plugin-google-gtag": "^5.12.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

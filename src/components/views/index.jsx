@@ -5,9 +5,7 @@ import Navigation from './Navigation';
 import './styles.css';
 
 /**
- * Creates react context for children
- * @param {Node} children The first number.
- * @return {Node} The sum of the two numbers.
+ * @return {Node} primary display layout
  */
 export default function Layout() {
   const {displayedPage} = useStore();
@@ -15,8 +13,12 @@ export default function Layout() {
 
   return (
     <div>
-      <Navigation/>
-      <Display />
+      <navigation>
+        <Navigation/>
+      </navigation>
+      <main>
+        <Display />
+      </main>
     </div>
   );
 }

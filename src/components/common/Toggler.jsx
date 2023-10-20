@@ -22,21 +22,20 @@ const Track = styled.div`
 `;
 
 const Container = styled.button`
-    width: ${({theme: {size}})=>`${size.u3 * 2}px`}
-    margin: ${({theme: {size}})=>`0 ${size.u3}px`}
+    margin: ${({theme: {size}})=>`0 ${size.u3}px`};
+    right: 10vw
 `;
 
 /**
- * Creates react context for children
  * @param {func} onClick click event handler
  * @param {int} position distance from the left
- * @return {Node} The sum of the two numbers.
+ * @return {Node} a toggler
  */
 export default function Toggler({onClick, position}) {
   return (
     <Container
       onClick={onClick}
-      className="flex align-self-end align-items-center justify-between"
+      className="flex align-self-end align-items-center justify-between relative"
     >
       <p>UIUX</p>
       <div className="flex align-items-center justify-center relative" style={{margin: 20}}>

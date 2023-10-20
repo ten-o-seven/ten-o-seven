@@ -1,26 +1,18 @@
 import React from 'react';
+import styled from '@emotion/styled';
+import backgroundImage from '../../../images/home_static_1.png';
+
+const Container = styled.img`
+  opacity: 1;
+  transition: 0.75s ease-in;
+  object-fit: cover;
+`;
 
 /**
- * Creates react context for children
- * @param {Node} children The first number.
- * @return {Node} The sum of the two numbers.
+ * @return {Node} home landing page
  */
 export default function Home() {
   return (
-    <div
-      id="homeContainer"
-      style={{
-        opacity: 1,
-        transition: '0.75s ease-in',
-      }}
-    >
-      <div
-        style={{
-          height: '100vh',
-          width: '100vw',
-          position: 'absolute',
-        }}
-      />
-    </div>
+    <Container src={backgroundImage} className="full-view" id="homeContainer"/>
   );
 }
