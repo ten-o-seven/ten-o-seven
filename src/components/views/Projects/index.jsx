@@ -1,5 +1,6 @@
 import React from 'react';
 import {useEffect, useState, useRef} from 'react';
+import Toggler from '../../common/Toggler';
 import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
 import './styles.css';
 
@@ -12,14 +13,14 @@ export default function Projects() {
   const [pageOpacity, setPageOpacity] = useState(0);
 
   const [isUiToggled, setIsUiToggled] = useState(true);
-  const [thumbnailPosition, setThumbnailPosition] = useState(0);
+  const [thumbnailPosition, setThumbnailPosition] = useState(-5);
   const mouseEvent = useRef({});
 
   const onTogglerClick = () => {
     if (isUiToggled) {
       setThumbnailPosition(15);
     } else {
-      setThumbnailPosition(0);
+      setThumbnailPosition(-5);
     }
 
     document.querySelectorAll('.parallax-element').forEach((shift) => {
@@ -36,7 +37,6 @@ export default function Projects() {
 
   const parallax = (event) => {
     mouseEvent.current = event;
-    // if(event.target.tagName !== 'BUTTON'){
     document.querySelectorAll('.parallax-element').forEach((shift) => {
       const isForeground = shift.getAttribute('data-toggled') === 'true' ? true : false;
       const position = isForeground ?
@@ -51,7 +51,6 @@ export default function Projects() {
         shift.style.transform = `scale(1, 1) translateX(${x}px) translateY(${y}px)`;
       }
     });
-    // }
   };
 
   const toggleBySpaceBar = (event) => {
@@ -74,48 +73,24 @@ export default function Projects() {
 
 
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      width: 'calc(100vw - 100px)',
-      height: '100vh',
-      transition: '0.75s ease-out',
-      opacity: pageOpacity,
-    }}>
-      <button
-        onClick={onTogglerClick}
-        style={{
-          display: 'flex',
-          alignSelf: 'flex-end',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
-        <p>UIUX</p>
-        <div className="toggler-container">
-          <div
-            id="toggler-thumbnail"
-            className="toggler-thumbnail"
-            style={{left: thumbnailPosition}}
-          />
-          <div className="toggler-track"/>
-        </div>
-        <p>Doodles</p>
-      </button>
-      <div className="parallax-container">
-        <div style={{
-          position: 'relative',
-          display: 'flex',
-          flexDirection: 'column',
-          flexGrow: 1,
-        }}>
+    <div
+      className="flex flex-column full-vh"
+      style={{
+        width: 'calc(100vw - 100px)',
+        transition: '0.75s ease-out',
+        opacity: pageOpacity,
+      }}
+    >
+      <Toggler onClick={onTogglerClick} position={thumbnailPosition}/>
+      <div className="flex flex-column flex-grow relative">
+        <div className="flex flex-column flex-grow relative">
           {Object.entries(PROJECTS_MAP).map(([name, {src, value, styles}], i)=>{
             return (
               <img
                 value={value}
                 data-toggled={isUiToggled}
                 key={name}
-                className={'parallax-element'}
+                className={'parallax-element relative'}
                 id={`parallax-${name}`}
                 src={src}
                 style={{
@@ -128,15 +103,10 @@ export default function Projects() {
             );
           })}
         </div>
-        <div style={{
-          position: 'absolute',
-          height: '90%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          flexGrow: 1,
-          top: 0,
-        }}>
+        <div
+          className="absolute flex flex-column flex-grow"
+          style={{height: '90%', width: '100%', top: 0}}
+        >
           {Object.entries(DOODLES_MAP).map(([name, {src, value, styles}], i)=>{
             return (
               <img
@@ -144,7 +114,7 @@ export default function Projects() {
                 data-toggled={!isUiToggled}
                 key={name}
                 id={`parallax-${name}`}
-                className={'parallax-element'}
+                className={'parallax-element relative'}
                 src={src}
                 style={{
                   opacity: isUiToggled ? 0.2 : 1,

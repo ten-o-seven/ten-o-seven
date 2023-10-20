@@ -1,39 +1,4 @@
 /* PROJECTS */
-.toggler-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    margin: 0 10px;
-    position: relative;
-}
-
-.toggler-thumbnail {
-    height: 15px;
-    width: 15px;
-    border-radius: 25px;
-    border: solid 1px #ddd;
-    background-color: rgb(167, 39, 39);
-    z-index: 10;
-    position: absolute;
-
-    transition-duration: 0.3s;
-}
-
-.toggler-track {
-    height: 8px;
-    width: 25px;
-    border-radius: 25px;
-    background-color: #ddd;
-}
-
-.parallax-container {
-    display: flex;
-    flex-direction: column;
-    flex-grow:1;
-    position: relative;
-}
-
 .parallax-element{
     transition-delay: 0.5s;
     transition: 
@@ -42,5 +7,4 @@
         opacity 0.5s ease-out;
     width: 50px;
     height: 50px;
-    position: relative;
 }
