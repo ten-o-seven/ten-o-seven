@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import backgroundImage from '../../../images/home_static_1.png';
+import cloud1 from '../../../video/cloud_1.mp4';
 
-const Container = styled.img`
+const Container = styled.div`
   opacity: 1;
   transition: 0.75s ease-in;
-  object-fit: cover;
+  overflow: hidden;
 `;
 
 /**
@@ -13,6 +14,10 @@ const Container = styled.img`
  */
 export default function Home() {
   return (
-    <Container src={backgroundImage} className="full-view" id="homeContainer"/>
+    <Container src={backgroundImage} className="full-view" id="homeContainer">
+      <video autoPlay={true} controls={false} className="full-view" style={{objectFit: 'cover'}}>
+        <source src={cloud1} type="video/mp4" />
+      </video>
+    </Container>
   );
 }

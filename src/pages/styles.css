@@ -5,13 +5,54 @@ body {
     background-color: #f9f9f9
 }
 
-p {
+p, h3, h4, h5, h6 {
+    margin: 0;
     font-family: 'Nunito Sans', Arial, Helvetica, sans-serif!important;
 }
 
 h1, h2 {
+    margin: 0;
     font-family: "Chelsea Market", Arial, Helvetica, sans-serif;
 }
+
+h1 {
+    font-size: 4.75em;
+    /* 64 */
+}
+
+h2 {
+    font-size: 3.5em;
+    /* 48 */
+}
+
+h3 {
+    font-size: 2.5em;
+    /* 36 */
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 1.75em;
+    /* 24 */
+}
+
+h5 {
+    font-size: 1.25em;
+    /* 18 */
+}
+
+h6 {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+p, h6 {
+    font-size: 1em;
+}
+
+
+
+
 
 iframe {
     height: 100vh;
@@ -90,4 +131,8 @@ button p {
 .full-view{
     width:100vw;
     height:100vh;
+}
+
+.container{
+    min-width: 744;
 }

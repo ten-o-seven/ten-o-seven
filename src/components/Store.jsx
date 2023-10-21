@@ -11,7 +11,7 @@ export const useStore = () => useContext(StoreContext);
  * @return {Node} The sum of the two numbers.
  */
 export default function Store({children}) {
-  const [displayedPage, setDisplayedPage] = useState(PAGE_NAME.HOME);
+  const [displayedPage, setDisplayedPage] = useState(PAGE_NAME.PACIFIC_PARADISE);
 
   const context = {
     displayedPage,
