@@ -2,12 +2,14 @@ import React from 'react';
 import {useEffect, useState, useRef} from 'react';
 import Toggler from '../../common/Toggler';
 import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
+import {useStore} from '../../Store';
 import './styles.css';
 
 /**
  * @return {Node} the project collection view
  */
 export default function Projects() {
+  const {setDisplayedPage} = useStore();
   const [pageOpacity, setPageOpacity] = useState(0);
 
   const [isUiToggled, setIsUiToggled] = useState(true);
@@ -91,7 +93,15 @@ export default function Projects() {
                 className={'parallax-element relative'}
                 id={`parallax-${name}`}
                 src={src}
+                onClick={()=>{
+                  setPageOpacity(0);
+                  setTimeout(()=>{
+                    setDisplayedPage(name);
+                  }, 1500);
+                }}
                 style={{
+                  zIndex: 100,
+                  cursor: 'pointer',
                   opacity: isUiToggled ? 1 : 0.2,
                   marginTop: `${(i+1) * 9}vh`,
                   transform: 'scale(1.5, 1.5) translateX(0px) translateY(0px)',

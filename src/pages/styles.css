@@ -5,12 +5,12 @@ body {
     background-color: #f9f9f9
 }
 
-p, h3, h4, h5, h6 {
+p, h3, h4, h5, h6, li {
     margin: 0;
     font-family: 'Nunito Sans', Arial, Helvetica, sans-serif!important;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin: 0;
     font-family: "Chelsea Market", Arial, Helvetica, sans-serif;
 }
@@ -84,6 +84,9 @@ button p {
 .align-items-center{
     align-items: center;
 }
+.align-self-center{
+    align-self: center;
+}
 .align-self-end{
     align-self: flex-end;
 }
@@ -134,5 +137,5 @@ button p {
 }
 
 .container{
-    min-width: 744;
+    width: 1200px;
 }

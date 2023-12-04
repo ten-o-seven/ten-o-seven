@@ -16,7 +16,7 @@ export default function Layout() {
       <navigation>
         <Navigation/>
       </navigation>
-      <main>
+      <main className="flex justify-center">
         <Display />
       </main>
     </div>

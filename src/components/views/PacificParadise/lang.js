@@ -1,27 +1,12 @@
 /* eslint-disable max-len */
-export const heroCopy = [
-  [{
-    title: 'Timeline',
-    content: 'October 2022 - February 2023',
-  },
+import shark from '../../../images/shark.png';
+import swim from '../../../images/swim.png';
+import lifesaver from '../../../images/lifesaver.png';
+
+export const hookCopy = [
   {
-    title: 'Role',
-    content: 'UX researcher / designer',
-  },
-  {
-    title: 'Responsibilities',
-    content: 'Conducting user interviews  / Developing paper + digital wireframing / Developing low + high-fidelity prototypes / Conducting usability studies / Iterating on designs',
-  },
-  {
-    title: 'Background',
-    content: 'Pacific Paradise is one of the most loved local restaurant in Albuquerque, NM for the past 2 decades. While the owners are proud of their steady dine-in customer flow, they hoped to improve on the take-out order process especially after the surge in demand due to the pandemic. ',
-  }],
-  [{
-    title: 'Client Request',
-    content: '“We need happy take-out order customers.”',
-  },
-  {
-    title: 'Designer Diagnosis',
+    title: 'Problem',
+    img: shark,
     content: [
       'long wait time',
       'back and forth phone calls',
@@ -30,7 +15,8 @@ export const heroCopy = [
     ],
   },
   {
-    title: 'Solution',
+    title: 'Goal',
+    img: swim,
     content: [
       'efficiency',
       'easy process ',
@@ -40,7 +26,8 @@ export const heroCopy = [
     ],
   },
   {
-    title: 'Implementation',
+    title: 'Solution',
+    img: lifesaver,
     content: [
       'complete all take-out related tasks',
       'schedule ahead feature',
@@ -48,6 +35,29 @@ export const heroCopy = [
       'availability confirmation prior order placement',
       'additional features + perks for regulars',
     ],
-  }],
+  },
 ];
 
+export const userResearchCopy = {
+  title: '0.1 User Research Summary',
+  content: 'I conducted interviews and identified that the primary users of the Pacific Paradise app are new and existing customers who hope to avoid the wait on the phone or at the restaurant. The research indicates that a shared goal among the customers is to order and acquire meals efficiently according to their schedule. Many are also interested in additional in-app features and promotions.',
+};
+
+export const opportunitiesCopy = [
+  {
+    title: 'Time',
+    content: 'All customers showed frustrations with waiting at the restaurant.',
+  },
+  {
+    title: 'Availability',
+    content: 'Many customers would like to check menu availabilities before placing an order.',
+  },
+  {
+    title: 'Communication',
+    content: 'Many customers dislike calling the restaurant, especially during rush hours, to complete order related tasks and get order conifrmation.',
+  },
+  {
+    title: 'Value',
+    content: 'Most regulars would liek to benefit from a loyalty program.',
+  },
+];
