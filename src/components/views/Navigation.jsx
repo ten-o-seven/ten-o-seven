@@ -14,6 +14,7 @@ const ContainerVertical = styled.div`
 `;
 
 const HomeIcon = styled.img`
+  cursor: pointer
 `;
 
 const LinksContainer = styled.div`
@@ -32,10 +33,12 @@ export default function Navigation() {
   const {displayedPage, setDisplayedPage} = useStore();
 
   const onProjectsClick = (e) => {
-    document.querySelector('main').firstChild.style.opacity=0;
+    if (displayedPage !== e.target.value && displayedPage !== e.target.parentNode.value) {
+      document.querySelector('main').firstChild.style.opacity=0;
+    }
     setTimeout(()=>{
       setDisplayedPage(e.target.value || e.target.parentNode.value);
-    }, 1500);
+    }, 1600);
   };
 
   if ([PAGE_NAME.PROJECTS, PAGE_NAME.HOME].includes(displayedPage)) {
@@ -46,7 +49,13 @@ export default function Navigation() {
           style={{marginTop: '10vh'}}
         >
           <li>
-            <HomeIcon src={logo}/>
+            <button
+              style={{padding: 0}}
+              value={PAGE_NAME.HOME}
+              onClick={onProjectsClick}
+            >
+              <HomeIcon src={logo}/>
+            </button>
           </li>
           <LinksContainer className='flex flex-column-reverse'>
             <li>
@@ -56,7 +65,7 @@ export default function Navigation() {
                 value={PAGE_NAME.PROJECTS}
               >
                 <LinkText value={PAGE_NAME.PROJECTS}>
-              Projects
+                  Projects
                 </LinkText>
               </button>
             </li>
@@ -83,7 +92,13 @@ export default function Navigation() {
       >
         <ul className="flex justify-between">
           <li>
-            <img src={logoText}/>
+            <button
+              style={{padding: 0}}
+              value={PAGE_NAME.HOME}
+              onClick={onProjectsClick}
+            >
+              <HomeIcon src={logoText}/>
+            </button>
           </li>
           <div className="flex justify-between" style={{width: '10%'}}>
             <li>
