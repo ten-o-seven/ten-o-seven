@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import React from 'react';
 import {PAGE_NAME} from '../constants';
 import {useStore} from '../Store';
+import logo from '../../images/logo_graphic.png';
+import logoText from '../../images/logo_w_text.png';
 
-const Container = styled.div`
+const ContainerVertical = styled.div`
     z-index: 100;
     // background-color: rgb(255 255 255 / 0.3);
     // backdrop-filter: blur(10px);
@@ -11,11 +13,7 @@ const Container = styled.div`
     right:0;
 `;
 
-const HomeIcon = styled.div`
-    width: 25px;
-    height:25px;
-    background-color: red;
-    border-radius: 50px;
+const HomeIcon = styled.img`
 `;
 
 const LinksContainer = styled.div`
@@ -34,46 +32,83 @@ export default function Navigation() {
   const {displayedPage, setDisplayedPage} = useStore();
 
   const onProjectsClick = (e) => {
-    if (displayedPage === PAGE_NAME.HOME) {
-      document.querySelector('#homeContainer').style.opacity=0;
-    }
+    document.querySelector('main').firstChild.style.opacity=0;
     setTimeout(()=>{
       setDisplayedPage(e.target.value || e.target.parentNode.value);
     }, 1500);
   };
 
+  if ([PAGE_NAME.PROJECTS, PAGE_NAME.HOME].includes(displayedPage)) {
+    return (
+      <ContainerVertical className='fixed align-self-end full-vh'>
+        <ul
+          className='flex flex-column align-items-center'
+          style={{marginTop: '10vh'}}
+        >
+          <li>
+            <HomeIcon src={logo}/>
+          </li>
+          <LinksContainer className='flex flex-column-reverse'>
+            <li>
+              <button
+                className='link-button'
+                onClick={onProjectsClick}
+                value={PAGE_NAME.PROJECTS}
+              >
+                <LinkText value={PAGE_NAME.PROJECTS}>
+              Projects
+                </LinkText>
+              </button>
+            </li>
+            <li>
+              <button
+                className='link-button'
+                onClick={()=>{}}
+                value={PAGE_NAME.CONTACTS}
+              >
+                <LinkText>Me</LinkText>
+              </button>
+            </li>
+          </LinksContainer>
+        </ul>
+      </ContainerVertical>
+    );
+  }
 
   return (
-    <Container className='fixed align-self-end full-vh'>
-      <ul
-        className='flex flex-column align-items-center'
-        style={{marginTop: '10vh'}}
+    <div className="flex flex-column align-items-center">
+      <div
+        className="container fixed"
+        style={{backgroundColor: 'rgba(255, 255, 255, 1)'}}
       >
-        <li>
-          <HomeIcon />
-        </li>
-        <LinksContainer className='flex flex-column-reverse'>
+        <ul className="flex justify-between">
           <li>
-            <button
-              className='link-button'
-              onClick={onProjectsClick}
-              value={PAGE_NAME.PROJECTS}
-            >
-              <LinkText value={PAGE_NAME.PROJECTS}>
-                Projects
-              </LinkText>
-            </button>
+            <img src={logoText}/>
           </li>
-          <li>
-            <button
-              className='link-button'
-              onClick={()=>{}}
-              value={PAGE_NAME.CONTACTS}
-            >
-              <LinkText>Me</LinkText>
-            </button>
-          </li>
-        </LinksContainer>
-      </ul>
-    </Container>);
+          <div className="flex justify-between" style={{width: '10%'}}>
+            <li>
+              <button
+                className='link-button'
+                onClick={onProjectsClick}
+                value={PAGE_NAME.PROJECTS}
+              >
+                <p value={PAGE_NAME.PROJECTS}>
+              Projects
+                </p>
+              </button>
+            </li>
+            <li>
+              <button
+                className='link-button'
+                onClick={()=>{}}
+                value={PAGE_NAME.CONTACTS}
+              >
+                <p>Me</p>
+              </button>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  );
 }

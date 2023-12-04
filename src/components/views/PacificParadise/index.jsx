@@ -20,6 +20,7 @@ export default function PacificParadise() {
         width: 'calc(100vw - 100px)',
         transition: '0.75s ease-out',
         opacity: pageOpacity,
+        marginTop: 100,
       }}>
       <div className="container flex flex-column" >
         <Hero />

@@ -30,7 +30,7 @@ export default function Opportunities() {
                 <h2
                   style={{
                     color: '#AD3537',
-                    fontFamily: 'Nunito Sans',
+                    fontFamily: 'Futura PT',
                     fontWeight: 400,
                     lineHeight: '1em',
                   }}
