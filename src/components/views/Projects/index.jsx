@@ -60,7 +60,9 @@ export default function Projects() {
   };
 
   useEffect(()=>{
-    setPageOpacity(1);
+    setTimeout(()=>{
+      setPageOpacity(1);
+    }, 700);
     document.addEventListener('mousemove', parallax);
     return () => document.removeEventListener('mousemove', parallax);
   }, []);

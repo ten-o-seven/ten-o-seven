@@ -36,9 +36,10 @@ export default function Navigation() {
     if (displayedPage !== e.target.value && displayedPage !== e.target.parentNode.value) {
       document.querySelector('main').firstChild.style.opacity=0;
     }
+
     setTimeout(()=>{
       setDisplayedPage(e.target.value || e.target.parentNode.value);
-    }, 1600);
+    }, 700);
   };
 
   if ([PAGE_NAME.PROJECTS, PAGE_NAME.HOME].includes(displayedPage)) {

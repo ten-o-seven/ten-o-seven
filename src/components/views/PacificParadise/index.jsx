@@ -10,7 +10,9 @@ import Opportunities from './Opportunities';
 export default function PacificParadise() {
   const [pageOpacity, setPageOpacity] = useState(0);
   useEffect(()=>{
-    setPageOpacity(1);
+    setTimeout(()=>{
+      setPageOpacity(1);
+    }, 700);
   }, []);
 
   return (
