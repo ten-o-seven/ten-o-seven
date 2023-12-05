@@ -9,7 +9,7 @@
     height: 50px;
 }
 
-.parallax-children:hover {
+.shake:hover {
     -webkit-animation: headShake 1s;
     animation: headShake 1s;
 }

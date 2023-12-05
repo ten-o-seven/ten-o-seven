@@ -32,6 +32,16 @@ export default function Projects() {
         shift.style.transform = `scale(1, 1) translateX(0px) translateY(0px)`;
       }
     });
+
+    document.querySelectorAll('.parallax-children').forEach((shift) => {
+      const isForeground = shift.getAttribute('data-toggled') === 'true' ? true : false;
+      if (!isForeground) {
+        shift.classList.add('shake');
+      } else {
+        shift.classList.remove('shake');
+      }
+    });
+
     setIsUiToggled(!isUiToggled);
   };
 
@@ -109,12 +119,13 @@ export default function Projects() {
                   ...styles,
                 }}>
                 <img
-                  className={'parallax-children animate__animated'}
+                  className={'parallax-children shake animate__animated'}
+                  data-toggled={isUiToggled}
                   src={src}
                   style={{
                     width: '100%',
                     height: '100%',
-                    cursor: 'pointer',
+                    cursor: isUiToggled ? 'pointer' : 'initial',
                   }}
                 />
               </div>
@@ -143,11 +154,12 @@ export default function Projects() {
               >
                 <img
                   className={'parallax-children animate__animated'}
+                  data-toggled={!isUiToggled}
                   src={src}
                   style={{
                     width: '100%',
                     height: '100%',
-                    cursor: 'pointer',
+                    cursor: isUiToggled ? 'initial' :'pointer',
                   }}
                 />
               </div>
