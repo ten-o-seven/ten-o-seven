@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import {userResearchCopy} from './lang';
-import bubble11 from '../../../images/bubble_1_1.png';
-import bubble12 from '../../../images/bubble_1_2.png';
-import bubble13 from '../../../images/bubble_1_3.png';
-import figure1 from '../../../images/figure_1.png';
-import bubble21 from '../../../images/bubble_2_1.png';
-import bubble22 from '../../../images/bubble_2_2.png';
-import bubble23 from '../../../images/bubble_2_3.png';
-import bubble24 from '../../../images/bubble_2_4.png';
-import figure2 from '../../../images/figure_2.png';
+import bubble11 from './images/bubble_1_1.png';
+import bubble12 from './images/bubble_1_2.png';
+import bubble13 from './images/bubble_1_3.png';
+import figure1 from './images/figure_1.png';
+import bubble21 from './images/bubble_2_1.png';
+import bubble22 from './images/bubble_2_2.png';
+import bubble23 from './images/bubble_2_3.png';
+import bubble24 from './images/bubble_2_4.png';
+import figure2 from './images/figure_2.png';
 
 const Bubble = styled.img`
   position: absolute;

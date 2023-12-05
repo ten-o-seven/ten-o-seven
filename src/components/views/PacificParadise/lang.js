@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import shark from '../../../images/shark.png';
-import swim from '../../../images/swim.png';
-import lifesaver from '../../../images/lifesaver.png';
+import shark from './images/shark.png';
+import swim from './images/swim.png';
+import lifesaver from './images/lifesaver.png';
 
 export const hookCopy = [
   {
@@ -39,7 +39,7 @@ export const hookCopy = [
 ];
 
 export const userResearchCopy = {
-  title: '01. User Research Summary',
+  title: '01. Discovery',
   content: 'I conducted interviews and identified that the primary users of the Pacific Paradise app are new and existing customers who hope to avoid the wait on the phone or at the restaurant. The research indicates that a shared goal among the customers is to order and acquire meals efficiently according to their schedule. Many are also interested in additional in-app features and promotions.',
 };
 

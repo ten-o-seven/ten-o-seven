@@ -13,9 +13,10 @@ const IndexPage = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
         <link
-          href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Lacquer&display=swap"
           rel="stylesheet"
         />
+
       </Helmet>
       <ThemeProvider theme={theme}>
         <Store>

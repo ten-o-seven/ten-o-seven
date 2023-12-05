@@ -1,6 +1,6 @@
 import React from 'react';
 import {opportunitiesCopy} from './lang';
-import frame from '../../../images/frame.png';
+import frame from './images/frame.png';
 
 /**
  * @param {Node} na
@@ -9,7 +9,8 @@ import frame from '../../../images/frame.png';
 export default function Opportunities() {
   return (
     <div style={{margin: '250px 0 0'}}>
-      <h4 style={{fontWeight: 700}}>02. Identify Pain Points and Opportunities</h4>
+      <h4 style={{fontWeight: 700}}>02. Process Discoveries</h4>
+      <h4>User pain points and opportunities</h4>
       <div
         className="flex align-items-center"
         style={{height: 560, marginTop: 20, transform: 'translateX(-50px)'}}
@@ -18,7 +19,7 @@ export default function Opportunities() {
           src={frame}
           style={{
             position: 'absolute',
-            zIndex: -10,
+            zIndex: -100,
           }}
         />
         <div className="flex" style={{marginLeft: 100}}>

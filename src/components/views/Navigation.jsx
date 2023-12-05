@@ -86,7 +86,7 @@ export default function Navigation() {
   }
 
   return (
-    <div className="flex flex-column align-items-center">
+    <div className="flex flex-column align-items-center" style={{zIndex: 1000}}>
       <div
         className="container fixed"
         style={{backgroundColor: 'rgba(255, 255, 255, 1)'}}

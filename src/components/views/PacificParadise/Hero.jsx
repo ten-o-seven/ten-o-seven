@@ -1,5 +1,5 @@
 import React from 'react';
-import ppHero from '../../../images/pp_hero.png';
+import ppHero from './images/pp_hero.png';
 import divider from '../../../images/divider.png';
 
 /**
@@ -25,7 +25,7 @@ export default function Hero() {
         </h4>
         <div style={{width: '35%'}}>
           <img src={divider} />
-          <h3>2022</h3>
+          <h3 style={{fontFamily: 'Chelsea Market Outline'}}>2022</h3>
           <h6 style={{fontWeight: 700}}>Service</h6>
           <p>
               User research, paper + digital wireframing, low + high-fidelity prototypes,

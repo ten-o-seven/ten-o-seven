@@ -3,6 +3,7 @@ import Hero from './Hero';
 import HeroSubSection from './HeroSubSection';
 import Opportunities from './Opportunities';
 import UserResearch from './UserResearch';
+import UserStories from './UserStories';
 
 /**
  * @param {Node} na
@@ -30,6 +31,7 @@ export default function PacificParadise() {
         <HeroSubSection />
         <UserResearch />
         <Opportunities />
+        <UserStories />
       </div>
     </div>
   );
