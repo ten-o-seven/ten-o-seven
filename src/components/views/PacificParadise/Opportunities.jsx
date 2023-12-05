@@ -8,16 +8,17 @@ import frame from '../../../images/frame.png';
  */
 export default function Opportunities() {
   return (
-    <div>
+    <div style={{margin: '250px 0 0'}}>
       <h4 style={{fontWeight: 700}}>02. Identify Pain Points and Opportunities</h4>
-      <div className="flex align-items-center" style={{height: 560, marginTop: 20}}>
+      <div
+        className="flex align-items-center"
+        style={{height: 560, marginTop: 20, transform: 'translateX(-50px)'}}
+      >
         <img
           src={frame}
           style={{
             position: 'absolute',
             zIndex: -10,
-            width: 1300,
-            transform: 'translateX(-30px)',
           }}
         />
         <div className="flex" style={{marginLeft: 100}}>

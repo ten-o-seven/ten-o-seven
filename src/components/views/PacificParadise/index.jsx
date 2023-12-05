@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Hero from './Hero';
 import HeroSubSection from './HeroSubSection';
 import Opportunities from './Opportunities';
+import UserResearch from './UserResearch';
 
 /**
  * @param {Node} na
@@ -27,6 +28,7 @@ export default function PacificParadise() {
       <div className="container flex flex-column" >
         <Hero />
         <HeroSubSection />
+        <UserResearch />
         <Opportunities />
       </div>
     </div>

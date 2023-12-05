@@ -7,7 +7,7 @@ import {hookCopy} from './lang';
  */
 export default function HeroSubSection() {
   return (
-    <div className="flex justify-between" style={{margin: '100px 0'}}>
+    <div className="flex justify-between" style={{margin: '100px 0 0'}}>
       {hookCopy.map((column)=>{
         return (
           <div

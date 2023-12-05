@@ -14,7 +14,7 @@ const ContainerVertical = styled.div`
 `;
 
 const HomeIcon = styled.img`
-  cursor: pointer
+  cursor: pointer;
 `;
 
 const LinksContainer = styled.div`
