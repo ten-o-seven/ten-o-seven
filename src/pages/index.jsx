@@ -16,7 +16,6 @@ const IndexPage = () => {
           href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Lacquer&display=swap"
           rel="stylesheet"
         />
-
       </Helmet>
       <ThemeProvider theme={theme}>
         <Store>

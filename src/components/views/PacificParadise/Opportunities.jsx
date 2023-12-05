@@ -1,6 +1,7 @@
 import React from 'react';
 import {opportunitiesCopy} from './lang';
 import frame from './images/frame.png';
+import {Fade} from 'react-awesome-reveal';
 
 /**
  * @param {Node} na
@@ -23,33 +24,41 @@ export default function Opportunities() {
           }}
         />
         <div className="flex" style={{marginLeft: 100}}>
-          {opportunitiesCopy.map((column, index)=>{
-            return (
-              <div
-                key={`opportunities-${column.title}-column`}
-                style={{width: '25%', marginRight: 30}}
-              >
-                <h2
-                  style={{
-                    color: '#AD3537',
-                    fontFamily: 'Futura PT',
-                    fontWeight: 400,
-                    lineHeight: '1em',
-                  }}
+          <Fade
+            cascade={true}
+            triggerOnce={true}
+            fraction={1}
+            direction='up'
+            style={{width: '100%'}}
+          >
+            {opportunitiesCopy.map((column, index)=>{
+              return (
+                <div
+                  key={`opportunities-${column.title}-column`}
+                  style={{marginRight: 30}}
                 >
-                  {index + 1}
-                </h2>
-                <div style={{
-                  width: 50,
-                  height: 10,
-                  backgroundColor: '#AD3537',
-                  margin: '0 0 10px',
-                }}/>
-                <h6 style={{fontWeight: 700}}>{column.title}</h6>
-                <p style={{marginTop: 25}}>{column.content}</p>
-              </div>
-            );
-          })}
+                  <h2
+                    style={{
+                      color: '#AD3537',
+                      fontFamily: 'Futura PT',
+                      fontWeight: 400,
+                      lineHeight: '1em',
+                    }}
+                  >
+                    {index + 1}
+                  </h2>
+                  <div style={{
+                    width: 50,
+                    height: 10,
+                    backgroundColor: '#AD3537',
+                    margin: '0 0 10px',
+                  }}/>
+                  <h6 style={{fontWeight: 700}}>{column.title}</h6>
+                  <p style={{marginTop: 25}}>{column.content}</p>
+                </div>
+              );
+            })}
+          </Fade>
         </div>
       </div>
     </div>
