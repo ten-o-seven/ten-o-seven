@@ -4,6 +4,7 @@ import Toggler from '../../common/Toggler';
 import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
 import {useStore} from '../../Store';
 import './styles.css';
+import 'animate.css';
 
 /**
  * @return {Node} the project collection view
@@ -88,13 +89,12 @@ export default function Projects() {
         <div className="flex flex-column flex-grow relative">
           {Object.entries(PROJECTS_MAP).map(([name, {src, value, styles}], i)=>{
             return (
-              <img
+              <div
+                key={name}
+                id={`parallax-${name}`}
                 value={value}
                 data-toggled={isUiToggled}
-                key={name}
-                className={'parallax-element relative'}
-                id={`parallax-${name}`}
-                src={src}
+                className="parallax-element relative"
                 onClick={()=>{
                   setPageOpacity(0);
                   setTimeout(()=>{
@@ -103,13 +103,21 @@ export default function Projects() {
                 }}
                 style={{
                   zIndex: 100,
-                  cursor: 'pointer',
                   opacity: isUiToggled ? 1 : 0.2,
                   marginTop: `${(i+1) * 9}vh`,
                   transform: 'scale(1.5, 1.5) translateX(0px) translateY(0px)',
                   ...styles,
-                }}
-              />
+                }}>
+                <img
+                  className={'parallax-children animate__animated'}
+                  src={src}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    cursor: 'pointer',
+                  }}
+                />
+              </div>
             );
           })}
         </div>
@@ -119,7 +127,7 @@ export default function Projects() {
         >
           {Object.entries(DOODLES_MAP).map(([name, {src, value, styles}], i)=>{
             return (
-              <img
+              <div
                 value={value}
                 data-toggled={!isUiToggled}
                 key={name}
@@ -132,7 +140,17 @@ export default function Projects() {
                   transform: 'scale(1, 1) translateX(0px) translateY(0px)',
                   ...styles,
                 }}
-              />
+              >
+                <img
+                  className={'parallax-children animate__animated'}
+                  src={src}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    cursor: 'pointer',
+                  }}
+                />
+              </div>
             );
           })}
         </div>
