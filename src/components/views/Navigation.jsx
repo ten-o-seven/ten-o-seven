@@ -3,7 +3,7 @@ import React from 'react';
 import {PAGE_NAME} from '../constants';
 import {useStore} from '../Store';
 import logo from '../../images/logo_graphic.png';
-import logoText from '../../images/logo_w_text.png';
+import logoWithText from '../../images/logo_w_text.png';
 
 const ContainerVertical = styled.div`
     z-index: 100;
@@ -86,10 +86,13 @@ export default function Navigation() {
   }
 
   return (
-    <div className="flex flex-column align-items-center" style={{zIndex: 1000}}>
+    <div
+      className="flex flex-column align-items-center"
+      style={{zIndex: 1000, position: 'relative'}}
+    >
       <div
         className="container fixed"
-        style={{backgroundColor: 'rgba(255, 255, 255, 1)'}}
+        style={{backgroundColor: 'rgba(249, 249, 249, 1)'}}
       >
         <ul className="flex justify-between">
           <li>
@@ -98,7 +101,7 @@ export default function Navigation() {
               value={PAGE_NAME.HOME}
               onClick={onProjectsClick}
             >
-              <HomeIcon src={logoText}/>
+              <HomeIcon src={logoWithText}/>
             </button>
           </li>
           <div className="flex justify-between" style={{width: '10%'}}>
