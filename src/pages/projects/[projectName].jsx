@@ -8,9 +8,14 @@ import {shape, string} from 'prop-types';
 import '../styles.css';
 import {PAGE_MAP} from '../../components/constants';
 
-const ProjectName = ({location: {pathname}, location}) => {
+const ProjectName = ({location: {pathname}}) => {
   const Display = PAGE_MAP[pathname];
-  console.log(Display);
+  const [pageOpacity, setPageOpacity] = React.useState(0);
+  React.useEffect(()=>{
+    setTimeout(()=>{
+      setPageOpacity(1);
+    }, 700);
+  }, []);
 
   return (
     <>
@@ -24,9 +29,9 @@ const ProjectName = ({location: {pathname}, location}) => {
       </Helmet>
       <ThemeProvider theme={theme}>
         <Store>
-          <Navigation location={pathname}/>
+          <Navigation location={pathname} setPageOpacity={setPageOpacity}/>
           <main className="flex justify-center">
-            <Display />
+            <Display pageOpacity={pageOpacity}/>
           </main>
         </Store>
       </ThemeProvider>

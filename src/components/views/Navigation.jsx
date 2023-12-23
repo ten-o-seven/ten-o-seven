@@ -3,7 +3,7 @@ import React from 'react';
 import {PAGE_NAME} from '../constants';
 import logo from '../../images/logo_graphic.png';
 import logoWithText from '../../images/logo_w_text.png';
-import {string} from 'prop-types';
+import {string, func} from 'prop-types';
 
 import './styles.css';
 
@@ -32,11 +32,9 @@ const LinkText = styled.p`
 /**
  * @return {Node} global nav bar
  */
-export default function Navigation({displayedPage}) {
+export default function Navigation({displayedPage, setPageOpacity}) {
   const onProjectsClick = (e) => {
-    if (displayedPage !== e.target.value && location !== e.target.parentNode.value) {
-      document.querySelector('main').firstChild.style.opacity=0;
-    }
+    setPageOpacity(0);
 
     setTimeout(()=>{
       window.location.href = e.target.value || e.target.parentNode.value;
@@ -135,4 +133,5 @@ export default function Navigation({displayedPage}) {
 
 Navigation.propTypes = {
   displayedPage: string.isRequired,
+  setPageOpacity: func.isRequired,
 };

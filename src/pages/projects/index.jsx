@@ -26,9 +26,9 @@ const ProjectsPage = ({location: {pathname}}) => {
           rel="stylesheet"
         />
       </Helmet>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} >
         <Store>
-          <Navigation location={pathname}/>
+          <Navigation displayedPage={pathname} setPageOpacity={setPageOpacity}/>
           <main className="flex justify-center">
             <Projects pageOpacity={pageOpacity} setPageOpacity={setPageOpacity} />
           </main>

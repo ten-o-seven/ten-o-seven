@@ -29,7 +29,7 @@ const IndexPage = ({location: {pathname}}) => {
       </Helmet>
       <ThemeProvider theme={theme}>
         <Store>
-          <Navigation displayedPage={pathname}/>
+          <Navigation displayedPage={pathname} setPageOpacity={setPageOpacity}/>
           <main className="flex justify-center">
             <div className="full-view" id="homeContainer" style={{
               opacity: pageOpacity,
