@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 import React, {useState} from 'react';
-import persona1 from './images/persona_1.png';
-import persona2 from './images/persona_2.png';
 import personaProfile1 from './images/persona_profile_1.png';
 import personaProfile2 from './images/persona_profile_2.png';
 import personaDetails1 from './images/persona_details_1.png';

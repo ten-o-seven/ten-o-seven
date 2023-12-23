@@ -2,17 +2,14 @@ import React from 'react';
 import {useEffect, useState, useRef} from 'react';
 import Toggler from '../../common/Toggler';
 import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
-import {useStore} from '../../Store';
+import {func, number} from 'prop-types';
 import './styles.css';
 import 'animate.css';
 
 /**
  * @return {Node} the project collection view
  */
-export default function Projects() {
-  const {setDisplayedPage} = useStore();
-  const [pageOpacity, setPageOpacity] = useState(0);
-
+export default function Projects({pageOpacity, setPageOpacity}) {
   const [isUiToggled, setIsUiToggled] = useState(true);
   const [thumbnailPosition, setThumbnailPosition] = useState(-5);
   const mouseEvent = useRef({});
@@ -71,9 +68,6 @@ export default function Projects() {
   };
 
   useEffect(()=>{
-    setTimeout(()=>{
-      setPageOpacity(1);
-    }, 700);
     document.addEventListener('mousemove', parallax);
     return () => document.removeEventListener('mousemove', parallax);
   }, []);
@@ -97,19 +91,19 @@ export default function Projects() {
       <Toggler onClick={onTogglerClick} position={thumbnailPosition}/>
       <div className="flex flex-column flex-grow relative">
         <div className="flex flex-column flex-grow relative">
-          {Object.entries(PROJECTS_MAP).map(([name, {src, value, styles}], i)=>{
+          {Object.entries(PROJECTS_MAP).map(([pathname, {src, value, styles}], i)=>{
             return (
               <div
-                key={name}
-                id={`parallax-${name}`}
+                key={pathname}
+                id={`parallax-${pathname}`}
                 value={value}
                 data-toggled={isUiToggled}
                 className="parallax-element relative"
                 onClick={()=>{
                   setPageOpacity(0);
                   setTimeout(()=>{
-                    setDisplayedPage(name);
-                  }, 1500);
+                    window.location.href = pathname;
+                  }, 700);
                 }}
                 style={{
                   zIndex: 100,
@@ -170,3 +164,8 @@ export default function Projects() {
     </div>
   );
 }
+
+Projects.propTypes = {
+  pageOpacity: number.isRequired,
+  setPageOpacity: func.isRequired,
+};

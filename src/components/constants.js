@@ -1,31 +1,25 @@
-import Home from './views/Home';
 import MindSupport from './views/MindSupport';
 import PacificParadise from './views/PacificParadise';
-import Projects from './views/Projects';
 import bird from '../images/bird.png';
 import golf from '../images/golf.png';
 import sneakers from '../images/sneakers.png';
 
 export const PAGE_NAME = {
-  HOME: 'HOME',
-  PROJECTS: 'PROJECTS',
-  CONTACTS: 'CONTACTS',
-  PACIFIC_PARADISE: 'PACIFIC_PARADISE',
-  MIND_SUPPORT: 'MIND_SUPPORT',
-  ANOTHER_PROJECT: 'ANOTHER_PROJECT',
+  HOME: '/',
+  PROJECTS: '/projects/',
+  CONTACTS: '/contacts/',
+  PACIFIC_PARADISE: '/projects/pacific_paradise/',
+  MIND_SUPPORT: 'mind_support',
+  ANOTHER_PROJECT: 'another_project',
 };
 
 const {
-  HOME,
-  PROJECTS,
   PACIFIC_PARADISE,
   MIND_SUPPORT,
   ANOTHER_PROJECT,
 } = PAGE_NAME;
 
 export const PAGE_MAP = {
-  [HOME]: Home,
-  [PROJECTS]: Projects,
   [PACIFIC_PARADISE]: PacificParadise,
   [MIND_SUPPORT]: MindSupport,
 };
