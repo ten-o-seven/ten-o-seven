@@ -11,6 +11,7 @@ export const PAGE_NAME = {
   PACIFIC_PARADISE: '/projects/pacific_paradise/',
   MIND_SUPPORT: 'mind_support',
   ANOTHER_PROJECT: 'another_project',
+  INSTAGRAM: '/projects/instagram',
 };
 
 const {
@@ -31,6 +32,8 @@ export const PROJECTS_MAP = {
     styles: {
       left: '60%',
     },
+    title: 'Pacific Paradise',
+    subtitle: 'mobile app case study for a local restaurant',
   },
   [MIND_SUPPORT]: {
     src: golf,
@@ -38,6 +41,8 @@ export const PROJECTS_MAP = {
     styles: {
       left: '35%',
     },
+    title: 'Mind Support',
+    subtitle: 'web & mobile mental health self-help app',
   },
   [ANOTHER_PROJECT]: {
     src: sneakers,
@@ -45,6 +50,8 @@ export const PROJECTS_MAP = {
     styles: {
       left: '70%',
     },
+    title: 'More to Come',
+    subtitle: 'in the mean time, feel free to check out my doodles',
   },
 };
 

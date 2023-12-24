@@ -67,6 +67,21 @@ export default function Projects({pageOpacity, setPageOpacity}) {
     }
   };
 
+  const onMouseEnter = (e) => {
+    if (e.target.className.includes('shake')) {
+      e.target.nextSibling.style.display = 'inline';
+      e.target.nextSibling.classList.remove('fadeOut');
+      e.target.nextSibling.classList.add('fadeIn');
+    }
+  };
+
+  const onMouseLeave = (e) => {
+    if (e.target.className.includes('shake')) {
+      e.target.nextSibling.classList.add('fadeOut');
+      e.target.nextSibling.classList.remove('fadeIn');
+    }
+  };
+
   useEffect(()=>{
     document.addEventListener('mousemove', parallax);
     return () => document.removeEventListener('mousemove', parallax);
@@ -91,40 +106,61 @@ export default function Projects({pageOpacity, setPageOpacity}) {
       <Toggler onClick={onTogglerClick} position={thumbnailPosition}/>
       <div className="flex flex-column flex-grow relative">
         <div className="flex flex-column flex-grow relative">
-          {Object.entries(PROJECTS_MAP).map(([pathname, {src, value, styles}], i)=>{
-            return (
-              <div
-                key={pathname}
-                id={`parallax-${pathname}`}
-                value={value}
-                data-toggled={isUiToggled}
-                className="parallax-element relative"
-                onClick={()=>{
-                  setPageOpacity(0);
-                  setTimeout(()=>{
-                    window.location.href = pathname;
-                  }, 700);
-                }}
-                style={{
-                  zIndex: 100,
-                  opacity: isUiToggled ? 1 : 0.2,
-                  marginTop: `${(i+1) * 9}vh`,
-                  transform: 'scale(1.5, 1.5) translateX(0px) translateY(0px)',
-                  ...styles,
-                }}>
-                <img
-                  className={'parallax-children shake animate__animated'}
-                  data-toggled={isUiToggled}
-                  src={src}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    cursor: isUiToggled ? 'pointer' : 'initial',
-                  }}
-                />
-              </div>
-            );
-          })}
+          {Object.entries(PROJECTS_MAP)
+              .map(([pathname, {src, value, styles, title, subtitle}], i)=>{
+                return (
+                  <div
+                    key={pathname}
+                    id={`parallax-${pathname}`}
+                    value={value}
+                    data-toggled={isUiToggled}
+                    className="parallax-element relative"
+                    onClick={()=>{
+                      setPageOpacity(0);
+                      setTimeout(()=>{
+                        window.location.href = pathname;
+                      }, 700);
+                    }}
+                    style={{
+                      zIndex: 100,
+                      opacity: isUiToggled ? 1 : 0.2,
+                      marginTop: `${(i+1) * 9}vh`,
+                      transform: 'scale(1.5, 1.5) translateX(0px) translateY(0px)',
+                      ...styles,
+                    }}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                  >
+                    <img
+                      className={'parallax-children shake animate__animated'}
+                      data-toggled={isUiToggled}
+                      src={src}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        cursor: isUiToggled ? 'pointer' : 'initial',
+                      }}
+                    />
+                    <div
+                      style={{
+                        display: 'none',
+                        position: 'absolute',
+                        top: 0,
+                        left: '100%',
+                        marginLeft: 10,
+                        width: '300%',
+                        zIndex: -10,
+                      }}
+                      className="sliding-text animate__animated"
+                    >
+                      <h6>{title}</h6>
+                      <p style={{fontSize: 12, color: '#999'}}>
+                        {subtitle}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
         </div>
         <div
           className="absolute flex flex-column flex-grow"
