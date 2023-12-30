@@ -7,6 +7,7 @@ import {Helmet} from 'react-helmet';
 import {shape, string} from 'prop-types';
 import '../styles.css';
 import {PAGE_MAP} from '../../components/constants';
+import PacificParadise from '../../components/views/PacificParadise';
 
 const ProjectName = ({location: {pathname}}) => {
   const Display = PAGE_MAP[pathname];
@@ -31,7 +32,9 @@ const ProjectName = ({location: {pathname}}) => {
         <Store>
           <Navigation location={pathname} setPageOpacity={setPageOpacity}/>
           <main className="flex justify-center">
-            <Display pageOpacity={pageOpacity}/>
+            <PacificParadise pageOpacity={pageOpacity}/>
+            {/* TODO: figure out why object map display does not work during build */}
+            {/* <Display pageOpacity={pageOpacity}/> */}
           </main>
         </Store>
       </ThemeProvider>
