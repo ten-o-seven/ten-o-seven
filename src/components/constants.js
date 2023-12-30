@@ -1,31 +1,26 @@
-import Home from './views/Home';
 import MindSupport from './views/MindSupport';
 import PacificParadise from './views/PacificParadise';
-import Projects from './views/Projects';
 import bird from '../images/bird.png';
 import golf from '../images/golf.png';
 import sneakers from '../images/sneakers.png';
 
 export const PAGE_NAME = {
-  HOME: 'HOME',
-  PROJECTS: 'PROJECTS',
-  CONTACTS: 'CONTACTS',
-  PACIFIC_PARADISE: 'PACIFIC_PARADISE',
-  MIND_SUPPORT: 'MIND_SUPPORT',
-  ANOTHER_PROJECT: 'ANOTHER_PROJECT',
+  HOME: '/',
+  PROJECTS: '/projects/',
+  CONTACTS: '/contacts/',
+  PACIFIC_PARADISE: '/projects/pacific_paradise/',
+  MIND_SUPPORT: 'mind_support',
+  ANOTHER_PROJECT: 'another_project',
+  INSTAGRAM: '/projects/instagram',
 };
 
 const {
-  HOME,
-  PROJECTS,
   PACIFIC_PARADISE,
   MIND_SUPPORT,
   ANOTHER_PROJECT,
 } = PAGE_NAME;
 
 export const PAGE_MAP = {
-  [HOME]: Home,
-  [PROJECTS]: Projects,
   [PACIFIC_PARADISE]: PacificParadise,
   [MIND_SUPPORT]: MindSupport,
 };
@@ -37,6 +32,8 @@ export const PROJECTS_MAP = {
     styles: {
       left: '60%',
     },
+    title: 'Pacific Paradise',
+    subtitle: 'mobile app case study for a local restaurant',
   },
   [MIND_SUPPORT]: {
     src: golf,
@@ -44,6 +41,8 @@ export const PROJECTS_MAP = {
     styles: {
       left: '35%',
     },
+    title: 'Mind Support',
+    subtitle: 'web & mobile mental health self-help app',
   },
   [ANOTHER_PROJECT]: {
     src: sneakers,
@@ -51,6 +50,8 @@ export const PROJECTS_MAP = {
     styles: {
       left: '70%',
     },
+    title: 'More to Come',
+    subtitle: 'in the mean time, feel free to check out my doodles',
   },
 };
 

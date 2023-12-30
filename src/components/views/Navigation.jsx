@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import {PAGE_NAME} from '../constants';
-import {useStore} from '../Store';
 import logo from '../../images/logo_graphic.png';
-import logoText from '../../images/logo_w_text.png';
+import logoWithText from '../../images/logo_w_text.png';
+import {string, func} from 'prop-types';
 
-const ContainerVertical = styled.div`
+import './styles.css';
+
+
+const ContainerVertical = styled.nav`
     z-index: 100;
     // background-color: rgb(255 255 255 / 0.3);
     // backdrop-filter: blur(10px);
@@ -29,16 +32,12 @@ const LinkText = styled.p`
 /**
  * @return {Node} global nav bar
  */
-export default function Navigation() {
-  const {displayedPage, setDisplayedPage} = useStore();
-
+export default function Navigation({displayedPage, setPageOpacity}) {
   const onProjectsClick = (e) => {
-    if (displayedPage !== e.target.value && displayedPage !== e.target.parentNode.value) {
-      document.querySelector('main').firstChild.style.opacity=0;
-    }
+    setPageOpacity(0);
 
     setTimeout(()=>{
-      setDisplayedPage(e.target.value || e.target.parentNode.value);
+      window.location.href = e.target.value || e.target.parentNode.value;
     }, 700);
   };
 
@@ -86,10 +85,13 @@ export default function Navigation() {
   }
 
   return (
-    <div className="flex flex-column align-items-center" style={{zIndex: 1000}}>
+    <nav
+      className="fixed"
+      style={{zIndex: 1000, width: '100%', backgroundColor: 'rgba(249, 249, 249, 1)'}}
+    >
       <div
-        className="container fixed"
-        style={{backgroundColor: 'rgba(255, 255, 255, 1)'}}
+        className="container"
+        style={{margin: '0 auto'}}
       >
         <ul className="flex justify-between">
           <li>
@@ -98,7 +100,7 @@ export default function Navigation() {
               value={PAGE_NAME.HOME}
               onClick={onProjectsClick}
             >
-              <HomeIcon src={logoText}/>
+              <HomeIcon src={logoWithText}/>
             </button>
           </li>
           <div className="flex justify-between" style={{width: '10%'}}>
@@ -125,6 +127,11 @@ export default function Navigation() {
           </div>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 }
+
+Navigation.propTypes = {
+  displayedPage: string.isRequired,
+  setPageOpacity: func.isRequired,
+};

@@ -8,7 +8,7 @@ import {hookCopy} from './lang';
  */
 export default function HeroSubSection() {
   return (
-    <div direction="up" className="flex justify-between" style={{margin: '100px 0 0'}}>
+    <div direction="up" className="flex justify-between" style={{margin: '150px 0 0'}}>
       <Fade
         cascade={true}
         fraction={1}

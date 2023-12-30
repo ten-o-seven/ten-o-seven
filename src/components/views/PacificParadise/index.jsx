@@ -1,22 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Hero from './Hero';
 import HeroSubSection from './HeroSubSection';
 import Opportunities from './Opportunities';
 import UserResearch from './UserResearch';
 import UserStories from './UserStories';
+import {number} from 'prop-types';
 
 /**
  * @param {Node} na
  * @return {Node} Pacific Paradise Project Page
  */
-export default function PacificParadise() {
-  const [pageOpacity, setPageOpacity] = useState(0);
-  useEffect(()=>{
-    setTimeout(()=>{
-      setPageOpacity(1);
-    }, 700);
-  }, []);
-
+export default function PacificParadise({pageOpacity}) {
   return (
     <div
       className="full-view flex flex-column align-items-center"
@@ -36,3 +30,7 @@ export default function PacificParadise() {
     </div>
   );
 }
+
+PacificParadise.propTypes = {
+  pageOpacity: number.isRequired,
+};

@@ -58,7 +58,7 @@ export default function UserResearch() {
       </div>
       <div style={{top: 150, position: 'relative'}}>
         <div style={{width: '50%'}}>
-          <Fade delay={1000} triggerOnce={true} cascade={true} fraction={1} >
+          <Fade delay={1500} triggerOnce={true} cascade={true} fraction={1} >
             <div style={{width: 210, position: 'relative'}}>
               <Bubble src={bubble21} />
               <p style={{top: 55, left: 30, position: 'absolute'}}>
