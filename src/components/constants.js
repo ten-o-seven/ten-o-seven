@@ -10,8 +10,8 @@ export const ROUTE_PATH = {
   PROJECTS: '/projects/',
   CONTACTS: '/contacts/',
   PACIFIC_PARADISE: '/projects/pacific_paradise/',
-  // MIND_SUPPORT: 'mind_support',
-  // ANOTHER_PROJECT: 'another_project',
+  MIND_SUPPORT: 'mind_support',
+  ANOTHER_PROJECT: 'another_project',
   INSTAGRAM: '/projects/instagram',
 };
 
