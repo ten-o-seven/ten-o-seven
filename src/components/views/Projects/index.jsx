@@ -5,12 +5,20 @@ import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
 import {func, number} from 'prop-types';
 import './styles.css';
 import 'animate.css';
-import {navigate} from 'gatsby-link';
+import {navigate, withPrefix} from 'gatsby-link';
+import {useStore} from '../../Store';
+import {getIsBetweenPortAndProj} from '../../utils';
 
 /**
  * @return {Node} the project collection view
  */
-export default function Projects({pageOpacity, setPageOpacity}) {
+export default function Projects() {
+  const {pageOpacity, setPageOpacity, setNavOpacity, location} = useStore();
+  React.useEffect(()=>{
+    setTimeout(()=>{
+      setPageOpacity(1);
+    }, 700);
+  }, []);
   const [isUiToggled, setIsUiToggled] = useState(true);
   const [thumbnailPosition, setThumbnailPosition] = useState(-5);
   const mouseEvent = useRef({});
@@ -83,6 +91,20 @@ export default function Projects({pageOpacity, setPageOpacity}) {
     }
   };
 
+  const onMouseClick = (pathname)=>{
+    const targetPath = withPrefix(pathname);
+    const isBetweenPortAndProj = getIsBetweenPortAndProj(location.pathname, targetPath);
+
+    if (!isBetweenPortAndProj) {
+      setNavOpacity(0);
+    }
+
+    setPageOpacity(0);
+    setTimeout(()=>{
+      navigate(pathname);
+    }, 700);
+  };
+
   useEffect(()=>{
     document.addEventListener('mousemove', parallax);
     return () => document.removeEventListener('mousemove', parallax);
@@ -116,12 +138,7 @@ export default function Projects({pageOpacity, setPageOpacity}) {
                     value={value}
                     data-toggled={isUiToggled}
                     className="parallax-element relative"
-                    onClick={()=>{
-                      setPageOpacity(0);
-                      setTimeout(()=>{
-                        navigate(pathname);
-                      }, 700);
-                    }}
+                    onClick={() => onMouseClick(pathname)}
                     style={{
                       zIndex: 100,
                       opacity: isUiToggled ? 1 : 0.2,
