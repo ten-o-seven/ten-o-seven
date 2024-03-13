@@ -6,11 +6,18 @@ import {func, number} from 'prop-types';
 import './styles.css';
 import 'animate.css';
 import {navigate} from 'gatsby-link';
+import {useStore} from '../../Store';
 
 /**
  * @return {Node} the project collection view
  */
-export default function Projects({pageOpacity, setPageOpacity}) {
+export default function Projects() {
+  const {pageOpacity, setPageOpacity} = useStore();
+  React.useEffect(()=>{
+    setTimeout(()=>{
+      setPageOpacity(1);
+    }, 700);
+  }, []);
   const [isUiToggled, setIsUiToggled] = useState(true);
   const [thumbnailPosition, setThumbnailPosition] = useState(-5);
   const mouseEvent = useRef({});

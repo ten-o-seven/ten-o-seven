@@ -10,12 +10,13 @@ export const useStore = () => useContext(StoreContext);
  * @param {Node} children The first number.
  * @return {Node} The sum of the two numbers.
  */
-export default function Store({children}) {
+export default function Store({children, rootValues}) {
   const [displayedPage, setDisplayedPage] = useState(ROUTE_PATH.HOME);
 
   const context = {
     displayedPage,
     setDisplayedPage,
+    ...rootValues,
   };
 
   return (
@@ -27,4 +28,5 @@ export default function Store({children}) {
 
 Store.propTypes = {
   children: PropTypes.node.isRequired,
+  rootValues: PropTypes.shape({}),
 };
