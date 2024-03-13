@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useState} from 'react';
-import {PAGE_NAME} from './constants';
+import {ROUTE_PATH} from './constants';
 import PropTypes from 'prop-types';
 
 export const StoreContext = createContext({});
@@ -11,7 +11,7 @@ export const useStore = () => useContext(StoreContext);
  * @return {Node} The sum of the two numbers.
  */
 export default function Store({children}) {
-  const [displayedPage, setDisplayedPage] = useState(PAGE_NAME.HOME);
+  const [displayedPage, setDisplayedPage] = useState(ROUTE_PATH.HOME);
 
   const context = {
     displayedPage,

@@ -5,6 +5,7 @@ import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
 import {func, number} from 'prop-types';
 import './styles.css';
 import 'animate.css';
+import {navigate} from 'gatsby-link';
 
 /**
  * @return {Node} the project collection view
@@ -118,7 +119,7 @@ export default function Projects({pageOpacity, setPageOpacity}) {
                     onClick={()=>{
                       setPageOpacity(0);
                       setTimeout(()=>{
-                        window.location.href = pathname;
+                        navigate(pathname);
                       }, 700);
                     }}
                     style={{

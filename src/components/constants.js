@@ -4,13 +4,14 @@ import bird from '../images/bird.png';
 import golf from '../images/golf.png';
 import sneakers from '../images/sneakers.png';
 
-export const PAGE_NAME = {
+// for navigate() payload
+export const ROUTE_PATH = {
   HOME: '/',
   PROJECTS: '/projects/',
   CONTACTS: '/contacts/',
   PACIFIC_PARADISE: '/projects/pacific_paradise/',
-  MIND_SUPPORT: 'mind_support',
-  ANOTHER_PROJECT: 'another_project',
+  // MIND_SUPPORT: 'mind_support',
+  // ANOTHER_PROJECT: 'another_project',
   INSTAGRAM: '/projects/instagram',
 };
 
@@ -18,7 +19,7 @@ const {
   PACIFIC_PARADISE,
   MIND_SUPPORT,
   ANOTHER_PROJECT,
-} = PAGE_NAME;
+} = ROUTE_PATH;
 
 export const PAGE_MAP = {
   [PACIFIC_PARADISE]: PacificParadise,

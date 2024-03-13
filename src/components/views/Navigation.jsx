@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import {PAGE_NAME} from '../constants';
+import {ROUTE_PATH} from '../constants';
 import logo from '../../images/logo_graphic.png';
 import logoWithText from '../../images/logo_w_text.png';
 import {string, func} from 'prop-types';
 
 import './styles.css';
+import {navigate, withPrefix} from 'gatsby-link';
 
 
 const ContainerVertical = styled.nav`
@@ -34,14 +35,18 @@ const LinkText = styled.p`
  */
 export default function Navigation({displayedPage, setPageOpacity}) {
   const onProjectsClick = (e) => {
-    setPageOpacity(0);
+    const targetPath = e.target.value || e.target.parentNode.value;
+    const isCurrentPage = displayedPage === withPrefix(targetPath);
+    if (!isCurrentPage) {
+      setPageOpacity(0);
+    }
 
     setTimeout(()=>{
-      window.location.href = e.target.value || e.target.parentNode.value;
+      navigate(targetPath);
     }, 700);
   };
 
-  if ([PAGE_NAME.PROJECTS, PAGE_NAME.HOME].includes(displayedPage)) {
+  if ([withPrefix(ROUTE_PATH.PROJECTS), withPrefix(ROUTE_PATH.HOME)].includes(displayedPage)) {
     return (
       <ContainerVertical className='fixed align-self-end full-vh'>
         <ul
@@ -51,7 +56,7 @@ export default function Navigation({displayedPage, setPageOpacity}) {
           <li>
             <button
               style={{padding: 0}}
-              value={PAGE_NAME.HOME}
+              value={ROUTE_PATH.HOME}
               onClick={onProjectsClick}
             >
               <HomeIcon src={logo}/>
@@ -62,9 +67,9 @@ export default function Navigation({displayedPage, setPageOpacity}) {
               <button
                 className='link-button'
                 onClick={onProjectsClick}
-                value={PAGE_NAME.PROJECTS}
+                value={ROUTE_PATH.PROJECTS}
               >
-                <LinkText value={PAGE_NAME.PROJECTS}>
+                <LinkText value={ROUTE_PATH.PROJECTS}>
                   Projects
                 </LinkText>
               </button>
@@ -73,7 +78,7 @@ export default function Navigation({displayedPage, setPageOpacity}) {
               <button
                 className='link-button'
                 onClick={()=>{}}
-                value={PAGE_NAME.CONTACTS}
+                value={ROUTE_PATH.CONTACTS}
               >
                 <LinkText>Me</LinkText>
               </button>
@@ -97,7 +102,7 @@ export default function Navigation({displayedPage, setPageOpacity}) {
           <li>
             <button
               style={{padding: 0}}
-              value={PAGE_NAME.HOME}
+              value={ROUTE_PATH.HOME}
               onClick={onProjectsClick}
             >
               <HomeIcon src={logoWithText}/>
@@ -108,9 +113,9 @@ export default function Navigation({displayedPage, setPageOpacity}) {
               <button
                 className='link-button'
                 onClick={onProjectsClick}
-                value={PAGE_NAME.PROJECTS}
+                value={ROUTE_PATH.PROJECTS}
               >
-                <p value={PAGE_NAME.PROJECTS}>
+                <p value={ROUTE_PATH.PROJECTS}>
               Projects
                 </p>
               </button>
@@ -119,7 +124,7 @@ export default function Navigation({displayedPage, setPageOpacity}) {
               <button
                 className='link-button'
                 onClick={()=>{}}
-                value={PAGE_NAME.CONTACTS}
+                value={ROUTE_PATH.CONTACTS}
               >
                 <p>Me</p>
               </button>

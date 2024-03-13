@@ -9,7 +9,7 @@ import './styles.css';
 
 import cloud1 from '../video/cloud_1.mp4';
 
-const IndexPage = ({location: {pathname}}) => {
+const IndexPage = ({location: {pathname, ...rest}}) => {
   const [pageOpacity, setPageOpacity] = useState(0);
   useEffect(()=>{
     setTimeout(()=>{
