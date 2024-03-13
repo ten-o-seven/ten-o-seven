@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ROUTE_PATH} from '../constants';
 import logo from '../../images/logo_graphic.png';
 import logoWithText from '../../images/logo_w_text.png';
-import {string, func} from 'prop-types';
+import {string, func, number} from 'prop-types';
 
 import './styles.css';
 import {navigate, withPrefix} from 'gatsby-link';
+import {useStore} from '../Store';
+import {getIsBetweenPortAndProj} from '../utils';
 
 
 const ContainerVertical = styled.nav`
@@ -33,12 +35,23 @@ const LinkText = styled.p`
 /**
  * @return {Node} global nav bar
  */
-export default function Navigation({displayedPage, setPageOpacity}) {
+export default function Navigation({displayedPage}) {
+  const {setPageOpacity, setNavOpacity, navOpacity} = useStore();
+  useEffect(()=>{
+    setTimeout(()=>{
+      setNavOpacity(1);
+    }, 700);
+  }, [displayedPage]);
+
   const onProjectsClick = (e) => {
-    const targetPath = e.target.value || e.target.parentNode.value;
-    const isCurrentPage = displayedPage === withPrefix(targetPath);
-    if (!isCurrentPage) {
-      setPageOpacity(0);
+    const targetPath = withPrefix(e.target.value || e.target.parentNode.value);
+    const isSameAsCurrentPage = displayedPage === targetPath;
+    if (!isSameAsCurrentPage) setPageOpacity(0);
+
+    const isBetweenPortAndProj = getIsBetweenPortAndProj(displayedPage, targetPath);
+
+    if (!isBetweenPortAndProj) {
+      setNavOpacity(0);
     }
 
     setTimeout(()=>{
@@ -48,7 +61,13 @@ export default function Navigation({displayedPage, setPageOpacity}) {
 
   if ([withPrefix(ROUTE_PATH.PROJECTS), withPrefix(ROUTE_PATH.HOME)].includes(displayedPage)) {
     return (
-      <ContainerVertical className='fixed align-self-end full-vh'>
+      <ContainerVertical
+        className='fixed align-self-end full-vh'
+        style={{
+          opacity: navOpacity,
+          transition: '0.75s ease-out',
+        }}
+      >
         <ul
           className='flex flex-column align-items-center'
           style={{marginTop: '10vh'}}
@@ -92,7 +111,13 @@ export default function Navigation({displayedPage, setPageOpacity}) {
   return (
     <nav
       className="fixed"
-      style={{zIndex: 1000, width: '100%', backgroundColor: 'rgba(249, 249, 249, 1)'}}
+      style={{
+        zIndex: 1000,
+        width: '100%',
+        backgroundColor: 'rgba(249, 249, 249, 1)',
+        opacity: navOpacity,
+        transition: '0.75s ease-out',
+      }}
     >
       <div
         className="container"
@@ -139,4 +164,5 @@ export default function Navigation({displayedPage, setPageOpacity}) {
 Navigation.propTypes = {
   displayedPage: string.isRequired,
   setPageOpacity: func.isRequired,
+  pageOpacity: number.isRequired,
 };

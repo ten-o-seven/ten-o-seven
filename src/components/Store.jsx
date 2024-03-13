@@ -12,10 +12,13 @@ export const useStore = () => useContext(StoreContext);
  */
 export default function Store({children, rootValues}) {
   const [displayedPage, setDisplayedPage] = useState(ROUTE_PATH.HOME);
+  const [navOpacity, setNavOpacity] = React.useState(1);
 
   const context = {
     displayedPage,
     setDisplayedPage,
+    navOpacity,
+    setNavOpacity,
     ...rootValues,
   };
 

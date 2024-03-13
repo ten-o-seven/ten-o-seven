@@ -7,7 +7,7 @@ import {Helmet} from 'react-helmet';
 import {shape, string} from 'prop-types';
 import '../pages/styles.css';
 
-const PageLayout = ({children, location: {pathname}}) => {
+const PageLayout = ({children, location, location: {pathname}}) => {
   const [pageOpacity, setPageOpacity] = React.useState(0);
   React.useEffect(()=>{
     setTimeout(()=>{
@@ -26,8 +26,11 @@ const PageLayout = ({children, location: {pathname}}) => {
         />
       </Helmet>
       <ThemeProvider theme={theme} >
-        <Store rootValues={{pageOpacity, setPageOpacity}}>
-          <Navigation displayedPage={pathname} setPageOpacity={setPageOpacity}/>
+        <Store rootValues={{pageOpacity, setPageOpacity, location}}>
+          <Navigation
+            displayedPage={pathname}
+            setPageOpacity={setPageOpacity}
+          />
           <main className="flex justify-center">
             {children}
           </main>
