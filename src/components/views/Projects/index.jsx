@@ -41,9 +41,9 @@ export default function Projects() {
     document.querySelectorAll('.parallax-children').forEach((shift) => {
       const isForeground = shift.getAttribute('data-toggled') === 'true' ? true : false;
       if (!isForeground) {
-        shift.classList.add('shake');
+        shift.classList.add('pulse');
       } else {
-        shift.classList.remove('shake');
+        shift.classList.remove('pulse');
       }
     });
 
@@ -58,7 +58,7 @@ export default function Projects() {
   };
 
   const onMouseEnter = (e) => {
-    if (e.target.className.includes('shake')) {
+    if (e.target.className.includes('pulse')) {
       e.target.nextSibling.style.display = 'inline';
       e.target.nextSibling.classList.remove('fadeOut');
       e.target.nextSibling.classList.add('fadeIn');
@@ -66,7 +66,7 @@ export default function Projects() {
   };
 
   const onMouseLeave = (e) => {
-    if (e.target.className.includes('shake')) {
+    if (e.target.className.includes('pulse')) {
       e.target.nextSibling.classList.add('fadeOut');
       e.target.nextSibling.classList.remove('fadeIn');
     }
@@ -126,7 +126,7 @@ export default function Projects() {
                     onMouseLeave={onMouseLeave}
                   >
                     <img
-                      className={'parallax-children shake animate__animated'}
+                      className={'parallax-children pulse animate__animated'}
                       data-toggled={isUiToggled}
                       src={src}
                       style={{

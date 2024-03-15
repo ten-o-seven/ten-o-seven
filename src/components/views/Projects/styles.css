@@ -9,9 +9,9 @@
     height: 50px;
 }
 
-.shake:hover {
-    -webkit-animation: headShake 1s;
-    animation: headShake 1s;
+.pulse:hover {
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
 }
 
 .fadeIn {
