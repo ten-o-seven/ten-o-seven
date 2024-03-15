@@ -4,7 +4,7 @@ import Store from './Store';
 import theme from './theme';
 import Navigation from './views/Navigation';
 import {Helmet} from 'react-helmet';
-import {shape, string} from 'prop-types';
+import {shape, string, func, object, oneOfType} from 'prop-types';
 import '../pages/styles.css';
 
 const PageLayout = ({children, location, location: {pathname}}) => {
@@ -24,6 +24,7 @@ const PageLayout = ({children, location, location: {pathname}}) => {
           href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Lacquer&display=swap"
           rel="stylesheet"
         />
+        <script src="https://kit.fontawesome.com/a704284d8b.js" crossOrigin="anonymous"></script>
       </Helmet>
       <ThemeProvider theme={theme} >
         <Store rootValues={{pageOpacity, setPageOpacity, location}}>
@@ -41,7 +42,7 @@ const PageLayout = ({children, location, location: {pathname}}) => {
 };
 
 PageLayout.propTypes = {
-  children: Node.isRequired,
+  children: oneOfType([func, object]),
   location: shape({pathname: string.isRequired}),
 };
 

@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {ROUTE_PATH} from '../constants';
 import logo from '../../images/logo_graphic.png';
 import logoWithText from '../../images/logo_w_text.png';
-import {string, func, number} from 'prop-types';
+import {string} from 'prop-types';
 
 import './styles.css';
 import {navigate, withPrefix} from 'gatsby-link';
@@ -163,6 +163,4 @@ export default function Navigation({displayedPage}) {
 
 Navigation.propTypes = {
   displayedPage: string.isRequired,
-  setPageOpacity: func.isRequired,
-  pageOpacity: number.isRequired,
 };
