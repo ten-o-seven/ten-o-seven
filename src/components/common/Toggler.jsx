@@ -22,7 +22,7 @@ const Track = styled.div`
 `;
 
 const Container = styled.button`
-    margin: ${({theme: {size}})=>`0 ${size.u3}px`};
+    margin: ${({theme: {size}})=>`0 ${size?.u3}px`};
     right: 10vw
 `;
 
