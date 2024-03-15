@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, {useEffect} from 'react';
-import {ROUTE_PATH} from '../constants';
+import {ROUTE_PATH, verticalNavList} from '../constants';
 import logo from '../../images/logo_graphic.png';
 import logoWithText from '../../images/logo_w_text.png';
 import {string} from 'prop-types';
@@ -8,7 +8,7 @@ import {string} from 'prop-types';
 import './styles.css';
 import {navigate, withPrefix} from 'gatsby-link';
 import {useStore} from '../Store';
-import {getIsBetweenPortAndProj} from '../utils';
+import {getIsBetweenVerticalNav} from '../utils';
 
 
 const ContainerVertical = styled.nav`
@@ -48,7 +48,7 @@ export default function Navigation({displayedPage}) {
     const isSameAsCurrentPage = displayedPage === targetPath;
     if (!isSameAsCurrentPage) setPageOpacity(0);
 
-    const isBetweenPortAndProj = getIsBetweenPortAndProj(displayedPage, targetPath);
+    const isBetweenPortAndProj = getIsBetweenVerticalNav(displayedPage, targetPath);
 
     if (!isBetweenPortAndProj && !isSameAsCurrentPage) {
       setNavOpacity(0);
@@ -59,7 +59,7 @@ export default function Navigation({displayedPage}) {
     }, 700);
   };
 
-  if ([withPrefix(ROUTE_PATH.PROJECTS), withPrefix(ROUTE_PATH.HOME)].includes(displayedPage)) {
+  if (verticalNavList.includes(displayedPage)) {
     return (
       <ContainerVertical
         className='fixed align-self-end full-vh'
@@ -96,8 +96,8 @@ export default function Navigation({displayedPage}) {
             <li>
               <button
                 className='link-button'
-                onClick={()=>{}}
-                value={ROUTE_PATH.CONTACTS}
+                onClick={onProjectsClick}
+                value={ROUTE_PATH.ABOUT}
               >
                 <LinkText>Me</LinkText>
               </button>

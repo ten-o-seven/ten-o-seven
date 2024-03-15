@@ -42,7 +42,7 @@ export default function Toggler({onClick, position}) {
         <Thumbnail className="absolute" position={position}/>
         <Track/>
       </div>
-      <p>Doodles</p>
+      <p>Creative Work</p>
     </Container>
   );
 }

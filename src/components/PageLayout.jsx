@@ -14,7 +14,7 @@ const PageLayout = ({children, location, location: {pathname}}) => {
     setTimeout(()=>{
       setPageOpacity(1);
     }, 700);
-  }, []);
+  }, [pathname]);
 
   return (
     <>
@@ -34,7 +34,13 @@ const PageLayout = ({children, location, location: {pathname}}) => {
             displayedPage={pathname}
             setPageOpacity={setPageOpacity}
           />
-          <main className="flex justify-center">
+          <main
+            className="flex justify-center"
+            style={{
+              opacity: pageOpacity,
+              transition: '0.75s ease-in',
+            }}
+          >
             {children}
           </main>
         </Store>

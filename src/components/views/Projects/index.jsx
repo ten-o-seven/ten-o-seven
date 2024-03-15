@@ -7,18 +7,13 @@ import './styles.css';
 import 'animate.css';
 import {navigate, withPrefix} from 'gatsby-link';
 import {useStore} from '../../Store';
-import {getIsBetweenPortAndProj} from '../../utils';
+import {getIsBetweenVerticalNav} from '../../utils';
 
 /**
  * @return {Node} the project collection view
  */
 export default function Projects() {
   const {pageOpacity, setPageOpacity, setNavOpacity, location} = useStore();
-  React.useEffect(()=>{
-    setTimeout(()=>{
-      setPageOpacity(1);
-    }, 700);
-  }, []);
   const [isUiToggled, setIsUiToggled] = useState(true);
   const [thumbnailPosition, setThumbnailPosition] = useState(-5);
 
@@ -58,6 +53,7 @@ export default function Projects() {
   };
 
   const onMouseEnter = (e) => {
+    console.log('123');
     if (e.target.className.includes('pulse')) {
       e.target.nextSibling.style.display = 'inline';
       e.target.nextSibling.classList.remove('fadeOut');
@@ -74,7 +70,7 @@ export default function Projects() {
 
   const onMouseClick = (pathname)=>{
     const targetPath = withPrefix(pathname);
-    const isBetweenPortAndProj = getIsBetweenPortAndProj(location.pathname, targetPath);
+    const isBetweenPortAndProj = getIsBetweenVerticalNav(location.pathname, targetPath);
 
     if (!isBetweenPortAndProj) {
       setNavOpacity(0);
@@ -160,24 +156,29 @@ export default function Projects() {
           className="absolute flex flex-column flex-grow"
           style={{height: '90%', width: '100%', top: 0}}
         >
-          {Object.entries(DOODLES_MAP).map(([name, {src, value, styles}], i)=>{
+          {Object.entries(DOODLES_MAP).map(([pathname, {src, value, styles, title}], i)=>{
             return (
               <div
                 value={value}
                 data-toggled={!isUiToggled}
-                key={name}
-                id={`parallax-${name}`}
+                key={pathname}
+                id={`parallax-${pathname}`}
                 className={'parallax-element relative'}
                 src={src}
                 style={{
                   opacity: isUiToggled ? 0.2 : 1,
                   marginTop: `${(i+1) * 7}vh`,
                   transform: 'scale(1, 1) translateX(0px) translateY(0px)',
+                  display: 'flex',
+                  alignItems: 'center',
                   ...styles,
                 }}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                onClick={() => onMouseClick(pathname)}
               >
                 <img
-                  className={'parallax-children animate__animated'}
+                  className={'parallax-children pulse animate__animated'}
                   data-toggled={!isUiToggled}
                   src={src}
                   style={{
@@ -186,6 +187,19 @@ export default function Projects() {
                     cursor: isUiToggled ? 'initial' :'pointer',
                   }}
                 />
+                <div
+                  style={{
+                    display: 'none',
+                    position: 'absolute',
+                    left: '100%',
+                    marginLeft: 10,
+                    width: '300%',
+                    zIndex: -10,
+                  }}
+                  className="sliding-text animate__animated"
+                >
+                  <h6>{title}</h6>
+                </div>
               </div>
             );
           })}

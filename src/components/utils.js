@@ -1,6 +1,14 @@
 import {ROUTE_PATH} from './constants';
 
-export const getIsBetweenPortAndProj = (currentPage, targetPage) =>{
-  return currentPage === ROUTE_PATH.HOME && targetPage === ROUTE_PATH.PROJECTS ||
-    currentPage === ROUTE_PATH.PROJECTS && targetPage === ROUTE_PATH.HOME;
+export const getIsBetweenVerticalNav = (currentPage, targetPage) =>{
+  const {HOME, PROJECTS, ABOUT} = ROUTE_PATH;
+  if (currentPage === HOME) {
+    return targetPage === PROJECTS || ABOUT;
+  }
+  if (currentPage === PROJECTS) {
+    return targetPage === HOME || ABOUT;
+  }
+  if (currentPage === ABOUT) {
+    return targetPage === PROJECTS || HOME;
+  }
 };

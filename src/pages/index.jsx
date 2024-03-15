@@ -1,6 +1,5 @@
 import React,
-{useEffect, useRef, useState} from 'react';
-import {useStore} from '../components/Store';
+{useRef, useState} from 'react';
 import cloud1 from '../video/cloud_1.mp4';
 
 /**
@@ -9,7 +8,6 @@ import cloud1 from '../video/cloud_1.mp4';
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  const {pageOpacity, setPageOpacity} = useStore();
   const videoRef = useRef();
 
   const playPause = () => {
@@ -22,18 +20,12 @@ export default function Home() {
     }
   };
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      setPageOpacity(1);
-    }, 700);
-  }, []);
-
   return (
-    <div className="full-view" id="homeContainer" style={{
-      opacity: pageOpacity,
-      transition: '0.75s ease-in',
-      overflow: 'hidden',
-    }}>
+    <div
+      className="full-view"
+      id="homeContainer"
+      style={{overflow: 'hidden'}}
+    >
       <video
         autoPlay={true}
         controls={false}

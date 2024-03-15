@@ -1,30 +1,49 @@
 import MindSupport from './views/MindSupport';
 import PacificParadise from './views/PacificParadise';
+import Photography from './views/Photography';
+import Doodles from './views/Doodles';
 import bird from '../images/bird.png';
 import golf from '../images/golf.png';
 import sneakers from '../images/sneakers.png';
+import {withPrefix} from 'gatsby-link';
 
 // for navigate() payload
 export const ROUTE_PATH = {
   HOME: '/',
   PROJECTS: '/projects/',
-  CONTACTS: '/contacts/',
+  ABOUT: '/about/',
   PACIFIC_PARADISE: '/projects/pacific_paradise/',
-  MIND_SUPPORT: 'mind_support',
-  ANOTHER_PROJECT: 'another_project',
-  INSTAGRAM: '/projects/instagram',
+  MIND_SUPPORT: '/projects/mind_support/',
+  ANOTHER_PROJECT: '/projects/another_project/',
+  PHOTOGRAPHY: '/projects/photography/',
+  DOODLE: '/projects/doodle/',
+  BLOG: '/blog/',
 };
 
 const {
+  HOME,
+  PROJECTS,
+  ABOUT,
   PACIFIC_PARADISE,
   MIND_SUPPORT,
   ANOTHER_PROJECT,
+  PHOTOGRAPHY,
+  DOODLE,
+  BLOG,
 } = ROUTE_PATH;
 
 export const PAGE_MAP = {
   [PACIFIC_PARADISE]: PacificParadise,
   [MIND_SUPPORT]: MindSupport,
+  [PHOTOGRAPHY]: Photography,
+  [DOODLE]: Doodles,
 };
+
+export const verticalNavList = [
+  withPrefix(HOME),
+  withPrefix(PROJECTS),
+  withPrefix(ABOUT),
+];
 
 export const PROJECTS_MAP = {
   [PACIFIC_PARADISE]: {
@@ -57,25 +76,28 @@ export const PROJECTS_MAP = {
 };
 
 export const DOODLES_MAP = {
-  [PACIFIC_PARADISE]: {
+  [PHOTOGRAPHY]: {
     src: sneakers,
     value: 20,
     styles: {
       left: '30%',
     },
+    title: 'Photography',
   },
-  [MIND_SUPPORT]: {
+  [DOODLE]: {
     src: golf,
     value: 30,
     styles: {
       left: '80%',
     },
+    title: 'Doodles',
   },
-  [ANOTHER_PROJECT]: {
+  [BLOG]: {
     src: bird,
     value: -20,
     styles: {
       left: '20%',
     },
+    title: 'blog',
   },
 };
