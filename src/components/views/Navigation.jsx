@@ -148,7 +148,7 @@ export default function Navigation({displayedPage}) {
             <li>
               <button
                 className='link-button'
-                onClick={()=>{}}
+                onClick={onProjectsClick}
                 value={ROUTE_PATH.CONTACTS}
               >
                 <p>Me</p>
