@@ -6,6 +6,7 @@ import Navigation from './views/Navigation';
 import {Helmet} from 'react-helmet';
 import {shape, string, func, object, oneOfType} from 'prop-types';
 import '../pages/styles.css';
+import favIco from '../images/icon.png';
 
 const PageLayout = ({children, location, location: {pathname}}) => {
   const [pageOpacity, setPageOpacity] = React.useState(0);
@@ -24,6 +25,7 @@ const PageLayout = ({children, location, location: {pathname}}) => {
           href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Lacquer&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" type="image/png" href={favIco} sizes="16x16" />
         <script src="https://kit.fontawesome.com/a704284d8b.js" crossOrigin="anonymous"></script>
       </Helmet>
       <ThemeProvider theme={theme} >
