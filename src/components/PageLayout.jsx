@@ -30,7 +30,6 @@ const PageLayout = ({children, location, location: {pathname}}) => {
       </Helmet>
       <ThemeProvider theme={theme} >
         <Store rootValues={{pageOpacity, setPageOpacity, location}}>
-          <div>2</div>
           <Navigation
             displayedPage={pathname}
             setPageOpacity={setPageOpacity}

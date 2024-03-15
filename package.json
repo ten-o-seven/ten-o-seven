@@ -8,12 +8,12 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby build --prefix-paths && gatsby serve --prefix-paths",
+    "dev": "gatsby build && gatsby serve",
     "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
-    "serve": "gatsby serve --prefix-paths",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build && gh-pages -d public",
     "deploy:cur": "gh-pages -d public"
   },
   "dependencies": {
