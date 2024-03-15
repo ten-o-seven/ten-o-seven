@@ -50,7 +50,7 @@ export default function Navigation({displayedPage}) {
 
     const isBetweenPortAndProj = getIsBetweenPortAndProj(displayedPage, targetPath);
 
-    if (!isBetweenPortAndProj) {
+    if (!isBetweenPortAndProj && !isSameAsCurrentPage) {
       setNavOpacity(0);
     }
 
