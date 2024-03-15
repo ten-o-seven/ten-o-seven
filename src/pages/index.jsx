@@ -6,7 +6,7 @@ import cloud1 from '../video/cloud_1.mp4';
 /**
  * @return {Node} home landing page
  */
-export default function Home(...props) {
+export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   const {pageOpacity, setPageOpacity} = useStore();
