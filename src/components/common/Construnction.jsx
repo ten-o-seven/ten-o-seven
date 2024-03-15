@@ -110,7 +110,7 @@ const Construction = () => {
         Sorry, still contemplating on this page. Or Clyde may have ate the page.
       </p>
       <div className="flex" style={{paddingTop: 30}}>
-        <div className="flex flex-column align-items-center">
+        <div className="flex flex-column align-items-center" >
           <LetterKeys children="W" style={{backgroundColor: bg('up')}} />
           <div className="flex">
             <LetterKeys children="A" style={{backgroundColor: bg('left')}}/>
@@ -118,6 +118,7 @@ const Construction = () => {
             <LetterKeys children="D" style={{backgroundColor: bg('right')}}/>
           </div>
         </div>
+        <div style={{width: 20}} />
         <div className="flex flex-column align-items-center">
           <IconKeys className="fa-solid fa-arrow-up" style={{backgroundColor: bg('up')}}/>
           <div>

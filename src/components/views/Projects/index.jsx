@@ -52,7 +52,6 @@ export default function Projects() {
   };
 
   const onMouseEnter = (e) => {
-    console.log('123');
     if (e.target.className.includes('pulse')) {
       e.target.nextSibling.style.display = 'inline';
       e.target.nextSibling.classList.remove('fadeOut');
@@ -71,6 +70,7 @@ export default function Projects() {
     const targetPath = withPrefix(pathname);
     const isBetweenPortAndProj = getIsBetweenVerticalNav(location.pathname, targetPath);
 
+    console.log(isBetweenPortAndProj);
     if (!isBetweenPortAndProj) {
       setNavOpacity(0);
     }
