@@ -2,7 +2,6 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import Toggler from '../../common/Toggler';
 import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
-import {func, number} from 'prop-types';
 import './styles.css';
 import 'animate.css';
 import {navigate, withPrefix} from 'gatsby-link';
@@ -208,8 +207,3 @@ export default function Projects() {
     </div>
   );
 }
-
-Projects.propTypes = {
-  pageOpacity: number.isRequired,
-  setPageOpacity: func.isRequired,
-};

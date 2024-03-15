@@ -5,15 +5,15 @@ import * as React from 'react';
 import Icon from './Icon';
 
 const IconKeys = styled.span`
-    padding: ${({theme: {size}})=>size.u2}px;
-    margin: ${({theme: {size}})=>size.u1}px;
-    border: 1px solid ${({theme: {color}})=>color.gray[400]};
+    padding: ${({theme: {size}})=>size?.u2}px;
+    margin: ${({theme: {size}})=>size?.u1}px;
+    border: 1px solid ${({theme: {color}})=>color?.gray[400]};
     border-radius: 5px;
 `;
 const LetterKeys = styled.p`
-    padding: ${({theme: {size}})=>size.u2}px;
-    margin: ${({theme: {size}})=>size.u1}px;
-    border: 1px solid ${({theme: {color}})=>color.gray[400]};
+    padding: ${({theme: {size}})=>size?.u2}px;
+    margin: ${({theme: {size}})=>size?.u1}px;
+    border: 1px solid ${({theme: {color}})=>color?.gray[400]};
     border-radius: 5px;
     width: 16px;
     height: 16px;
