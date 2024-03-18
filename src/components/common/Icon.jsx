@@ -10,6 +10,7 @@ import Ghost from '../../icons/ghost.svg';
 import Planet from '../../icons/planet.svg';
 import YinYang from '../../icons/yinyang.svg';
 import Lily from '../../icons/lily.svg';
+import Lightning from '../../icons/lightning.svg';
 import Palm from '../../icons/palm.svg';
 import Star from '../../icons/star.svg';
 import Ufo from '../../icons/ufo.svg';
@@ -34,6 +35,7 @@ export default function Icon({name, ...rest}) {
     Palm,
     Star,
     Ufo,
+    Lightning,
   };
   return <img src={icons[name]} {...rest}/>;
 }

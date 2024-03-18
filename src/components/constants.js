@@ -2,9 +2,6 @@ import MindSupport from './views/MindSupport';
 import PacificParadise from './views/PacificParadise';
 import Photography from './views/Photography';
 import Doodles from './views/Doodles';
-import bird from '../images/bird.png';
-import golf from '../images/golf.png';
-import sneakers from '../images/sneakers.png';
 import {withPrefix} from 'gatsby-link';
 
 // for navigate() payload
@@ -47,7 +44,7 @@ export const verticalNavList = [
 
 export const PROJECTS_MAP = {
   [PACIFIC_PARADISE]: {
-    src: bird,
+    name: 'Palm',
     value: 10,
     styles: {
       left: '60%',
@@ -56,7 +53,7 @@ export const PROJECTS_MAP = {
     subtitle: 'mobile app case study for a local restaurant',
   },
   [MIND_SUPPORT]: {
-    src: golf,
+    name: 'Lily',
     value: -10,
     styles: {
       left: '35%',
@@ -65,7 +62,7 @@ export const PROJECTS_MAP = {
     subtitle: 'web & mobile mental health self-help app',
   },
   [ANOTHER_PROJECT]: {
-    src: sneakers,
+    name: 'Ufo',
     value: 20,
     styles: {
       left: '70%',
@@ -77,7 +74,7 @@ export const PROJECTS_MAP = {
 
 export const DOODLES_MAP = {
   [PHOTOGRAPHY]: {
-    src: sneakers,
+    name: 'Lightning',
     value: 20,
     styles: {
       left: '30%',
@@ -85,7 +82,7 @@ export const DOODLES_MAP = {
     title: 'Photography',
   },
   [DOODLE]: {
-    src: golf,
+    name: 'Star',
     value: 30,
     styles: {
       left: '80%',
@@ -93,7 +90,7 @@ export const DOODLES_MAP = {
     title: 'Doodles',
   },
   [BLOG]: {
-    src: bird,
+    name: 'Cloud',
     value: -20,
     styles: {
       left: '20%',

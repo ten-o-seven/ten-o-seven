@@ -7,6 +7,7 @@ import 'animate.css';
 import {navigate, withPrefix} from 'gatsby-link';
 import {useStore} from '../../Store';
 import {getIsBetweenVerticalNav} from '../../utils';
+import Icon from '../../common/Icon';
 
 /**
  * @return {Node} the project collection view
@@ -101,7 +102,7 @@ export default function Projects() {
       <div className="flex flex-column flex-grow relative">
         <div className="flex flex-column flex-grow relative">
           {Object.entries(PROJECTS_MAP)
-              .map(([pathname, {src, value, styles, title, subtitle}], i)=>{
+              .map(([pathname, {name, value, styles, title, subtitle}], i)=>{
                 return (
                   <div
                     key={pathname}
@@ -120,10 +121,10 @@ export default function Projects() {
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                   >
-                    <img
+                    <Icon
                       className={'parallax-children pulse animate__animated'}
                       data-toggled={isUiToggled}
-                      src={src}
+                      name={name}
                       style={{
                         width: '100%',
                         height: '100%',
@@ -155,7 +156,7 @@ export default function Projects() {
           className="absolute flex flex-column flex-grow"
           style={{height: '90%', width: '100%', top: 0}}
         >
-          {Object.entries(DOODLES_MAP).map(([pathname, {src, value, styles, title}], i)=>{
+          {Object.entries(DOODLES_MAP).map(([pathname, {name, value, styles, title}], i)=>{
             return (
               <div
                 value={value}
@@ -163,7 +164,6 @@ export default function Projects() {
                 key={pathname}
                 id={`parallax-${pathname}`}
                 className={'parallax-element relative'}
-                src={src}
                 style={{
                   opacity: isUiToggled ? 0.2 : 1,
                   marginTop: `${(i+1) * 7}vh`,
@@ -176,10 +176,10 @@ export default function Projects() {
                 onMouseLeave={onMouseLeave}
                 onClick={() => onMouseClick(pathname)}
               >
-                <img
+                <Icon
                   className={'parallax-children pulse animate__animated'}
                   data-toggled={!isUiToggled}
-                  src={src}
+                  name={name}
                   style={{
                     width: '100%',
                     height: '100%',
