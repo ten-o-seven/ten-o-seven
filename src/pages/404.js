@@ -69,7 +69,12 @@ const NotFoundPage = () => {
       className="flex flex-column align-items-center justify-center full-view relative"
       onClick={onClick}
     >
-      <Icon name={'Balloon'}/>
+      <Icon
+        name={'Balloon'}
+        style={{
+          'animation': 'shakeY 20s infinite',
+        }}
+      />
       <h2>Page Not Found</h2>
       <br />
       <p className="flex flex-column align-items-center">

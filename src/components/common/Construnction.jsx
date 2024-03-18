@@ -100,6 +100,7 @@ const Construction = () => {
           'left': x,
           'top': y,
           'transition': 'all 0.2s ease-out',
+          'transform': pressedKey === 'right' ? 'scale(-1,1)' : 'scale(1, 1)',
         }}
       >
         <Icon name={'Ghost'}/>
