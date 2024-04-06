@@ -5,9 +5,9 @@ import styled from '@emotion/styled';
 const Anchor = styled.a`
     text-decoration: none;
     &: hover{
-      color: ${({theme})=>theme.color.brand.red};
+      color: ${({theme})=>theme?.color?.brand?.red};
     }
-    color: ${({theme})=>theme.color.gray[700]};
+    color: ${({theme})=>theme?.color?.gray[700]};
 `;
 
 /**
