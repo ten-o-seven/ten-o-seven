@@ -7,6 +7,7 @@ import {Helmet} from 'react-helmet';
 import {shape, string, func, object, oneOfType} from 'prop-types';
 import '../pages/styles.css';
 import favIco from '../images/icon.png';
+import Footer from './common/Footer';
 
 const PageLayout = ({children, location, location: {pathname}}) => {
   const [pageOpacity, setPageOpacity] = React.useState(0);
@@ -43,6 +44,7 @@ const PageLayout = ({children, location, location: {pathname}}) => {
           >
             {children}
           </main>
+          <Footer pathname={pathname} />
         </Store>
       </ThemeProvider>
     </>

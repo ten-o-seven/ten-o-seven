@@ -4,16 +4,24 @@ import Toggler from '../../common/Toggler';
 import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
 import './styles.css';
 import 'animate.css';
-import {navigate, withPrefix} from 'gatsby-link';
+import {
+  navigate,
+  // withPrefix
+} from 'gatsby-link';
 import {useStore} from '../../Store';
-import {getIsBetweenVerticalNav} from '../../utils';
+// import {getIsBetweenVerticalNav} from '../../utils';
 import Icon from '../../common/Icon';
 
 /**
  * @return {Node} the project collection view
  */
 export default function Projects() {
-  const {pageOpacity, setPageOpacity, setNavOpacity, location} = useStore();
+  const {
+    pageOpacity,
+    setPageOpacity,
+    // setNavOpacity,
+    // location,
+  } = useStore();
   const [isUiToggled, setIsUiToggled] = useState(true);
   const [thumbnailPosition, setThumbnailPosition] = useState(-5);
 
@@ -68,13 +76,12 @@ export default function Projects() {
   };
 
   const onMouseClick = (pathname)=>{
-    const targetPath = withPrefix(pathname);
-    const isBetweenPortAndProj = getIsBetweenVerticalNav(location.pathname, targetPath);
-
-    console.log(isBetweenPortAndProj);
-    if (!isBetweenPortAndProj) {
-      setNavOpacity(0);
-    }
+    // for vertical -> horizontal nav transition
+    // const targetPath = withPrefix(pathname);
+    // const isBetweenPortAndProj = getIsBetweenVerticalNav(location.pathname, targetPath);
+    // if (!isBetweenPortAndProj) {
+    //   setNavOpacity(0);
+    // }
 
     setPageOpacity(0);
     setTimeout(()=>{

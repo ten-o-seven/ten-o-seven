@@ -1,58 +1,102 @@
-import styled from '@emotion/styled';
-import React, {useState} from 'react';
-import personaProfile1 from './images/persona_profile_1.png';
-import personaProfile2 from './images/persona_profile_2.png';
-import personaDetails1 from './images/persona_details_1.png';
-import personaDetails2 from './images/persona_details_2.png';
-import journey1 from './images/journey_1.png';
-import journey2 from './images/journey_2.png';
-
-const NameLink = styled.button`
-  :hover > img {
-    opacity: 100% !important;
-  }
-`;
+import React from 'react';
+import left from './images/note_left.png';
+import top from './images/note_top.png';
+import bottom from './images/note_bottom.png';
+import right from './images/note_right.png';
+import {userStories} from './lang';
 
 /**
  * @param {Node} na
  * @return {Node} Pacific Paradise Hero Sub Section
  */
 export default function UserStories() {
-  const [person, setPerson] = useState('Austin');
-  const handleSetPerson = ({target}) => {
-    console.log(target);
-    setPerson(target.value || target.parentNode.value);
-  };
-
   return (
-    <div className="container flex flex-column" style={{margin: '100px 0 0'}}>
-      <h2 style={{margin: '0 auto'}}>User Persona and Journey Maps</h2>
-      <div className="flex" style={{marginTop: 0}}>
-        <div style={{width: '20%', marginTop: 40}}>
-          <NameLink value="Austin" onClick={handleSetPerson} style={{cursor: 'pointer'}}>
-            <img
-              src={personaProfile1}
-              style={{width: '100%', marginTop: 20, opacity: person === 'Austin' ? '100%': '30%'}}
-            />
-          </NameLink>
-          <NameLink value="Ting" onClick={handleSetPerson} style={{cursor: 'pointer'}}>
-            <img
-              src={personaProfile2}
-              style={{width: '100%', marginTop: 20, opacity: person === 'Ting' ? '100%': '30%'}}
-            />
-          </NameLink>
-        </div>
-        {person === 'Austin' ?
-          <div style={{width: '80%', marginLeft: '10%'}}>
-            <img src={personaDetails1} style={{width: '80%', marginTop: 20, marginLeft: 60}}/>
-            <img src={journey1} style={{width: '100%', marginTop: 50}}/>
-          </div> :
-          <div style={{width: '80%', marginLeft: '10%'}}>
-            <img src={personaDetails2} style={{width: '80%', marginTop: 20, marginLeft: 60}}/>
-            <img src={journey2} style={{width: '100%', marginTop: 50}}/>
+    <>
+      {userStories.map((story)=>{
+        return (
+          <div
+            key={story.title}
+            id={story.id}
+            style={{marginTop: 150}}
+            className="flex align-items-center flex-column"
+          >
+            <h2>{story.title}</h2>
+            <div className="flex" style={{marginTop: 50}}>
+              <div style={{width: '100%', position: 'relative'}}>
+                <img
+                  src={story.name}
+                  style={{width: 200, rotate: '6rad', position: 'absolute', right: 20, top: 70}}
+                />
+                <img src={left} style={{width: 300, height: 450}}/>
+                <div style={{position: 'absolute', bottom: 180, right: 0, width: 240}}>
+                  {story.demographics.map((item)=>{
+                    const [[key, value]] = Object.entries(item);
+                    return <p key={key+value}>{key}: {value}</p>;
+                  })}
+                </div>
+              </div>
+              <div className="flex flex-column align-center" style={{paddingLeft: 10}}>
+                <div style={{position: 'relative'}}>
+                  <p style={{position: 'absolute', width: 300, left: 30, top: 60}}>
+                    {story.background}
+                  </p>
+                  <img src={top} style={{width: 370, height: 257}}/>
+                </div>
+                <div style={{position: 'relative'}}>
+                  <div style={{position: 'absolute', top: 30, left: 20}}>
+                    <h5>Frustration:</h5>
+                    <div style={{width: 280}}>
+                      {story.frustration.map((item)=>{
+                        return (
+                          <p
+                            key={item}
+                            style={{width: 280, marginTop: 22, marginLeft: 40}}
+                          >
+                            {item}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <img src={bottom} style={{width: 370, height: 287}}/>
+                </div>
+              </div>
+              <div style={{position: 'relative', paddingLeft: 10}}>
+                <div style={{position: 'absolute', top: 50, left: 20}}>
+                  <h5> Goals:</h5>
+                  <div style={{width: 280}}>
+                    {story.goals.map((item)=>{
+                      return (
+                        <p
+                          key={item}
+                          style={{width: 180, marginTop: 20, marginLeft: 35}}
+                        >
+                          {item}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+              <img src={right} style={{width: 250, height: 377}}/>
+            </div>
+            <div className="flex flex-column align-items-center">
+              <div style={{marginTop: 100, width: '75%'}}>
+                <img
+                  src={story.name}
+                  style={{float: 'left', marginRight: 5, position: 'relative', top: 7}}
+                />
+                <div style={{height: 20}}/>
+                <p style={{textAlign: 'justify', position: 'relative'}}>
+                  {story.desire}
+                </p>
+              </div>
+              <img src={story.journey} style={{marginTop: 30}}/>
+            </div>
           </div>
-        }
-      </div>
-    </div>
+        );
+      })}
+
+    </>
   );
 }

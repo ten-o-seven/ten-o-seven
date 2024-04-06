@@ -1,6 +1,6 @@
 import React from 'react';
 import ppHero from './images/pp_hero.png';
-import divider from '../../../images/divider.png';
+import Divider from '../../common/Divider';
 
 /**
  * @param {Node} na
@@ -9,30 +9,41 @@ import divider from '../../../images/divider.png';
 export default function Hero() {
   return (
     <>
-      <h1>Pacific Paradise.</h1>
-      <h6 style={{marginTop: 10}}>UX/ brand strategy / visual design</h6>
-      <h4>This is a mobile app for a family business </h4>
-      <img
-        src={ppHero}
-        style={{marginTop: 40, objectFit: 'cover'}}
-      />
-      <div className="flex" style={{marginTop: 60}}>
-        <h4 style={{width: '65%', marginRight: 40, fontSize: '1.5em'}}>
-            Pacific Paradise is one of the most loved local restaurant in Albuquerque,
-            NM for the past 2 decades. While the owners are proud of their steady dine-in
-            customer flow, they hoped to improve on the take-out order process especially
-            after the surge in demand due to the pandemic.
-        </h4>
-        <div style={{width: '35%'}}>
-          <img src={divider} />
-          <h3 style={{fontFamily: 'Chelsea Market Outline'}}>2022</h3>
-          <h6 style={{fontWeight: 700}}>Service</h6>
+      <h1 id="pp">Pacific Paradise.</h1>
+      <h6 style={{marginTop: 10}}>Mobile App for a Local Restaurant</h6>
+      <div className="flex" style={{marginTop: 60, justifyContent: 'space-between'}}>
+        <h3 style={{width: '67%'}}>
+        During COVID, PP was forced to transition to a take-out only business model.
+        However, the existing take-out ordering experience discourages many customers
+        from placing orders. The owners requested an app capable of addressing user
+        concerns and preventing further customer loss.
+        </h3>
+        <div style={{width: '20%', alignSelf: 'flex-end'}}>
+          <h2 style={{fontFamily: 'Chelsea Market Outline'}}>2022</h2>
+          <Divider style={{marginBottom: 10}}/>
+          <h6 style={{fontWeight: 600}}>Service</h6>
+          <p>UX/UI Design</p>
+          <Divider style={{marginTop: 20, marginBottom: 10}}/>
+          <h6 style={{fontWeight: 600}}>My Role</h6>
           <p>
-              User research, paper + digital wireframing, low + high-fidelity prototypes,
-              usability studies, oncept, interface design, interactions, graphic design &
-              illustrations
+            User Reserch <br/>
+            Wireframing <br/>
+            Lofi - Hifi <br/>
+            Usability Studies <br/>
+            UI Design <br/>
+          </p>
+          <Divider style={{marginTop: 20, marginBottom: 10}}/>
+          <h6 style={{fontWeight: 600}}>Team</h6>
+          <p>
+            Me, Myself and I
           </p>
         </div>
+      </div>
+      <img
+        src={ppHero}
+        style={{marginTop: 120, objectFit: 'cover'}}
+      />
+      <div className="flex" style={{marginTop: 60}}>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import {opportunitiesCopy} from './lang';
-import frame from './images/frame.png';
+import frame from './images/rounded_card.svg';
 import {Fade} from 'react-awesome-reveal';
 
 /**
@@ -10,19 +10,15 @@ import {Fade} from 'react-awesome-reveal';
 export default function Opportunities() {
   return (
     <div style={{margin: '250px 0 0'}}>
-      <h4 style={{fontWeight: 700}}>02. Process Discoveries</h4>
-      <h4>User pain points and opportunities</h4>
+      <h4 id="define">02. Define</h4>
+      <p style={{marginTop: 30}}>
+        After analyzing the research data, I’ve identified 4 major issues that
+        customers are facing when placing take-out orders over the phone or online.
+      </p>
       <div
         className="flex align-items-center"
         style={{height: 560, marginTop: 20, transform: 'translateX(-50px)'}}
       >
-        <img
-          src={frame}
-          style={{
-            position: 'absolute',
-            zIndex: -100,
-          }}
-        />
         <div className="flex" style={{marginLeft: 100}}>
           <Fade
             cascade={true}
@@ -35,26 +31,17 @@ export default function Opportunities() {
               return (
                 <div
                   key={`opportunities-${column.title}-column`}
-                  style={{marginRight: 30}}
+                  className="flex flex-column align-items-center"
                 >
-                  <h2
+                  <img src={column.src} />
+                  <h6 style={{fontWeight: 700, marginTop: 20}}>{column.title}</h6>
+                  <p
                     style={{
-                      color: '#AD3537',
-                      fontFamily: 'Futura PT',
-                      fontWeight: 400,
-                      lineHeight: '1em',
-                    }}
-                  >
-                    {index + 1}
-                  </h2>
-                  <div style={{
-                    width: 50,
-                    height: 10,
-                    backgroundColor: '#AD3537',
-                    margin: '0 0 10px',
-                  }}/>
-                  <h6 style={{fontWeight: 700}}>{column.title}</h6>
-                  <p style={{marginTop: 25}}>{column.content}</p>
+                      marginTop: 25,
+                      height: 150,
+                    }} className="text-center">{column.content}</p>
+                  <p style={{fontSize: 14, width: '60%', height: 90}}>{column.question}</p>
+                  <img style={{position: 'absolute', bottom: 0}} src={frame} />
                 </div>
               );
             })}

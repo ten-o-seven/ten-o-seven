@@ -107,6 +107,9 @@ button p {
 .align-items-end {
     align-items: flex-end;
 }
+.align-items-start{
+    align-items: start;
+}
 .align-self-center{
     align-self: center;
 }
@@ -160,6 +163,10 @@ button p {
 .full-view{
     width:100vw;
     height:100vh;
+}
+
+.text-center{
+    text-align: center;
 }
 
 @media (min-width: 1024px) {   

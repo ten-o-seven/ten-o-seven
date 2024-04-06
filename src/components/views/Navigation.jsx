@@ -1,14 +1,17 @@
 import styled from '@emotion/styled';
 import React, {useEffect} from 'react';
-import {ROUTE_PATH, verticalNavList} from '../constants';
+import {
+  ROUTE_PATH,
+  // verticalNavList,
+} from '../constants';
 import logo from '../../images/logo_graphic.png';
-import logoWithText from '../../images/logo_w_text.png';
+// import logoWithText from '../../images/logo_w_text.png';
 import {string} from 'prop-types';
 
 import './styles.css';
 import {navigate, withPrefix} from 'gatsby-link';
 import {useStore} from '../Store';
-import {getIsBetweenVerticalNav} from '../utils';
+// import {getIsBetweenVerticalNav} from '../utils';
 
 
 const ContainerVertical = styled.nav`
@@ -48,117 +51,116 @@ export default function Navigation({displayedPage}) {
     const isSameAsCurrentPage = displayedPage === targetPath;
     if (!isSameAsCurrentPage) setPageOpacity(0);
 
-    const isBetweenPortAndProj = getIsBetweenVerticalNav(displayedPage, targetPath);
-
-    if (!isBetweenPortAndProj && !isSameAsCurrentPage) {
-      setNavOpacity(0);
-    }
+    // for vertical -> horizontal nav transition
+    // const isBetweenPortAndProj = getIsBetweenVerticalNav(displayedPage, targetPath);
+    // if (!isBetweenPortAndProj && !isSameAsCurrentPage) {
+    //   setNavOpacity(0);
+    // }
 
     setTimeout(()=>{
       navigate(targetPath);
     }, 700);
   };
 
-  if (verticalNavList.includes(displayedPage)) {
-    return (
-      <ContainerVertical
-        className='fixed align-self-end full-vh'
-        style={{
-          opacity: navOpacity,
-          transition: '0.75s ease-out',
-        }}
-      >
-        <ul
-          className='flex flex-column align-items-center'
-          style={{marginTop: '10vh'}}
-        >
-          <li>
-            <button
-              style={{padding: 0}}
-              value={ROUTE_PATH.HOME}
-              onClick={onProjectsClick}
-            >
-              <HomeIcon src={logo}/>
-            </button>
-          </li>
-          <LinksContainer className='flex flex-column-reverse'>
-            <li>
-              <button
-                className='link-button'
-                onClick={onProjectsClick}
-                value={ROUTE_PATH.PROJECTS}
-              >
-                <LinkText value={ROUTE_PATH.PROJECTS}>
-                  Projects
-                </LinkText>
-              </button>
-            </li>
-            <li>
-              <button
-                className='link-button'
-                onClick={onProjectsClick}
-                value={ROUTE_PATH.ABOUT}
-              >
-                <LinkText>Me</LinkText>
-              </button>
-            </li>
-          </LinksContainer>
-        </ul>
-      </ContainerVertical>
-    );
-  }
-
   return (
-    <nav
-      className="fixed"
+    <ContainerVertical
+      className='fixed align-self-end full-vh'
       style={{
-        zIndex: 1000,
-        width: '100%',
-        backgroundColor: 'rgba(249, 249, 249, 1)',
         opacity: navOpacity,
         transition: '0.75s ease-out',
       }}
     >
-      <div
-        className="container"
-        style={{margin: '0 auto'}}
+      <ul
+        className='flex flex-column align-items-center'
+        style={{marginTop: '10vh'}}
       >
-        <ul className="flex justify-between">
+        <li>
+          <button
+            style={{padding: 0}}
+            value={ROUTE_PATH.HOME}
+            onClick={onProjectsClick}
+          >
+            <HomeIcon src={logo}/>
+          </button>
+        </li>
+        <LinksContainer className='flex flex-column-reverse'>
           <li>
             <button
-              style={{padding: 0}}
-              value={ROUTE_PATH.HOME}
+              className='link-button'
               onClick={onProjectsClick}
+              value={ROUTE_PATH.PROJECTS}
             >
-              <HomeIcon src={logoWithText}/>
+              <LinkText value={ROUTE_PATH.PROJECTS}>
+                  Projects
+              </LinkText>
             </button>
           </li>
-          <div className="flex justify-between" style={{width: '10%'}}>
-            <li>
-              <button
-                className='link-button'
-                onClick={onProjectsClick}
-                value={ROUTE_PATH.PROJECTS}
-              >
-                <p value={ROUTE_PATH.PROJECTS}>
-              Projects
-                </p>
-              </button>
-            </li>
-            <li>
-              <button
-                className='link-button'
-                onClick={onProjectsClick}
-                value={ROUTE_PATH.ABOUT}
-              >
-                <p>Me</p>
-              </button>
-            </li>
-          </div>
-        </ul>
-      </div>
-    </nav>
+          <li>
+            <button
+              className='link-button'
+              onClick={onProjectsClick}
+              value={ROUTE_PATH.ABOUT}
+            >
+              <LinkText>Me</LinkText>
+            </button>
+          </li>
+        </LinksContainer>
+      </ul>
+    </ContainerVertical>
   );
+
+  // horizontal nav
+  // return (
+  //   <nav
+  //     className="fixed"
+  //     style={{
+  //       zIndex: 1000,
+  //       width: '100%',
+  //       backgroundColor: 'rgba(249, 249, 249, 1)',
+  //       opacity: navOpacity,
+  //       transition: '0.75s ease-out',
+  //     }}
+  //   >
+  //     <div
+  //       className="container"
+  //       style={{margin: '0 auto'}}
+  //     >
+  //       <ul className="flex justify-between">
+  //         <li>
+  //           <button
+  //             style={{padding: 0}}
+  //             value={ROUTE_PATH.HOME}
+  //             onClick={onProjectsClick}
+  //           >
+  //             <HomeIcon src={logoWithText}/>
+  //           </button>
+  //         </li>
+  //         <div className="flex justify-between" style={{width: '10%'}}>
+  //           <li>
+  //             <button
+  //               className='link-button'
+  //               onClick={onProjectsClick}
+  //               value={ROUTE_PATH.PROJECTS}
+  //             >
+  //               <p value={ROUTE_PATH.PROJECTS}>
+  //             Projects
+  //               </p>
+  //             </button>
+  //           </li>
+  //           <li>
+  //             <button
+  //               className='link-button'
+  //               onClick={onProjectsClick}
+  //               value={ROUTE_PATH.ABOUT}
+  //             >
+  //               <p>Me</p>
+  //             </button>
+  //           </li>
+  //         </div>
+  //       </ul>
+  //     </div>
+  //   </nav>
+  // );
 }
 
 Navigation.propTypes = {
