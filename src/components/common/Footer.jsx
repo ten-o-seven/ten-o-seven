@@ -7,14 +7,27 @@ import {ROUTE_PATH} from '../constants';
  * @return {Node} Pacific Paradise User Research Section
  */
 export default function Footer({pathname}) {
-  if (pathname === ROUTE_PATH.PROJECTS) return null;
+  const {
+    PROJECTS,
+    ABOUT,
+    HOME,
+    PHOTOGRAPHY,
+    DOODLE,
+    BLOG,
+  } = ROUTE_PATH;
+  if (
+    [PROJECTS, HOME].includes(pathname) ||
+    !Object.values(ROUTE_PATH).includes(pathname)
+  ) {
+    return null;
+  }
 
   let style = {
     margin: '0 auto',
     paddingBottom: 50,
   };
 
-  if ([ROUTE_PATH.HOME].includes(pathname)) {
+  if ([ABOUT, PHOTOGRAPHY, DOODLE, BLOG].includes(pathname)) {
     style={
       paddingBottom: 50,
       bottom: 0,

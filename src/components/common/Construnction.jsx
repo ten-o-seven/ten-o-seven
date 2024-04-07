@@ -26,11 +26,6 @@ const Construction = () => {
   const [y, setY] = React.useState(0);
   const [pressedKey, setPressedKey] = React.useState(null);
 
-  //   const canvasRef = React.useRef();
-  //   const context = canvasRef.current?.getContext('2d');
-  //   const img = new Image();
-  //   img.src = GhostSVG;
-
   const clydeNavigation = ({keyCode}) =>{
     switch (keyCode) {
       case 87:
@@ -81,17 +76,12 @@ const Construction = () => {
     };
   }, []);
 
-  //   const render = () =>{
-  //     requestAnimationFrame(render);
-  //   };
-  //   render();
   const bg = (elementKey) =>{
     return pressedKey === elementKey ? '#ddd' : 'white';
   };
 
   return (
     <div className="flex flex-column align-items-center justify-center full-view relative">
-      {/* <canvas ref={canvasRef} height="500" width="500" /> */}
       <div
         ref={ghostRef}
         id="ghost"

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Construction from '../components/common/Construnction';
+import About from '../components/views/About';
 
-const About = () => {
-  return <Construction/>;
+const AboutPage = () => {
+  return <About/>;
 };
 
-export default About;
+export default AboutPage;
