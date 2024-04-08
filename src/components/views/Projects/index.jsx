@@ -101,7 +101,7 @@ export default function Projects() {
                       zIndex: 100,
                       opacity: isUiToggled ? 1 : 0.2,
                       marginTop: `${(i+1) * 11}vh`,
-                      transform: 'scale(1.5, 1.5) translateX(0px) translateY(0px)',
+                      transform: 'scale(2.2, 2.2) translateX(0px) translateY(0px)',
                       ...styles,
                     }}
 
@@ -143,8 +143,8 @@ export default function Projects() {
                 className={'parallax-element relative'}
                 style={{
                   opacity: isUiToggled ? 0.2 : 1,
-                  marginTop: `${(i+1) * 13}vh`,
-                  transform: 'scale(1, 1) translateX(0px) translateY(0px)',
+                  marginTop: `${(i+1) * 9}vh`,
+                  transform: 'scale(1.75, 1.75) translateX(0px) translateY(0px)',
                   display: 'flex',
                   alignItems: 'center',
                   ...styles,

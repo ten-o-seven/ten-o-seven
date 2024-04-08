@@ -10,19 +10,19 @@ import hero4 from '../video/hero_4.mp4';
  */
 export default function Home() {
   // const [isMuted, setIsMuted] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
+  // const [isPaused, setIsPaused] = useState(false);
   const [video, setVideo] = useState(null);
   const videoRef = useRef();
 
-  const playPause = () => {
-    if (isPaused) {
-      videoRef.current.play();
-      setIsPaused(false);
-    } else {
-      videoRef.current.pause();
-      setIsPaused(true);
-    }
-  };
+  // const playPause = () => {
+  //   if (isPaused) {
+  //     videoRef.current.play();
+  //     setIsPaused(false);
+  //   } else {
+  //     videoRef.current.pause();
+  //     setIsPaused(true);
+  //   }
+  // };
 
   const selectVideo = () => {
     const videoMap = {
@@ -59,7 +59,7 @@ export default function Home() {
       >
         <source src={video} type="video/mp4" />
       </video>
-      <div style={{
+      {/* <div style={{
         zIndex: 1000,
         position: 'absolute',
         top: '10vh',
@@ -67,7 +67,7 @@ export default function Home() {
 
       }}
       >
-        {/* <button
+        <button
           onClick={()=>setIsMuted(!isMuted)}
           style={{padding: 10}}
         >
@@ -75,7 +75,7 @@ export default function Home() {
             title={isMuted ? 'click to unmute' : 'click to mute'}
             className={`fa-lg fa-solid fa-volume-${isMuted ? 'xmark' : 'high'}`}
           />
-        </button> */}
+        </button>
         <button
           onClick={playPause}
           style={{padding: 10}}
@@ -85,7 +85,7 @@ export default function Home() {
             className={`fa-lg fa-solid fa-${isPaused ? 'play' : 'pause'}`}
           />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
