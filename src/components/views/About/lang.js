@@ -49,7 +49,7 @@ Currently, I am focused on growing as a UX designer, and {third}
   },
   {
     id: '5',
-    title: 'What\'s the 3 most expensive things I own?',
+    title: '3 most $$$ things I own.',
     description: `
         My high-maintenance self
         My high-maintenance shiba-inu

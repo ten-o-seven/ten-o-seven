@@ -29,8 +29,9 @@ const DescriptionContainer = styled.div`
  */
 export default function About() {
   const [displayedCard, setDisplayedCard] = useState(null);
+  const [displayedHeader, setDisplayedHeader] = useState('Welcome to my about page.');
 
-  const onCardClick = (e) => {
+  const onCardClick = (e, title) => {
     const [...cardList] = document.querySelectorAll('.card');
     const cardExceptThis = cardList.filter(({id: cardId})=> cardId!==e.target.id);
 
@@ -46,7 +47,9 @@ export default function About() {
         title.style = null;
       });
 
+      document.querySelector('#card-container').classList.add('justify-between');
       setDisplayedCard(null);
+      setDisplayedHeader('Welcome to my about page.');
     } else {
       currentCard.style.opacity = 1;
       currentCard.style.width = '1200px';
@@ -60,6 +63,9 @@ export default function About() {
         card.style.opacity = 0;
       });
 
+      document.querySelector('#card-container').classList.remove('justify-between');
+
+      setDisplayedHeader(title);
       setTimeout(()=>{
         setDisplayedCard(e.target.id);
       }, 200);
@@ -79,7 +85,7 @@ export default function About() {
       style={{overflow: 'hidden'}}
     >
       <img src={profile} style={{margin: '0 auto', width: 180}}/>
-      <h1 style={{marginTop: 20}}>Welcome to my about page.</h1>
+      <h1 style={{marginTop: 20}}>{displayedHeader}</h1>
       <div
         className="flex justify-between"
         style={{width: 1200, marginTop: 50}}
@@ -91,7 +97,9 @@ export default function About() {
               id={`card-${id}`}
               key={description}
               className="flex flex-column align-items-center align-self-center justify-center card"
-              onClick={onCardClick}
+              onClick={(e) => {
+                onCardClick(e, title);
+              }}
             >
               <div style={{padding: 20, minHeight: 50}}>
                 {displayedCard ?

@@ -1,16 +1,12 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
-import Toggler from '../../common/Toggler';
 import {DOODLES_MAP, PROJECTS_MAP} from '../../constants';
 import './styles.css';
 import 'animate.css';
-import {
-  navigate,
-  // withPrefix
-} from 'gatsby-link';
+import {navigate} from 'gatsby-link';
 import {useStore} from '../../Store';
-// import {getIsBetweenVerticalNav} from '../../utils';
 import Icon from '../../common/Icon';
+import FatBoi from './FatBoi';
 
 /**
  * @return {Node} the project collection view
@@ -19,25 +15,17 @@ export default function Projects() {
   const {
     pageOpacity,
     setPageOpacity,
-    // setNavOpacity,
-    // location,
   } = useStore();
   const [isUiToggled, setIsUiToggled] = useState(true);
-  const [thumbnailPosition, setThumbnailPosition] = useState(-5);
+  const [caption, setCaption] = useState(null);
 
   const onTogglerClick = () => {
-    if (isUiToggled) {
-      setThumbnailPosition(15);
-    } else {
-      setThumbnailPosition(-5);
-    }
-
     document.querySelectorAll('.parallax-element').forEach((shift) => {
       const isForeground = shift.getAttribute('data-toggled') === 'true' ? true : false;
       if (!isForeground) {
-        shift.style.transform = `scale(1.5, 1.5) translateX(0px) translateY(0px)`;
+        shift.style.transform = `scale(2.2, 2.2) translateX(0px) translateY(0px)`;
       } else {
-        shift.style.transform = `scale(1, 1) translateX(0px) translateY(0px)`;
+        shift.style.transform = `scale(1.75, 1.75) translateX(0px) translateY(0px)`;
       }
     });
 
@@ -60,29 +48,19 @@ export default function Projects() {
     }
   };
 
-  const onMouseEnter = (e) => {
-    if (e.target.className.includes('pulse')) {
-      e.target.nextSibling.style.display = 'inline';
-      e.target.nextSibling.classList.remove('fadeOut');
-      e.target.nextSibling.classList.add('fadeIn');
-    }
+  const onMouseEnter = (title, subtitle) => {
+    const fatboi = document.querySelector('#fat-boi');
+    fatboi.style.bottom = '5px';
+    setCaption({title, subtitle});
   };
 
-  const onMouseLeave = (e) => {
-    if (e.target.className.includes('pulse')) {
-      e.target.nextSibling.classList.add('fadeOut');
-      e.target.nextSibling.classList.remove('fadeIn');
-    }
+  const onMouseLeave = () => {
+    const fatboi = document.querySelector('#fat-boi');
+    fatboi.style = null;
+    setCaption(null);
   };
 
   const onMouseClick = (pathname)=>{
-    // for vertical -> horizontal nav transition
-    // const targetPath = withPrefix(pathname);
-    // const isBetweenPortAndProj = getIsBetweenVerticalNav(location.pathname, targetPath);
-    // if (!isBetweenPortAndProj) {
-    //   setNavOpacity(0);
-    // }
-
     setPageOpacity(0);
     setTimeout(()=>{
       navigate(pathname);
@@ -100,12 +78,14 @@ export default function Projects() {
     <div
       className="flex flex-column full-vh relative"
       style={{
+        overflow: 'hidden',
         width: 'calc(100vw - 100px)',
         transition: '0.75s ease-out',
         opacity: pageOpacity,
       }}
     >
-      <Toggler onClick={onTogglerClick} position={thumbnailPosition}/>
+      <FatBoi onClick={onTogglerClick} caption={caption} />
+      {/* <Toggler onClick={onTogglerClick} position={thumbnailPosition}/> */}
       <div className="flex flex-column flex-grow relative">
         <div className="flex flex-column flex-grow relative">
           {Object.entries(PROJECTS_MAP)
@@ -117,16 +97,23 @@ export default function Projects() {
                     value={value}
                     data-toggled={isUiToggled}
                     className="parallax-element relative"
-                    onClick={() => onMouseClick(pathname)}
                     style={{
                       zIndex: 100,
                       opacity: isUiToggled ? 1 : 0.2,
-                      marginTop: `${(i+1) * 9}vh`,
+                      marginTop: `${(i+1) * 11}vh`,
                       transform: 'scale(1.5, 1.5) translateX(0px) translateY(0px)',
                       ...styles,
                     }}
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
+
+                    onMouseEnter={() => {
+                      if (isUiToggled) onMouseEnter(title, subtitle);
+                    }}
+                    onMouseLeave={() => {
+                      if (isUiToggled) onMouseLeave(title, subtitle);
+                    }}
+                    onClick={() => {
+                      if (isUiToggled) onMouseClick(pathname);
+                    }}
                   >
                     <Icon
                       className={'parallax-children pulse animate__animated'}
@@ -138,23 +125,6 @@ export default function Projects() {
                         cursor: isUiToggled ? 'pointer' : 'initial',
                       }}
                     />
-                    <div
-                      style={{
-                        display: 'none',
-                        position: 'absolute',
-                        top: 0,
-                        left: '100%',
-                        marginLeft: 10,
-                        width: '300%',
-                        zIndex: -10,
-                      }}
-                      className="sliding-text animate__animated"
-                    >
-                      <h6>{title}</h6>
-                      <p style={{fontSize: 12, color: '#999'}}>
-                        {subtitle}
-                      </p>
-                    </div>
                   </div>
                 );
               })}
@@ -173,15 +143,21 @@ export default function Projects() {
                 className={'parallax-element relative'}
                 style={{
                   opacity: isUiToggled ? 0.2 : 1,
-                  marginTop: `${(i+1) * 7}vh`,
+                  marginTop: `${(i+1) * 13}vh`,
                   transform: 'scale(1, 1) translateX(0px) translateY(0px)',
                   display: 'flex',
                   alignItems: 'center',
                   ...styles,
                 }}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                onClick={() => onMouseClick(pathname)}
+                onMouseEnter={() => {
+                  if (!isUiToggled) onMouseEnter(title);
+                }}
+                onMouseLeave={() => {
+                  if (!isUiToggled) onMouseLeave(title);
+                }}
+                onClick={() => {
+                  if (!isUiToggled) onMouseClick(pathname);
+                }}
               >
                 <Icon
                   className={'parallax-children pulse animate__animated'}
@@ -202,7 +178,6 @@ export default function Projects() {
                     width: '300%',
                     zIndex: -10,
                   }}
-                  className="sliding-text animate__animated"
                 >
                   <h6>{title}</h6>
                 </div>

@@ -169,6 +169,10 @@ button p {
     text-align: center;
 }
 
+.hide {
+    display: none;
+}
+
 @media (min-width: 1024px) {   
     .container{
         width: 1200px;

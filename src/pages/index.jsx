@@ -1,7 +1,9 @@
 import React,
 {useEffect, useRef, useState} from 'react';
-import cloud1 from '../video/cloud_1.mp4';
-import cloud2 from '../video/cloud_2.mp4';
+import hero1 from '../video/hero_1.mp4';
+import hero2 from '../video/hero_2.mp4';
+import hero3 from '../video/hero_3.mp4';
+import hero4 from '../video/hero_4.mp4';
 
 /**
  * @return {Node} home landing page
@@ -24,12 +26,12 @@ export default function Home() {
 
   const selectVideo = () => {
     const videoMap = {
-      0: cloud1,
-      1: cloud2,
-      2: cloud2,
-      3: cloud2,
+      0: hero1,
+      1: hero2,
+      2: hero3,
+      3: hero4,
     };
-    const num = Math.floor(Math.random() * 3);
+    const num = Math.floor(Math.random() * 4);
     setVideo(videoMap[num]);
   };
 

@@ -11,21 +11,53 @@
 
 .pulse:hover {
     /* -webkit-animation: pulse 0.2s; */
-    animation-name: pulse;
+    animation-name: largePulse;
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
 
-.fadeIn {
-    opacity: 1;
-    /* transition: all 0.1s ease-out;
-    -webkit-animation: fadeInUp 0.1s;
-    animation: fadeInUp 0.1s; */
+@keyframes raiseBrow {
+    from,
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translate3d(0, -5px, 0);
+    }
+  
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+      transform: translate3d(0, 0px, 0);
+    }
+  }
+
+.animate__raiseBrow {
+    animation-name: raiseBrow;
 }
 
-.fadeOut {
-    opacity: 0;
-    /* transition: all 0.1s ease-in;
-    -webkit-animation: fadeOutUp 0.1s;
-    animation: fadeOutUp 0.1s; */
-}
+@keyframes largePulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      transform: scale3d(1.15, 1.15, 1.15);
+    }
+  
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  .animate__pulse {
+    animation-name: largePulse;
+    animation-timing-function: ease-in-out;
+  }

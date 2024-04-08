@@ -68,7 +68,7 @@ export const PROJECTS_MAP = {
       left: '70%',
     },
     title: 'More to Come',
-    subtitle: 'in the mean time, feel free to check out my doodles',
+    subtitle: 'in the mean time, click on me to checkout my doodles',
   },
 };
 
@@ -95,6 +95,6 @@ export const DOODLES_MAP = {
     styles: {
       left: '20%',
     },
-    title: 'blog',
+    title: 'Blog',
   },
 };
