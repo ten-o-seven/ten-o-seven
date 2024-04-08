@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[921],{4381:function(l,e,t){t.r(e);t(7294),t(2009);var a=t(2935),n=t(917);e.default=l=>{let{location:{pathname:e}}=l;return(0,n.tZ)("div",{className:"full-view flex flex-column align-items-center",style:{width:"calc(100vw - 100px)",marginTop:100}},(0,n.tZ)(a.Z,null))}}}]);
-//# sourceMappingURL=component---src-pages-projects-project-name-jsx-418fb813b5d1512d6f6b.js.map

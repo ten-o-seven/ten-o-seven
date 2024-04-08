@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[874],{1827:function(l,e,t){t.r(e);t(7294);var i=t(2935),a=t(917);e.default=()=>(0,a.tZ)("div",{className:"full-view flex flex-column align-items-center",style:{width:"calc(100vw - 100px)",marginTop:100}},(0,a.tZ)(i.Z,null))}}]);
-//# sourceMappingURL=component---src-pages-projects-pacific-paradise-jsx-b0b60216844ef91b8c52.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[640],{6030:function(l,e,t){t.r(e);t(7294);var c=t(1648),f=t(917);e.default=()=>(0,f.tZ)("div",{className:"full-view flex flex-column align-items-center",style:{width:"calc(100vw - 100px)"}},(0,f.tZ)(c.Z,null))}}]);
-//# sourceMappingURL=component---src-pages-projects-photography-jsx-f5c71c7c89348d0919c7.js.map
