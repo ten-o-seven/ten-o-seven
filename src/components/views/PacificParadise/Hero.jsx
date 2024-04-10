@@ -10,21 +10,19 @@ export default function Hero() {
   return (
     <>
       <h1 id="pp">Pacific Paradise.</h1>
-      <h6 style={{marginTop: 10}}>Mobile App for a Local Restaurant</h6>
+      <h6 style={{marginTop: 10}}>Mobile App Case Study for a Local Chinese Restaurant.</h6>
       <div className="flex" style={{marginTop: 60, justifyContent: 'space-between'}}>
         <h3 style={{width: '67%'}}>
-        During COVID, PP was forced to transition to a take-out only business model.
+        During COVID, Pacific Paradise was forced to transition to a take-out only business model.
         However, the existing take-out ordering experience discourages many customers
         from placing orders. The owners requested an app capable of addressing user
         concerns and preventing further customer loss.
         </h3>
-        <div style={{width: '20%', alignSelf: 'flex-end'}}>
+        <div style={{width: '20%', alignSelf: 'flex-start'}}>
           <h2 style={{fontFamily: 'Chelsea Market Outline'}}>2022</h2>
           <Divider style={{marginBottom: 10}}/>
           <h6 style={{fontWeight: 600}}>Service</h6>
           <p>UX/UI Design</p>
-          <Divider style={{marginTop: 20, marginBottom: 10}}/>
-          <h6 style={{fontWeight: 600}}>My Role</h6>
           <p>
             User Reserch <br/>
             Wireframing <br/>
@@ -32,10 +30,9 @@ export default function Hero() {
             Usability Studies <br/>
             UI Design <br/>
           </p>
-          <Divider style={{marginTop: 20, marginBottom: 10}}/>
-          <h6 style={{fontWeight: 600}}>Team</h6>
+          <h6 style={{marginTop: 30, fontWeight: 600}}>Team</h6>
           <p>
-            Me, Myself and I
+            Angela Zhang
           </p>
         </div>
       </div>
