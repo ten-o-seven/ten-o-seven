@@ -49,6 +49,7 @@ export default function Projects() {
   };
 
   const onMouseEnter = (title, subtitle) => {
+    console.log(isUiToggled);
     const fatboi = document.querySelector('#fat-boi');
     fatboi.style.bottom = '5px';
     setCaption({title, subtitle});
@@ -160,7 +161,7 @@ export default function Projects() {
                 }}
               >
                 <Icon
-                  className={'parallax-children pulse animate__animated'}
+                  className={'parallax-children animate__animated'}
                   data-toggled={!isUiToggled}
                   name={name}
                   style={{
