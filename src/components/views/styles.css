@@ -1,11 +1,10 @@
 /* VIEWS_ROOT */
 .link-button {
-    font-weight: bold;
     width: 45;
-    padding: 20px 0
+    position: relative;
+    padding: 20px 0;
 }
 
-.link-button:hover{
-    cursor: pointer;
-    color:red
+.link-button:hover svg{
+    opacity: 1!important
 }

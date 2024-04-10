@@ -12,6 +12,7 @@ import './styles.css';
 import {navigate, withPrefix} from 'gatsby-link';
 import {useStore} from '../Store';
 // import {getIsBetweenVerticalNav} from '../utils';
+import NavBubble from '../../images/NavBubble';
 
 
 const ContainerVertical = styled.nav`
@@ -27,12 +28,12 @@ const HomeIcon = styled.img`
 `;
 
 const LinksContainer = styled.div`
+    margin-top: 40px;
     transform: rotate(180deg);
 `;
 
 const LinkText = styled.p`
     writing-mode: vertical-lr;
-    font-weight: 400
 `;
 
 /**
@@ -90,6 +91,15 @@ export default function Navigation({displayedPage}) {
               onClick={onProjectsClick}
               value={ROUTE_PATH.PROJECTS}
             >
+              <NavBubble
+                style={{
+                  right: -5,
+                  top: 10,
+                  opacity: 0,
+                  position: 'absolute',
+                  transform: 'scale(-1.1, 1.1)',
+                }}
+              />
               <LinkText value={ROUTE_PATH.PROJECTS}>
                   Projects
               </LinkText>
@@ -101,6 +111,15 @@ export default function Navigation({displayedPage}) {
               onClick={onProjectsClick}
               value={ROUTE_PATH.ABOUT}
             >
+              <NavBubble
+                style={{
+                  right: -5,
+                  top: -5,
+                  opacity: 0,
+                  position: 'absolute',
+                  transform: 'scale(-1.1, 1.1)',
+                }}
+              />
               <LinkText>Me</LinkText>
             </button>
           </li>

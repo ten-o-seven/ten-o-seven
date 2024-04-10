@@ -50,7 +50,7 @@ export const PROJECTS_MAP = {
       left: '60%',
     },
     title: 'Pacific Paradise',
-    subtitle: 'mobile app case study for a local restaurant',
+    subtitle: 'mobile app case study for a local Chinese restaurant.',
   },
   [MIND_SUPPORT]: {
     name: 'Lily',
@@ -59,7 +59,7 @@ export const PROJECTS_MAP = {
       left: '35%',
     },
     title: 'Mind Support',
-    subtitle: 'web & mobile mental health self-help app',
+    subtitle: 'digital platforms for mental health support.',
   },
   [ANOTHER_PROJECT]: {
     name: 'Ufo',
