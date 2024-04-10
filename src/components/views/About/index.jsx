@@ -53,6 +53,11 @@ export default function About() {
       document.querySelector('#card-container').classList.add('justify-between');
       setDisplayedCard(null);
       setDisplayedHeader('Welcome to my about page.');
+
+      document.querySelector('#about-header').classList.add('animate__fadeIn');
+      setTimeout(()=>{
+        document.querySelector('#about-header').classList.remove('animate__fadeIn');
+      }, 200);
     } else {
       currentCard.style.opacity = 1;
       currentCard.style.width = '1200px';
@@ -67,10 +72,12 @@ export default function About() {
       });
 
       document.querySelector('#card-container').classList.remove('justify-between');
+      document.querySelector('#about-header').classList.add('animate__fadeIn');
 
       setDisplayedHeader(title);
       setTimeout(()=>{
         setDisplayedCard(e.target.id);
+        document.querySelector('#about-header').classList.remove('animate__fadeIn');
       }, 200);
 
       setTimeout(()=>{
@@ -88,7 +95,7 @@ export default function About() {
       style={{overflow: 'hidden'}}
     >
       <img src={profile} style={{margin: '0 auto', width: 180}}/>
-      <h1 id="about-header" style={{marginTop: 20}}>
+      <h1 id="about-header" className="animate__animated" style={{marginTop: 20}}>
         {displayedHeader}
       </h1>
       <div
