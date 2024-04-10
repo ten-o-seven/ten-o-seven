@@ -13,6 +13,9 @@ const Card = styled.button`
     & div {
         pointer-events: none;
     }
+    &:hover {
+        border-color: black
+    }
 `;
 
 const TitleContainer = styled.div`
@@ -85,7 +88,9 @@ export default function About() {
       style={{overflow: 'hidden'}}
     >
       <img src={profile} style={{margin: '0 auto', width: 180}}/>
-      <h1 style={{marginTop: 20}}>{displayedHeader}</h1>
+      <h1 id="about-header" style={{marginTop: 20}}>
+        {displayedHeader}
+      </h1>
       <div
         className="flex justify-between"
         style={{width: 1200, marginTop: 50}}

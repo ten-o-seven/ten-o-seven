@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 
 const FooterAnchor = styled.a`
     text-decoration: none;
+    color: black;
     &: visited {
         color: black
     }
