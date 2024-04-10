@@ -52,7 +52,7 @@ export default function FatBoi({onClick, caption}) {
         <BubbleWide />
         <div style={{position: 'absolute', left: 40, top: 20}} className="flex">
           <p><strong>{caption.title}</strong></p>
-          <p style={{marginLeft: 10}}>-</p>
+          {caption.subtitle && <p style={{marginLeft: 10}}>-</p>}
           <p style={{marginLeft: 10}}>{caption.subtitle}</p>
         </div>
       </BubbleWrapper>
