@@ -1,6 +1,17 @@
 import React from 'react';
 import {string} from 'prop-types';
 import {ROUTE_PATH} from '../constants';
+import styled from '@emotion/styled';
+
+const FooterAnchor = styled.a`
+    text-decoration: none;
+    &: visited {
+        color: black
+    }
+    &: hover {
+        text-decoration: underline;
+    }
+`;
 
 /**
  * @param {Node} message
@@ -45,21 +56,36 @@ export default function Footer({pathname}) {
         className="flex justify-between container"
       >
         <div>
-          <a href="https://www.instagram.com/pei.1004/?hl=en" className="flex align-items-center">
-            <i className="fa-brands fa-instagram" />
+          <div className="flex">
+            <FooterAnchor
+              href=""
+              className="flex align-items-center"
+              style={{textDecoration: 'none'}}
+            >
+              <i className="fa-regular fa-envelope" />
+            </FooterAnchor>
+            <FooterAnchor
+              href="https://www.instagram.com/pei.1004/?hl=en"
+              className="flex align-items-center"
+              style={{marginLeft: 10, textDecoration: 'none'}}
+            >
+              <i className="fa-brands fa-instagram" />
+            </FooterAnchor>
             <p style={{marginLeft: 10}}>Let’s collaborate or be friends.</p>
-          </a>
-          <p style={{marginTop: 10}}>© 2024 Designed by Angela Zhang | Developed by Hank Chen</p>
+          </div>
+          <p
+            style={{
+              marginTop: 10,
+              fontSize: 12,
+            }}
+          >
+              © 2024 Designed by Angela Zhang | Developed by Hank Chen
+          </p>
         </div>
         <div>
-          <a href="" className="flex align-items-center">
-            <i style={{marginRight: 10}} className="fa-regular fa-user" />
+          <FooterAnchor href="" className="flex align-items-center">
             <p>Resume</p>
-          </a>
-          <a href="" className="flex align-items-center" style={{marginTop: 10}}>
-            <i style={{marginRight: 10}} className="fa-regular fa-envelope" />
-            <p>Email Me</p>
-          </a>
+          </FooterAnchor>
         </div>
       </div>
     </footer>
