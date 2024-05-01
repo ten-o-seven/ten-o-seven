@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Construction from '../../components/common/Construnction';
+import MindSupport from '../../components/views/MindSupport';
 
 const MS = () => {
-  return <Construction />;
+  return <MindSupport />;
 };
 
 export default MS;

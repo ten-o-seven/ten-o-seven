@@ -1,6 +1,6 @@
 import React from 'react';
 import {opportunitiesCopy} from './lang';
-import frame from './images/rounded_card.svg';
+import frame from '../../../images/rounded_card.svg';
 import {Fade} from 'react-awesome-reveal';
 
 /**
