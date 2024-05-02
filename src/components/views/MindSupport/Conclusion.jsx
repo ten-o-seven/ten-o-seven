@@ -8,7 +8,7 @@ export default function Conclusion() {
   return (
     <div style={{marginTop: 210}}>
       <div>
-        <h4>0.5 Conclusion</h4>
+        <h4>0.6 Conclusion</h4>
         <p style={{marginTop: 30}}>
           My primary contributions to this project were guiding the team to find clarity
           and opportunities while safeguarding the product goal and the UI design. Although
@@ -72,7 +72,7 @@ export default function Conclusion() {
         </div>
       </div>
 
-      <h4 style={{marginTop: 140}}>0.6 Lesson Learned</h4>
+      <h4 style={{marginTop: 140}}>0.7 Lesson Learned</h4>
       <p style={{marginTop: 30}}>
         I thoroughly enjoyed working with Moustapha and the MS team. Mind Support&lsquo;s
         commendable business goal resonated with me, and I&lsquo;m happy to have played a

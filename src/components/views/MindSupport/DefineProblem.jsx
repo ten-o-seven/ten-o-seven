@@ -14,7 +14,7 @@ import noteThree from './images/written_note_3.png';
 export default function DefineProblem() {
   return (
     <div style={{marginTop: 210}}>
-      <h2 id="pp">02. Define The Problem</h2>
+      <h4 id="pp">02. Define The Problem</h4>
       <p>
         Our top priority was crafting an intuitive app that users genuinely enjoy,
         while gradually fostering the growth of the MS community. Given the early

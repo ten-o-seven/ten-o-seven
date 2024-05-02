@@ -18,7 +18,7 @@ export default function Hifi() {
   return (
     <div style={{marginTop: 210}}>
       <div>
-        <h4>0.3 Final Design</h4>
+        <h4>0.5 Final Design</h4>
         <p style={{marginTop: 30}}>
           Based on the feedback received from the MS team, we quickly produced high-fidelity
           screens and applied the design strategies uncovered during the user analysis phase.
