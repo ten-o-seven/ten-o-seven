@@ -1,6 +1,5 @@
 import React from 'react';
-// import ppHero from './images/pp_hero.png';
-import Divider from '../../common/Divider';
+import msHero from './images/hero.png';
 
 /**
  * @param {Node} na
@@ -18,8 +17,6 @@ export default function Hero() {
         individuals to self-help and connect with others who sahre similar experiences.
         </h3>
         <div style={{width: '20%', alignSelf: 'flex-start'}}>
-          <h2 style={{fontFamily: 'Chelsea Market Outline'}}>2023</h2>
-          <Divider style={{marginBottom: 10}}/>
           <h6 style={{fontWeight: 600}}>Service</h6>
           <p>
             UX/UI Design <br/>
@@ -34,11 +31,20 @@ export default function Hero() {
           </p>
         </div>
       </div>
-      {/* <img
-        src={ppHero}
-        style={{marginTop: 120, objectFit: 'cover'}}
-      /> */}
-      <div className="flex" style={{marginTop: 60}}>
+      <img
+        src={msHero}
+        className="full-vw"
+        style={{
+          position: 'absolute',
+          left: 0,
+        }}
+      />
+      <img
+        src={msHero}
+        className="full-vw"
+        style={{opacity: 0}}
+      />
+      <div className="flex">
       </div>
     </div>
   );

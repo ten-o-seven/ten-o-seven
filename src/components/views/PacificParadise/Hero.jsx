@@ -1,6 +1,5 @@
 import React from 'react';
 import ppHero from './images/pp_hero.png';
-import Divider from '../../common/Divider';
 
 /**
  * @param {Node} na
@@ -8,7 +7,7 @@ import Divider from '../../common/Divider';
  */
 export default function Hero() {
   return (
-    <>
+    <div>
       <h1 id="pp">Pacific Paradise.</h1>
       <h6 style={{marginTop: 10}}>Mobile App Case Study for a Local Chinese Restaurant.</h6>
       <div className="flex" style={{marginTop: 60, justifyContent: 'space-between'}}>
@@ -19,8 +18,6 @@ export default function Hero() {
         concerns and preventing further customer loss.
         </h3>
         <div style={{width: '20%', alignSelf: 'flex-start'}}>
-          <h2 style={{fontFamily: 'Chelsea Market Outline'}}>2022</h2>
-          <Divider style={{marginBottom: 10}}/>
           <h6 style={{fontWeight: 600}}>Service</h6>
           <p>UX/UI Design</p>
           <p>
@@ -38,10 +35,16 @@ export default function Hero() {
       </div>
       <img
         src={ppHero}
-        style={{marginTop: 120, objectFit: 'cover'}}
+        className="full-vw"
+        style={{position: 'absolute', left: 0, marginTop: 120, objectFit: 'cover'}}
+      />
+      <img
+        src={ppHero}
+        className="full-vw"
+        style={{opacity: 0}}
       />
       <div className="flex" style={{marginTop: 60}}>
       </div>
-    </>
+    </div>
   );
 }
