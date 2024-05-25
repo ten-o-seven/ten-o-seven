@@ -67,6 +67,7 @@ export default function Navigation({displayedPage}) {
     <ContainerVertical
       className='fixed align-self-end full-vh'
       style={{
+        right: 0,
         opacity: navOpacity,
         transition: '0.75s ease-out',
       }}

@@ -1,4 +1,5 @@
 import React from 'react';
+import BoldedText from '../../common/BoldedText';
 import danJourney from './images/dan_user_journey.png';
 import emmaJourney from './images/emma_user_journey.png';
 import barbaraJourney from './images/barbara_user_journey.png';
@@ -30,10 +31,25 @@ export default function UserFlow() {
           <h2 style={{fontSize: 36}}>curious new user</h2>
           <img src={danText} style={{marginLeft: 20, marginTop: 5, height: 36}}/>
         </div>
-        <p style={{marginTop: 20}}>
-          As a busy working adult, I want to learn and adopt good mental health
-          practices, so thatI can better manage my stressful life.
-        </p>
+        <BoldedText
+          className="text-box"
+          style={{marginTop: 20}}
+          bolded={{
+            firstBolded: 'As a',
+            secondBolded: 'I want to',
+            thirdBolded: 'so that',
+          }}
+          italics={{
+            firstItalics: 'busy working adult',
+            secondItalics: 'learn to adopt good mental health practices',
+            thirdItalics: 'I can better manage my stressful life',
+          }}
+          message={`
+            {firstBolded} {firstItalics},
+            {secondBolded} {secondItalics},
+            {thirdBolded} {thirdItalics}.
+          `}
+        />
         <img src={danJourney} style={{width: '100%', marginTop: 40}}/>
 
         <div className="flex align-items-center" style={{marginTop: 70}}>
@@ -41,11 +57,26 @@ export default function UserFlow() {
           <img src={emmaText} style={{marginLeft: 20, marginTop: 5, height: 36}}/>
           <h2 style={{fontSize: 36, marginLeft: 20}}>looking FOR support</h2>
         </div>
-        <p style={{marginTop: 20}}>
-          As a college student who suffers from PTSD, I want to get free help and see how
-          others deal with similar experiences, so thatI can learn to cope and talk about
-          the incident without going to expensive therapy sessions.
-        </p>
+        <BoldedText
+          className="text-box"
+          style={{marginTop: 20}}
+          bolded={{
+            firstBolded: 'As a',
+            secondBolded: 'I want to',
+            thirdBolded: 'so that',
+          }}
+          italics={{
+            firstItalics: 'college student who suffers from PTSD',
+            secondItalics: 'get free help and see how others deal with similar experiences',
+            thirdItalics: `I can learn to cope and talk about the 
+            incident without going to expensive therapy sessions`,
+          }}
+          message={`
+            {firstBolded} {firstItalics}, 
+            {secondBolded} {secondItalics}, 
+            {thirdBolded} {thirdItalics}.
+          `}
+        />
         <img src={emmaJourney} style={{width: '100%', marginTop: 40}}/>
 
         <div className="flex align-items-center" style={{marginTop: 70}}>
@@ -53,16 +84,31 @@ export default function UserFlow() {
           <img src={barbaraText} style={{marginLeft: 20, marginTop: 5, height: 36}}/>
           <h2 style={{fontSize: 36, marginLeft: 20}}>looking TO support</h2>
         </div>
-        <p style={{marginTop: 20}}>
-          As a person who has spent years dealing with bio-polar disorder, I want to connect
-          with people who are also fighting it , so that we can help and support each other.
-        </p>
+        <BoldedText
+          className="text-box"
+          style={{marginTop: 20}}
+          bolded={{
+            firstBolded: 'As a',
+            secondBolded: 'I want to',
+            thirdBolded: 'so that',
+          }}
+          italics={{
+            firstItalics: 'person who has spent years dealing with bio-polar disorder',
+            secondItalics: 'I want to connect with people who are also fighting it',
+            thirdItalics: 'we can help and support each other',
+          }}
+          message={`
+            {firstBolded} {firstItalics}, 
+            {secondBolded} {secondItalics}, 
+            {thirdBolded} {thirdItalics}.
+          `}
+        />
         <img src={barbaraJourney} style={{width: '100%', marginTop: 40}}/>
       </div>
 
       <div className="flex flex-column align-items-center" style={{marginTop: 140}}>
         <h2 style={{fontSize: 36}}>introducing new users to MS</h2>
-        <p style={{marginTop: 20}}>
+        <p className="text-box" style={{marginTop: 20}}>
           The biggest challenger is to onboard users for the peer support feature. After
           reviewing the user journey maps, we has a few thoughts on how to to best achieve our goal.
         </p>
@@ -113,8 +159,10 @@ export default function UserFlow() {
             </div>
           </div>
         </div>
-        <h2 style={{fontSize: 36, marginTop: 140}}>onboarding users to Peer Support</h2>
-        <p style={{marginTop: 20}}>
+        <h2 style={{fontSize: 36, marginTop: 140}}>
+          onboarding users to Peer Support
+        </h2>
+        <p className="text-box" style={{marginTop: 20}}>
           Upon onboarding, users will be guided through the following path to successfully
           match with a MS buddy. The supporter path differs from the supportee path because
           it has an additional requirement for training.

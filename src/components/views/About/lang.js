@@ -15,11 +15,11 @@ export const cards = [
     img: log,
     bolded: {first: 'I learned to fit in.', second: 'I learned to be happy.', third: 'I am learning to be.'},
     description: `
-Born and raised in Chengdu, I relocated to Albuquerque at age 15. After spending 4 wonderful years with the desert and tumbleweeds, I ventured out to the east coast to be trained as an architectural designer. {first}
+Born and raised in Chengdu, I moved to ABQ at age 15. After spending 4 wonderful years with the desert and tumbleweeds, I ventured out to the east coast to be trained as an architectural designer. During these years, {first}
 
-In the past 5 years, I obtained my B.Arch degree, moved to Seattle, and began my fully remote career in Architecture. Though I did well, my dissatisfaction grew heavier as I progressed down the path that was crystal clear to most of my peers. I reflected, adjusted, and endured. After two and half years of endless effort, I realized that I needed to shift my focus from being most people to being me. I started to question, reevaluate, and explore alternative paths. It launched a soul-searching process that eventually led to a beautiful transformation. {second}
-        
-Currently, I am focused on growing as a UX designer, and {third}
+When I finished the 5-year professional program, I relocated to Seattle and began my fully remote career in architecture. Though I did well, my dissatisfaction grew heavier as I progressed down the path that seemed crystal clear to most of my peers but not me. I endured, reflected, and adjusted, yet I still felt lost and uninspired. My desire to live a full and vibrant life launched a soul-searching process that eventually led to a beautiful transformation. {second}
+  
+Since then, I’ve explored different avenues of interest, nurturing the growth of my creative skills. Currently, I am focused on growing as a UX designer, and {third}
     `,
   },
   {
@@ -28,13 +28,13 @@ Currently, I am focused on growing as a UX designer, and {third}
     italics: {first: 'As a professional, I can help with:', second: 'As a human, I can help with:'},
     bolded: {bolded: 'UI + UX Design | Strategy | Branding | Visual design | Photography | Spatial Design'},
     description: `
-        I am made to create, and I love to help.
-        
-        {first}
-        {bolded}
+I am made to create, and I love to help.
 
-        {second}
-        Life problems. | Vetting Chinese restaurants for non-Chinese friends. | Naming clouds. | 看八字
+{first}
+{bolded}
+
+{second}
+Life problems. | Vetting Chinese restaurants for non-Chinese friends. | Naming clouds. | 看八字
     `,
   },
   {
@@ -42,18 +42,20 @@ Currently, I am focused on growing as a UX designer, and {third}
     title: 'What inspires me?',
     bolded: {first: '人 / people', second: '事 / experiences', third: '物 / things'},
     description: `
-        {first} - individuals who are deeply connected to their authentic selves
-        {second}  - nature, culture, personal growth of others and my own
-        {third} - the little things in life, especially clouds. Follow me on instagram to look at clouds :) 
+{first} - individuals who are deeply connected to their authentic selves
+
+{second} - nature, culture, personal growth of others and my own
+
+{third} - the little things in life, especially clouds. Follow me on instagram to look at clouds :) 
     `,
   },
   {
     id: '5',
     title: '3 most $$$ things I own.',
     description: `
-        My high-maintenance self
-        My high-maintenance shiba-inu
-        My macbook pro which contains all of my ideas and creative projects. 
+My high-maintenance self
+My high-maintenance shiba-inu
+My macbook pro which contains all of my ideas and creative projects. 
     `,
   },
 ];

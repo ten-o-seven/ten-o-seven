@@ -1,8 +1,9 @@
 import React from 'react';
-import WireframeCarousel from '../../common/WireframeCarousel';
 
-const hifiOne = require.context('./images/hifi_g1', true);
-const hifiOneList = hifiOne.keys().map((image) => hifiOne(image));
+const hifiOneOne = require.context('./images/hifi_g1_1', true);
+const hifiOneOneList = hifiOneOne.keys().map((image) => hifiOneOne(image));
+const hifiOneTwo = require.context('./images/hifi_g1_2', true);
+const hifiOneTwoList = hifiOneTwo.keys().map((image) => hifiOneTwo(image));
 const hifiTwo = require.context('./images/hifi_g2', true);
 const hifiTwoList = hifiTwo.keys().map((image) => hifiTwo(image));
 const hifiThree = require.context('./images/hifi_g3', true);
@@ -31,39 +32,85 @@ export default function Hifi() {
       </div>
       <div className="flex flex-column align-items-center" style={{marginTop: 140}}>
         <h2 style={{fontSize: 36, fontWeight: 400}}>dashboard, self support</h2>
-        <WireframeCarousel
-          verticalPadding={20}
-          imageWidth={250}
-          imageSpacing={-20}
-          imageList={hifiOneList}
-        />
+        <div className="flex" style={{marginTop: 70}}>
+          {hifiOneOneList.map((image)=>{
+            return (
+              <img
+                src={image.default}
+                key={image.default}
+                style={{objectFit: 'contain', width: 250}}
+              />
+            );
+          })}
+        </div>
+        <div className="flex">
+          {hifiOneTwoList.map((image)=>{
+            return (
+              <img
+                src={image.default}
+                key={image.default}
+                style={{objectFit: 'contain', width: 250}}
+              />
+            );
+          })}
+        </div>
       </div>
       <div className="flex flex-column align-items-center" style={{marginTop: 140}}>
         <h2 style={{fontSize: 36, fontWeight: 400}}>survey questions</h2>
-        <WireframeCarousel
-          verticalPadding={20}
-          imageWidth={250}
-          imageSpacing={-20}
-          imageList={hifiTwoList}
-        />
+        <div
+          className="flex"
+          style={{marginTop: 70, width: '105%', flexWrap: 'wrap', alignItems: 'center'}}
+        >
+          {hifiTwoList.map((image)=>{
+            return (
+              <img
+                src={image.default}
+                key={image.default}
+                style={{objectFit: 'contain', width: 250}}
+              />
+            );
+          })}
+        </div>
       </div>
       <div className="flex flex-column align-items-center" style={{marginTop: 140}}>
         <h2 style={{fontSize: 36, fontWeight: 400}}>training modules</h2>
-        <WireframeCarousel
-          verticalPadding={20}
-          imageWidth={250}
-          imageSpacing={-20}
-          imageList={hifiThreeList}
-        />
+        <div
+          className="flex"
+          style={{marginTop: 70, width: '105%', flexWrap: 'wrap', alignItems: 'center'}}
+        >
+          {hifiThreeList.map((image)=>{
+            return (
+              <img
+                src={image.default}
+                key={image.default}
+                style={{objectFit: 'contain', width: 250}}
+              />
+            );
+          })}
+        </div>
       </div>
       <div className="flex flex-column align-items-center" style={{marginTop: 140}}>
         <h2 style={{fontSize: 36, fontWeight: 400}}>training modules</h2>
-        <WireframeCarousel
-          verticalPadding={20}
-          imageWidth={250}
-          imageSpacing={-20}
-          imageList={hifiFourList}
-        />
+        <div
+          className="flex"
+          style={{
+            marginTop: 70,
+            width: '105%',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {hifiFourList.map((image)=>{
+            return (
+              <img
+                src={image.default}
+                key={image.default}
+                style={{objectFit: 'contain', width: 250}}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

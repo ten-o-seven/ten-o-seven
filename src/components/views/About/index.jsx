@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from '@emotion/styled';
-import profile from './images/profile.png';
+import profile from './images/profile_v2.png';
 import {cards} from './lang';
 import BoldedText from '../../common/BoldedText';
 
@@ -32,7 +32,7 @@ const DescriptionContainer = styled.div`
  */
 export default function About() {
   const [displayedCard, setDisplayedCard] = useState(null);
-  const [displayedHeader, setDisplayedHeader] = useState('Welcome to my about page.');
+  // const [displayedHeader, setDisplayedHeader] = useState('Welcome to my about page.');
 
   const onCardClick = (e, title) => {
     const [...cardList] = document.querySelectorAll('.card');
@@ -52,12 +52,12 @@ export default function About() {
 
       document.querySelector('#card-container').classList.add('justify-between');
       setDisplayedCard(null);
-      setDisplayedHeader('Welcome to my about page.');
+      // setDisplayedHeader('Welcome to my about page.');
 
-      document.querySelector('#about-header').classList.add('animate__fadeIn');
-      setTimeout(()=>{
-        document.querySelector('#about-header').classList.remove('animate__fadeIn');
-      }, 200);
+      // document.querySelector('#about-header').classList.add('animate__fadeIn');
+      // setTimeout(()=>{
+      //   document.querySelector('#about-header').classList.remove('animate__fadeIn');
+      // }, 200);
     } else {
       currentCard.style.opacity = 1;
       currentCard.style.width = '1200px';
@@ -72,12 +72,12 @@ export default function About() {
       });
 
       document.querySelector('#card-container').classList.remove('justify-between');
-      document.querySelector('#about-header').classList.add('animate__fadeIn');
+      // document.querySelector('#about-header').classList.add('animate__fadeIn');
 
-      setDisplayedHeader(title);
+      // setDisplayedHeader(title);
       setTimeout(()=>{
         setDisplayedCard(e.target.id);
-        document.querySelector('#about-header').classList.remove('animate__fadeIn');
+        // document.querySelector('#about-header').classList.remove('animate__fadeIn');
       }, 200);
 
       setTimeout(()=>{
@@ -90,18 +90,15 @@ export default function About() {
   };
 
   return (
-    <div
-      className="flex flex-column align-items-center justify-center full-vh"
-      style={{overflow: 'hidden'}}
-    >
-      <img src={profile} style={{margin: '0 auto', width: 180}}/>
-      <h1 id="about-header" className="animate__animated" style={{marginTop: 20}}>
+    <div className="flex flex-column align-items-center justify-center full-vh container">
+      {/* <h1 id="about-header" className="animate__animated" style={{marginTop: 20}}>
         {displayedHeader}
-      </h1>
+      </h1> */}
       <div
         className="flex justify-between"
-        style={{width: 1200, marginTop: 50}}
+        style={{width: '100%', marginTop: 50, overflow: 'hidden'}}
         id="card-container"
+        // style={{}}
       >
         {cards.map(({id, title, subtitle, img, description, bolded, italics})=>{
           return (
@@ -115,7 +112,10 @@ export default function About() {
             >
               <div style={{padding: 20, minHeight: 50}}>
                 {displayedCard ?
-                    <DescriptionContainer id={`description-container-${id}`}>
+                    <DescriptionContainer
+                      id={`description-container-${id}`}
+                      className="flex align-items-start flex-column"
+                    >
                       <i
                         style={{
                           marginRight: 10,
@@ -125,6 +125,7 @@ export default function About() {
                         }}
                         className="fa-regular fa-x"
                       />
+                      <h5>{title}</h5>
                       <BoldedText
                         bolded={bolded}
                         italics={italics}
@@ -141,7 +142,7 @@ export default function About() {
                       {subtitle && <p style={{textAlign: 'center'}}>{subtitle}</p>}
                     </TitleContainer>
                 }
-                {img &&
+                {/* {img &&
                     <img
                       src={img}
                       style={{
@@ -152,11 +153,22 @@ export default function About() {
                         zIndex: -1,
                       }}
                     />
-                }
+                } */}
               </div>
             </Card>
           );
         })}
+      </div>
+      <div className="container absolute full-vw full-vh">
+        <img
+          src={profile}
+          style={{
+            position: 'absolute',
+            width: 180,
+            left: -250,
+            bottom: 0,
+          }}
+        />
       </div>
       <div style={{height: 160}}/>
     </div>

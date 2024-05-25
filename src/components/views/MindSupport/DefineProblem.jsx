@@ -24,7 +24,7 @@ export default function DefineProblem() {
       </p>
       <div className="flex justify-evenly">
         <div style={{width: '25%', marginTop: 140}} className="flex flex-column align-items-center">
-          <div style={{width: '75%'}}>
+          <div style={{width: '85%'}}>
             <img src={numberOne}/>
             <h6 style={{fontWeight: 700}}>User Trust</h6>
             <p style={{marginTop: 20}}>
@@ -44,7 +44,7 @@ export default function DefineProblem() {
           <img src={noteOne} style={{width: '100%', marginTop: 30}} />
         </div>
         <div style={{width: '25%', marginTop: 140}} className="flex flex-column align-items-center">
-          <div style={{width: '75%'}}>
+          <div style={{width: '85%'}}>
             <img src={numberTwo}/>
             <h6 style={{fontWeight: 700}}>Resistance</h6>
             <p style={{marginTop: 20}}>
@@ -65,7 +65,7 @@ export default function DefineProblem() {
           <img src={noteTwo} style={{width: '100%', marginTop: 30}} />
         </div>
         <div style={{width: '25%', marginTop: 140}} className="flex flex-column align-items-center">
-          <div style={{width: '75%'}}>
+          <div style={{width: '85%'}}>
             <img src={numberThree}/>
             <h6 style={{fontWeight: 700}}>Community</h6>
             <p style={{marginTop: 20}}>

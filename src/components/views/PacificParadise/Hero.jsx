@@ -7,7 +7,7 @@ import ppHero from './images/pp_hero.png';
  */
 export default function Hero() {
   return (
-    <div>
+    <div style={{marginTop: 150}}>
       <h1 id="pp">Pacific Paradise.</h1>
       <h6 style={{marginTop: 10}}>Mobile App Case Study for a Local Chinese Restaurant.</h6>
       <div className="flex" style={{marginTop: 60, justifyContent: 'space-between'}}>
@@ -17,7 +17,7 @@ export default function Hero() {
         from placing orders. The owners requested an app capable of addressing user
         concerns and preventing further customer loss.
         </h3>
-        <div style={{width: '20%', alignSelf: 'flex-start'}}>
+        <div style={{width: '20%', alignSelf: 'flex-start', marginTop: 10}}>
           <h6 style={{fontWeight: 600}}>Service</h6>
           <p>UX/UI Design</p>
           <p>
@@ -35,14 +35,24 @@ export default function Hero() {
       </div>
       <img
         src={ppHero}
-        className="full-vw"
-        style={{position: 'absolute', left: 0, marginTop: 120, objectFit: 'cover'}}
+        style={{
+          position: 'absolute',
+          left: 0,
+          marginTop: 120,
+          objectFit: 'cover',
+          width: '100%',
+        }}
       />
-      <img
-        src={ppHero}
-        className="full-vw"
-        style={{opacity: 0}}
-      />
+      <div style={{overflowX: 'hidden'}}>
+        <img
+          src={ppHero}
+          className="full-vw"
+          style={{
+            opacity: 0,
+            marginTop: 120,
+          }}
+        />
+      </div>
       <div className="flex" style={{marginTop: 60}}>
       </div>
     </div>

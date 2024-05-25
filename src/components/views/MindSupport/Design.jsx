@@ -39,6 +39,25 @@ const Pill = styled.p`
   border-radius: 50px;
 `;
 
+const pillColors = {
+  purple: {
+    backgroundColor: '#E8DCE3',
+    borderColor: '#76626E',
+  },
+  yellow: {
+    backgroundColor: '#FFEAAE',
+    borderColor: '#FFBD00',
+  },
+  green: {
+    backgroundColor: '#E4EFED',
+    borderColor: '#79AEA3',
+  },
+  grey: {
+    backgroundColor: '#F0EDE9',
+    borderColor: '#BEBEBE',
+  },
+};
+
 /**
  * @param {Node} na
  * @return {Node} Pacific Paradise Hero Sub Section
@@ -58,14 +77,14 @@ export default function Design() {
       <div className="flex flex-column align-items-center" style={{marginTop: 70}}>
         <h6 style={{fontWeight: 600}}>What they asked</h6>
         <div className="flex">
-          <Pill style={{backgroundColor: '#C9BAC3'}}>make it look good</Pill>
-          <Pill style={{backgroundColor: '#FFEAAE'}}>let&lsquo;s use warm colors</Pill>
-          <Pill style={{backgroundColor: '#C4DAD5'}}>friendly but not childish</Pill>
+          <Pill style={{...pillColors.purple}}>make it look good</Pill>
+          <Pill style={{...pillColors.yellow}}>let&lsquo;s use warm colors</Pill>
+          <Pill style={{...pillColors.green}}>friendly but not childish</Pill>
         </div>
         <div className="flex">
-          <Pill style={{backgroundColor: '#F0EDE9'}}>unique</Pill>
-          <Pill style={{backgroundColor: '#C4DAD5'}}>it should appeal to all</Pill>
-          <Pill style={{backgroundColor: '#FFEAAE'}}>welcoming</Pill>
+          <Pill style={{...pillColors.grey}}>unique</Pill>
+          <Pill style={{...pillColors.green}}>it should appeal to all</Pill>
+          <Pill style={{...pillColors.yellow}}>welcoming</Pill>
         </div>
       </div>
 

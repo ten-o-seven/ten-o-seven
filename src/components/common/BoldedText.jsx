@@ -19,13 +19,13 @@ const treatString = (typeObj, messageSplit) => {
  * @param {Node} message
  * @return {Node} Pacific Paradise User Research Section
  */
-export default function BoldedText({message, bolded, italics, style}) {
+export default function BoldedText({message, bolded, italics, style, ...props}) {
   const messageSplit = message.split(/{|}/);
   const boldedIndex = treatString(bolded, messageSplit);
   const italicsIndex = treatString(italics, messageSplit);
 
   return (
-    <div style={style}>
+    <div style={style} {...props}>
       {messageSplit.map((message, index)=>{
         if (boldedIndex.includes(index)) message = <strong>{message}</strong>;
         if (italicsIndex.includes(index)) message = <em>{message}</em>;

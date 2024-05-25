@@ -20,7 +20,7 @@ export default function HeroSubSection() {
           <h6 style={{fontWeight: 700}}>Background</h6>
           {/* <img src={column.img} sizes="contian" style={{height: 100, width: 130}}/> */}
           <div className="flex flex-column align-items-center" style={{marginTop: 20}}>
-            <p>
+            <p className="text-box">
               The MS team hired Moustapha and me to design the self-support
               and peer-support features of the MS mobile app and provided us
               with a rough outline of those two primary user flows . Due to
@@ -70,15 +70,15 @@ export default function HeroSubSection() {
           <h6 style={{fontWeight: 700, marginTop: 210}}>Project Timeline</h6>
           <img src={timeline} style={{width: '100%', marginTop: 70}}/>
           <h6 style={{fontWeight: 700, marginTop: 210}}>My Role</h6>
-          <p style={{marginTop: 30}}>
-          Collaborating closely with Moustapha, I drove the UX design process by spearheading
-          user analysis, guiding the MS team to define their key priorities, and facilitating
-          discussions to uncover design opportunities. I offered design recommendations to ensure
-           alignment with project goals. Additionally, I encouraged the MS team to establish
-           their branding narrative and took the led on UI design for the app which later
-           informed the website redesign. In late July, after five Zoom meetings and receiving
-           scattered offline critiques from all team members, including their in-house developers,
-           we handed off the design to the team for future development.
+          <p className="text-box" style={{marginTop: 30}}>
+            Collaborating closely with Moustapha, I drove the UX design process by spearheading
+            user analysis, guiding the MS team to define their key priorities, and facilitating
+            discussions to uncover design opportunities. I offered design recommendations to ensure
+            alignment with project goals. Additionally, I encouraged the MS team to establish
+            their branding narrative and took the led on UI design for the app which later
+            informed the website redesign. In late July, after five Zoom meetings and receiving
+            scattered offline critiques from all team members, including their in-house developers,
+            we handed off the design to the team for future development.
           </p>
         </div>
       </div>

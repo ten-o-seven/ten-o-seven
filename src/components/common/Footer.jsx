@@ -53,8 +53,8 @@ export default function Footer({pathname}) {
     <footer
       style={style}>
       <div
-        style={{margin: '0 auto'}}
         className="flex justify-between container"
+        style={{margin: '0 auto'}}
       >
         <div>
           <div className="flex">
