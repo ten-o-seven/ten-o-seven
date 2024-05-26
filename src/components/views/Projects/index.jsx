@@ -49,7 +49,6 @@ export default function Projects() {
   };
 
   const onMouseEnter = (title, subtitle) => {
-    console.log(isUiToggled);
     const fatboi = document.querySelector('#fat-boi');
     fatboi.style.bottom = '5px';
     setCaption({title, subtitle});

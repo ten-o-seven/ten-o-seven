@@ -23,7 +23,6 @@ export default function Footer({pathname}) {
     PROJECTS,
     ABOUT,
     HOME,
-    PHOTOGRAPHY,
     DOODLE,
     BLOG,
   } = ROUTE_PATH;
@@ -39,7 +38,7 @@ export default function Footer({pathname}) {
     paddingBottom: 50,
   };
 
-  if ([ABOUT, PHOTOGRAPHY, DOODLE, BLOG].includes(pathname)) {
+  if ([ABOUT, DOODLE, BLOG].includes(pathname)) {
     style={
       paddingBottom: 50,
       bottom: 0,

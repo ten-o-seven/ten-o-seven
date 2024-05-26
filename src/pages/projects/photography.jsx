@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Construction from '../../components/common/Construnction';
+import Photography from '../../components/views/Photography';
 
 const PP = () => {
-  return <Construction />;
+  return <Photography />;
 };
 
 export default PP;
