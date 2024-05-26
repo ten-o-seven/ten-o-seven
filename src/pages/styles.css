@@ -144,6 +144,9 @@ button p {
 .flex-grow{
     flex-grow:1
 }
+.flex-wrap{
+    flex-wrap: wrap
+}
 
 .justify-between{
     justify-content: space-between;

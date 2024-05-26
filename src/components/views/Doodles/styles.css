@@ -1,0 +1,28 @@
+.flip-card:hover {
+    cursor: pointer;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+@media (min-width: 1200px) {   
+    .dad {
+        height: 430px
+    }
+    .bday {
+        height: 400px
+    }
+    .bday-container{
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1199px) {   
+    .dad {
+        height: 180px
+    }
+    .bday {
+        height: 250px
+    }
+    .bday-container{
+        justify-content: center;
+    }
+}

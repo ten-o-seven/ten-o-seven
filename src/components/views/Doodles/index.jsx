@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 
 const bday = require.context('./images/bday', true);
 const bdayImages = bday.keys().map((img)=>bday(img).default);
@@ -22,30 +23,30 @@ export default function Doodles() {
         <h1>doodles.</h1>
       </div>
       <h6 style={{marginTop: 220}} ><strong>I love my dad</strong></h6>
-      <div className="flex" style={{marginTop: 60}}>
+      <div className="flex flex-wrap justify-center" style={{marginTop: 60}}>
         {dadImages.map((path)=>(
           <img
-            style={{height: 430}}
+            className="dad"
             key={path}
             src={path}
           />
         ))}
       </div>
       <h6 style={{marginTop: 600}}><strong>My feelings in Colors</strong></h6>
-      <div style={{marginTop: 60, width: '100%'}} className="flex justify-between">
+      <div style={{marginTop: 60, width: '100%'}} className="flex flex-wrap bday-container">
         {bdayImages.map((path)=>(
           <img
-            style={{maxWidth: 400}}
+            className="bday"
             key={path}
             src={path}
           />
         ))}
       </div>
       <h6 style={{marginTop: 600}}><strong>Fatboi</strong></h6>
-      <div style={{marginTop: 60}}>
+      <div style={{marginTop: 60}} className="flex justify-center flex-wrap">
         {fatboiImages.map((path)=>(
           <img
-            style={{height: 400}}
+            style={{maxHeight: 400}}
             key={path}
             src={path}
           />

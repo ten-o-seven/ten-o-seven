@@ -9,5 +9,12 @@ module.exports = {
   // plugins: ['gatsby-plugin-emotion', 'gatsby-plugin-google-gtag'],
   plugins: [
     'gatsby-plugin-emotion',
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `tomato`,
+        showSpinner: false,
+      },
+    },
   ],
 };
