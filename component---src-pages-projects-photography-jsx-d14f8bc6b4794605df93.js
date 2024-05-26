@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[640],{6030:function(l,o,t){t.r(o);t(7294);var u=t(4816),e=t(917);o.default=()=>(0,e.tZ)(u.Z,null)}}]);
+//# sourceMappingURL=component---src-pages-projects-photography-jsx-d14f8bc6b4794605df93.js.map
