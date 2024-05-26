@@ -12,3 +12,8 @@ export const getIsBetweenVerticalNav = (currentPage, targetPage) =>{
     return targetPage === PROJECTS || targetPage === HOME;
   }
 };
+
+export const importImageFolder = (path) => {
+  const images = require.context(path, true);
+  return images.keys().map((img)=>images(img));
+};

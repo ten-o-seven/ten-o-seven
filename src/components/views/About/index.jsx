@@ -159,7 +159,12 @@ export default function About() {
           );
         })}
       </div>
-      <div className="container absolute full-vw full-vh">
+      <div
+        className="container absolute full-vw full-vh"
+        style={{
+          zIndex: -1,
+        }}
+      >
         <img
           src={profile}
           style={{

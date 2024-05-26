@@ -12,7 +12,7 @@ export default function Photography() {
   let stackedCount = 0;
   return (
     <div className="large-container flex flex-column align-items-center">
-      <div className="container">
+      <div className="container" style={{marginTop: 250}}>
         <h1>dslr.</h1>
       </div>
       <div className="flex align-items-start justify-between" style={{flexWrap: 'wrap'}}>

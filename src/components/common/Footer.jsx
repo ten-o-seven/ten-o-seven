@@ -38,7 +38,7 @@ export default function Footer({pathname}) {
     paddingBottom: 50,
   };
 
-  if ([ABOUT, DOODLE, BLOG].includes(pathname)) {
+  if ([ABOUT, BLOG].includes(pathname)) {
     style={
       paddingBottom: 50,
       bottom: 0,
@@ -48,9 +48,19 @@ export default function Footer({pathname}) {
     };
   }
 
+  if ([DOODLE].includes(pathname)) {
+    style={
+      backgroundColor: 'white',
+    };
+  }
+
   return (
     <footer
-      style={style}>
+      style={{
+        ...style,
+        paddingBottom: 30,
+      }}
+    >
       <div
         className="flex justify-between container"
         style={{margin: '0 auto'}}

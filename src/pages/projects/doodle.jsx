@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Construction from '../../components/common/Construnction';
+import Doodles from '../../components/views/Doodles';
 
 const DD = () => {
-  return <Construction />;
+  return <Doodles />;
 };
 
 export default DD;

@@ -191,6 +191,10 @@ button p {
     display: none;
 }
 
+.center-margin {
+    margin: 0 auto;
+}
+
 @media (min-width: 1200px) {
     .large-container{
         width: 1350px;

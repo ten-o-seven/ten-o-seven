@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import backV from './images/back_vertical.png';
 import backH from './images/back_horizontal.png';
+import './styles.css';
 
 /**
  * Creates react context for children
@@ -19,28 +20,38 @@ export default function FlipImage({front, backText, vertical, styles}) {
   }
 
   return (
-    <div className="relative" style={{position: 'relative'}}>
+    <div
+      className="relative flip-card"
+      style={{
+        marginTop: 100,
+        position: 'relative',
+        transition: 'all 0.2s',
+        transform: showBack ? 'scale(1,1)' : 'scale(-1, 1)',
+        width: 600,
+        height: vertical ? 900 : 400,
+      }}
+    >
       <div
         style={{
+          height: '100%',
+          width: '100%',
           position: 'absolute',
-          transition: 'all 0.2s',
           opacity: showBack ? 1 : 0,
-          transform: showBack ? 'scale(1,1)' : 'scale(-1, 1)',
         }}
       >
         <img
           src={backImg}
           style={{
             left: 0,
-            marginTop: 100,
-            width: 600,
-            height: vertical ? 900 : 400,
             objectFit: 'cover',
+            height: '100%',
+            width: '100%',
+            transition: 'all 0.2s',
             ...styles,
           }}
           onClick={handleFlip}
         />
-        {showBack && backText &&
+        {backText &&
             <img
               src={backText}
               style={{
@@ -54,13 +65,10 @@ export default function FlipImage({front, backText, vertical, styles}) {
       <img
         src={front}
         style={{
-          marginTop: 100,
-          width: 600,
-          height: vertical ? 900 : 400,
+          height: '100%',
+          width: '100%',
           objectFit: 'cover',
-          transition: 'all 0.2s',
           opacity: showBack ? 0 : 1,
-          transform: showBack ? 'scale(-1,1)' : 'scale(1, 1)',
           ...styles,
         }}
         onClick={handleFlip}
