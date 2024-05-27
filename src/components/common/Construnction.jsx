@@ -21,7 +21,7 @@ const LetterKeys = styled.p`
     text-align: center;
 `;
 
-const Construction = ({title}) => {
+const Construction = ({title, style}) => {
   const ghostRef = React.useRef();
   const [x, setX] = React.useState(0);
   const [y, setY] = React.useState(0);
@@ -82,7 +82,10 @@ const Construction = ({title}) => {
   };
 
   return (
-    <div className="flex flex-column align-items-center justify-center full-view relative">
+    <div
+      className="flex flex-column align-items-center justify-center full-view relative"
+      style={{...style}}
+    >
       <div
         ref={ghostRef}
         id="ghost"
@@ -129,8 +132,10 @@ export default Construction;
 
 Construction.propTypes = {
   title: PropTypes.string,
+  style: PropTypes.object,
 };
 
 Construction.defaultProps = {
   title: 'Page Under Construction',
+  style: null,
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import useAssetAppend from '../../../hooks/useAssetAppend';
 import useAssetLoader from '../../../hooks/useAssetLoader';
+import Construction from '../../common/Construnction';
 import FlipImage from './FlipImage';
 import {imageMap, textListObj} from './imageMap';
 import './styles.css';
@@ -17,20 +18,22 @@ export default function Photography() {
   useAssetAppend(loaded, assets, {className: 'appended-image'});
 
   return (
-    <div className="large-container flex flex-column align-items-center">
-      <h2
-        className="full-vh"
+    <div
+      className="large-container flex flex-column align-items-center"
+      style={{
+        overflow: loaded ? 'inherit' : 'hidden',
+        height: '90vh',
+      }}
+    >
+      <Construction
+        title={`loading... ${status}`}
         style={{
-          opacity: loaded ? 0 : 1,
-          zIndex: loaded ? -1 : 0,
-          top: '45%',
-          position: 'absolute',
+          display: loaded ? 'none' : 'flex',
         }}
-      >
-        loading... {status}
-      </h2>
+      />
       <div
         style={{
+          height: loaded ? '100%' : 0,
           opacity: loaded ? 1 : 0,
           zIndex: loaded ? 0 : -1,
         }}
