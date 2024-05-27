@@ -9,11 +9,12 @@ import {useStore} from '../components/Store';
 export default function useAssetLoader(assetUrls, nestedListKey) {
   const [loaded, setLoaded] = useState(false);
   const [assets, setAssets] = useState([]);
+  const [status, setStatus] = useState(0);
   const {setPageOpacity} = useStore();
 
   useEffect(() => {
     let isMounted = true; // To prevent state update if component is unmounted
-    const promises = assetUrls.map((url) => {
+    const promises = assetUrls.map((url, index) => {
       return new Promise((resolve, reject) => {
         let otherEntries;
         if (nestedListKey) {
@@ -23,12 +24,18 @@ export default function useAssetLoader(assetUrls, nestedListKey) {
         if (url.match(/\.(jpeg|jpg|gif|png)$/) !== null) {
           const img = new Image();
           img.src = url;
-          img.onload = () => resolve({...otherEntries, url, element: img});
+          img.onload = () => {
+            setStatus(Math.round(index/assetUrls.length)*100);
+            return resolve({...otherEntries, url, element: img});
+          };
           img.onerror = reject;
         } else if (url.match(/\.(mp4|webm|ogg)$/) !== null) {
           const video = document.createElement('video');
           video.src = url;
-          video.onloadeddata = () => resolve({...otherEntries, url, element: video});
+          video.onloadeddata = () => {
+            setStatus(Math.round(index/assetUrls.length)*100);
+            return resolve({...otherEntries, url, element: video});
+          };
           video.onerror = reject;
         } else {
           resolve(); // If the URL is neither image nor video, consider it loaded
@@ -57,5 +64,5 @@ export default function useAssetLoader(assetUrls, nestedListKey) {
     };
   }, []);
 
-  return {loaded, assets};
+  return {loaded, assets, status};
 }

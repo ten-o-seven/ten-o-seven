@@ -11,12 +11,12 @@ import {imageMap, textListObj} from './imageMap';
 export default function Photography() {
   let skipNextImage = false;
   let stackedCount = 0;
-  const {loaded, assets} = useAssetLoader(imageMap, 'image');
+  const {loaded, assets, status} = useAssetLoader(imageMap, 'image');
 
   if (!loaded) {
     return (
       <h2 className="full-vh flex justify-center align-items-center">
-        loading...
+        loading... {status}
       </h2>
     );
   }
