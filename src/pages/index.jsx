@@ -37,7 +37,7 @@ export default function Home() {
   const videoNumber = Math.floor(Math.random() * 4) + 1;
   const {loaded, assets} = useAssetLoader([videoObj[videoNumber]]);
 
-  if (loaded) {
+  if (!loaded) {
     return (
       <h2 className="full-vh flex justify-center align-items-center">
         loading...
