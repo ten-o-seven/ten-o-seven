@@ -1,4 +1,5 @@
 import React from 'react';
+import useAssetLoader from '../../../hooks/useAssetLoader';
 import FlipImage from './FlipImage';
 import {imageMap, textListObj} from './imageMap';
 
@@ -10,13 +11,24 @@ import {imageMap, textListObj} from './imageMap';
 export default function Photography() {
   let skipNextImage = false;
   let stackedCount = 0;
+
+  const {loaded, assets} = useAssetLoader(imageMap, 'image');
+
+  if (!loaded) {
+    return (
+      <h2 className="full-vh flex justify-center align-items-center">
+        loading...
+      </h2>
+    );
+  }
+
   return (
     <div className="large-container flex flex-column align-items-center">
       <div className="container" style={{marginTop: 250}}>
         <h1>dslr.</h1>
       </div>
       <div className="flex align-items-start justify-between" style={{flexWrap: 'wrap'}}>
-        {imageMap.map(({image, vertical}, index, imgArr)=>{
+        {assets.map(({image, vertical}, index, imgArr)=>{
           const isRightColumn = (index - stackedCount) % 2 === 1;
           const shouldStack =
             (isRightColumn && !!imgArr[index-1]?.vertical && !vertical) ||
