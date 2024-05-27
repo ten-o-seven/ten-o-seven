@@ -1,21 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
+import useAssetAppend from '../../../hooks/useAssetAppend';
 import useAssetLoader from '../../../hooks/useAssetLoader';
 import FlipImage from './FlipImage';
 import {imageMap, textListObj} from './imageMap';
 import './styles.css';
-
-const useAssetAppend = (loaded, assets) => {
-  useEffect(()=>{
-    if (loaded) {
-      assets.forEach(({element, image})=>{
-        const ref = image.default.split('/').join('').split('.')[0];
-        element.className = 'appended-image';
-        console.log(document.querySelector(`#${ref}`));
-        document.querySelector(`#${ref}`)?.append(element);
-      });
-    }
-  }, [loaded]);
-};
 
 /**
  * Creates react context for children
@@ -26,7 +14,7 @@ export default function Photography() {
   let skipNextImage = false;
   let stackedCount = 0;
   const {loaded, assets, status} = useAssetLoader(imageMap, 'image');
-  useAssetAppend(loaded, assets);
+  useAssetAppend(loaded, assets, {className: 'appended-image'});
 
   return (
     <div className="large-container flex flex-column align-items-center">

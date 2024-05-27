@@ -198,6 +198,12 @@ button p {
     margin: 0 auto;
 }
 
+.hero-video{
+    object-fit: cover;
+    width:100vw;
+    height:100vh;
+}
+
 @media (min-width: 1200px) {
     .large-container{
         width: 1350px;
