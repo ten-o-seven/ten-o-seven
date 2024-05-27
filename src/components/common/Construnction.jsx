@@ -2,6 +2,7 @@
 import styled from '@emotion/styled';
 import * as React from 'react';
 // import GhostSVG from '../../icons/Ghost.svg';
+import PropTypes from 'prop-types';
 import Icon from './Icon';
 
 const IconKeys = styled.span`
@@ -20,7 +21,7 @@ const LetterKeys = styled.p`
     text-align: center;
 `;
 
-const Construction = () => {
+const Construction = ({title}) => {
   const ghostRef = React.useRef();
   const [x, setX] = React.useState(0);
   const [y, setY] = React.useState(0);
@@ -95,7 +96,7 @@ const Construction = () => {
       >
         <Icon name={'Ghost'}/>
       </div>
-      <h2>Page Under Construction</h2>
+      <h2>{title}</h2>
       <br />
       <p className="flex flex-column align-items-center">
         Sorry, still contemplating on this page. Or Clyde may have ate the page.
@@ -124,3 +125,12 @@ const Construction = () => {
 };
 
 export default Construction;
+
+
+Construction.propTypes = {
+  title: PropTypes.string,
+};
+
+Construction.defaultProps = {
+  title: 'Page Under Construction',
+};

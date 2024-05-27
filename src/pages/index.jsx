@@ -1,5 +1,6 @@
-import React,
-{useEffect, useRef, useState} from 'react';
+import React from 'react';
+import Construction from '../components/common/Construnction';
+import useAssetLoader from '../hooks/useAssetLoader';
 import hero1 from '../video/hero_1.mp4';
 import hero2 from '../video/hero_2.mp4';
 import hero3 from '../video/hero_3.mp4';
@@ -11,9 +12,6 @@ import hero4 from '../video/hero_4.mp4';
 export default function Home() {
   // const [isMuted, setIsMuted] = useState(true);
   // const [isPaused, setIsPaused] = useState(false);
-  const [video, setVideo] = useState(null);
-  const videoRef = useRef();
-
   // const playPause = () => {
   //   if (isPaused) {
   //     videoRef.current.play();
@@ -23,23 +21,29 @@ export default function Home() {
   //     setIsPaused(true);
   //   }
   // };
+  // const videoRef = useRef();
 
-  const selectVideo = () => {
-    const videoMap = {
-      0: hero1,
-      1: hero2,
-      2: hero3,
-      3: hero4,
-    };
-    const num = Math.floor(Math.random() * 4);
-    setVideo(videoMap[num]);
+  // const [videoNumber, setVideoNumber] = useState(null);
+  // useEffect(()=>{
+  //   setVideoNumber(num);
+  // }, []);
+  const videoObj = {
+    1: hero1,
+    2: hero2,
+    3: hero3,
+    4: hero4,
   };
 
-  useEffect(()=>{
-    selectVideo();
-  }, []);
+  const videoNumber = Math.floor(Math.random() * 4) + 1;
+  const {loaded, assets} = useAssetLoader([videoObj[videoNumber]]);
 
-  if (!video) return null;
+  if (loaded) {
+    return (
+      <h2 className="full-vh flex justify-center align-items-center">
+        loading...
+      </h2>
+    );
+  }
 
   return (
     <div
@@ -47,18 +51,26 @@ export default function Home() {
       id="homeContainer"
       style={{overflow: 'hidden'}}
     >
-      <video
-        autoPlay={true}
-        controls={false}
-        className="full-view"
-        style={{objectFit: 'cover'}}
-        ref={videoRef}
-        loop={true}
-        muted={true}
-        // muted={isMuted}
-      >
-        <source src={video} type="video/mp4" />
-      </video>
+      {assets.map(({element})=>{
+        return (
+          <video
+            key={element}
+            autoPlay={true}
+            controls={false}
+            className="full-view"
+            style={{objectFit: 'cover'}}
+            loop={true}
+            muted={true}
+            // ref={videoRef}
+            // muted={isMuted}
+          >
+            <source
+              src={element.src}
+              type="video/mp4"
+            />
+          </video>
+        );
+      })}
       {/* <div style={{
         zIndex: 1000,
         position: 'absolute',
