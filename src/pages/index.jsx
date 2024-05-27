@@ -1,5 +1,5 @@
-import React from 'react';
-import Construction from '../components/common/Construnction';
+import React, {useEffect} from 'react';
+import {useStore} from '../components/Store';
 import useAssetLoader from '../hooks/useAssetLoader';
 import hero1 from '../video/hero_1.mp4';
 import hero2 from '../video/hero_2.mp4';
@@ -27,6 +27,7 @@ export default function Home() {
   // useEffect(()=>{
   //   setVideoNumber(num);
   // }, []);
+  const {setPageOpacity} = useStore();
   const videoObj = {
     1: hero1,
     2: hero2,
@@ -36,6 +37,13 @@ export default function Home() {
 
   const videoNumber = Math.floor(Math.random() * 4) + 1;
   const {loaded, assets} = useAssetLoader([videoObj[videoNumber]]);
+
+  useEffect(()=>{
+    setPageOpacity(0);
+    setTimeout(()=>{
+      setPageOpacity(1);
+    }, 700);
+  }, [loaded]);
 
   if (!loaded) {
     return (

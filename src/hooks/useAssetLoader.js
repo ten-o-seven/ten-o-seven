@@ -36,7 +36,6 @@ export default function useAssetLoader(assetUrls, nestedListKey) {
 
     Promise.all(promises).then((res) => {
       if (isMounted) {
-        console.log(res);
         setAssets(res);
         setLoaded(true);
       }
