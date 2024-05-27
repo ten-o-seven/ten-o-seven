@@ -14,6 +14,7 @@ export default function useAssetLoader(assetUrls, nestedListKey) {
 
   useEffect(() => {
     let isMounted = true; // To prevent state update if component is unmounted
+    let loadedAssets = 0;
     const promises = assetUrls.map((url, index) => {
       return new Promise((resolve, reject) => {
         let otherEntries;
@@ -25,7 +26,8 @@ export default function useAssetLoader(assetUrls, nestedListKey) {
           const img = new Image();
           img.src = url;
           img.onload = () => {
-            setStatus(Math.round(index/assetUrls.length*100));
+            loadedAssets ++;
+            setStatus(Math.round(loadedAssets/assetUrls.length*100));
             return resolve({...otherEntries, url, element: img});
           };
           img.onerror = reject;
@@ -33,7 +35,8 @@ export default function useAssetLoader(assetUrls, nestedListKey) {
           const video = document.createElement('video');
           video.src = url;
           video.onloadeddata = () => {
-            setStatus(Math.round(index/assetUrls.length*100));
+            loadedAssets ++;
+            setStatus(Math.round(loadedAssets/assetUrls.length*100));
             return resolve({...otherEntries, url, element: video});
           };
           video.onerror = reject;
