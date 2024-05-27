@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {useStore} from '../components/Store';
 
 /**
  * @param {Array} assetUrls
@@ -8,6 +9,7 @@ import {useState, useEffect} from 'react';
 export default function useAssetLoader(assetUrls, nestedListKey) {
   const [loaded, setLoaded] = useState(false);
   const [assets, setAssets] = useState([]);
+  const {setPageOpacity} = useStore();
 
   useEffect(() => {
     let isMounted = true; // To prevent state update if component is unmounted
@@ -37,7 +39,11 @@ export default function useAssetLoader(assetUrls, nestedListKey) {
     Promise.all(promises).then((res) => {
       if (isMounted) {
         setAssets(res);
-        setLoaded(true);
+        setPageOpacity(0);
+        setTimeout(()=>{
+          setPageOpacity(1);
+          setLoaded(true);
+        }, 700);
       }
     }).catch((error) => {
       console.error('Error loading assets', error);

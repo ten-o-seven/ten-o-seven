@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import useAssetLoader from '../../../hooks/useAssetLoader';
-import {useStore} from '../../Store';
 import FlipImage from './FlipImage';
 import {imageMap, textListObj} from './imageMap';
 
@@ -12,17 +11,7 @@ import {imageMap, textListObj} from './imageMap';
 export default function Photography() {
   let skipNextImage = false;
   let stackedCount = 0;
-
-  const {setPageOpacity} = useStore();
   const {loaded, assets} = useAssetLoader(imageMap, 'image');
-
-
-  useEffect(()=>{
-    setPageOpacity(0);
-    setTimeout(()=>{
-      setPageOpacity(1);
-    }, 700);
-  }, [loaded]);
 
   if (!loaded) {
     return (
