@@ -28,7 +28,7 @@ export default function Photography() {
         <h1>dslr.</h1>
       </div>
       <div className="flex align-items-start justify-between" style={{flexWrap: 'wrap'}}>
-        {assets.map(({image, vertical}, index, imgArr)=>{
+        {assets.map(({image, vertical, element}, index, imgArr)=>{
           const isRightColumn = (index - stackedCount) % 2 === 1;
           const shouldStack =
             (isRightColumn && !!imgArr[index-1]?.vertical && !vertical) ||
@@ -42,12 +42,12 @@ export default function Photography() {
                 className="flex flex-column justify-between"
               >
                 <FlipImage
-                  front={image.default}
+                  front={element.src}
                   backText={textListObj?.[index+1]?.default}
                   vertical={vertical}
                 />
                 <FlipImage
-                  front={imgArr[index+1]?.image.default}
+                  front={imgArr[index+1]?.element.src}
                   backText={textListObj?.[index+2]?.default}
                   vertical={vertical}
                 />
@@ -60,7 +60,7 @@ export default function Photography() {
             return (
               <div key={image}>
                 <FlipImage
-                  front={image.default}
+                  front={element.src}
                   backText={textListObj?.[index+1]?.default}
                   vertical={vertical}
                 />
