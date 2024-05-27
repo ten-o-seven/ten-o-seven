@@ -22,7 +22,7 @@ export default function Photography() {
       className="large-container flex flex-column align-items-center"
       style={{
         overflow: loaded ? 'inherit' : 'hidden',
-        height: '90vh',
+        height: loaded ? '100%' : '90vh',
       }}
     >
       <Construction
@@ -36,6 +36,7 @@ export default function Photography() {
           height: loaded ? '100%' : 0,
           opacity: loaded ? 1 : 0,
           zIndex: loaded ? 0 : -1,
+          marginBottom: loaded ? 250 : 0,
         }}
       >
         <div className="container" style={{marginTop: 250}}>
