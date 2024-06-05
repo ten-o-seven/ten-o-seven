@@ -22,7 +22,7 @@ export default function FlipImage({id, backText, vertical, styles}) {
         marginTop: 100,
         position: 'relative',
         transition: 'all 0.2s',
-        transform: showBack ? 'scale(1,1)' : 'scale(-1, 1)',
+        transform: showBack ? 'scale(-1,1)' : 'scale(1, 1)',
         width: 600,
         height: vertical ? 900 : 400,
       }}
@@ -51,9 +51,10 @@ export default function FlipImage({id, backText, vertical, styles}) {
             <img
               src={backText}
               style={{
+                transform: 'scale(-1, 1)',
                 position: 'absolute',
-                top: '70%',
-                left: '20%',
+                top: '50%',
+                right: '10%',
               }}
             />
         }

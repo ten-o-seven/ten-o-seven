@@ -143,7 +143,7 @@ export default function Projects() {
                 className={'parallax-element relative'}
                 style={{
                   opacity: isUiToggled ? 0.2 : 1,
-                  marginTop: `${(i+1) * 9}vh`,
+                  marginTop: `${(i+2) * 4}vh`,
                   transform: 'scale(1.75, 1.75) translateX(0px) translateY(0px)',
                   display: 'flex',
                   alignItems: 'center',

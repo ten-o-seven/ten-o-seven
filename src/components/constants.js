@@ -2,7 +2,9 @@ import MindSupport from './views/MindSupport';
 import PacificParadise from './views/PacificParadise';
 import Photography from './views/Photography';
 import Doodles from './views/Doodles';
+import JustForFun from './views/JustForFun';
 import {withPrefix} from 'gatsby-link';
+import Construction from './common/Construnction';
 
 // for navigate() payload
 export const ROUTE_PATH = {
@@ -14,6 +16,7 @@ export const ROUTE_PATH = {
   ANOTHER_PROJECT: '/projects/another_project/',
   PHOTOGRAPHY: '/projects/photography/',
   DOODLE: '/projects/doodle/',
+  FUN: '/projects/fun/',
   BLOG: '/blog/',
 };
 
@@ -26,6 +29,7 @@ const {
   ANOTHER_PROJECT,
   PHOTOGRAPHY,
   DOODLE,
+  FUN,
   BLOG,
 } = ROUTE_PATH;
 
@@ -33,7 +37,9 @@ export const PAGE_MAP = {
   [PACIFIC_PARADISE]: PacificParadise,
   [MIND_SUPPORT]: MindSupport,
   [PHOTOGRAPHY]: Photography,
+  [ANOTHER_PROJECT]: Construction,
   [DOODLE]: Doodles,
+  [FUN]: JustForFun,
 };
 
 export const verticalNavList = [
@@ -56,7 +62,7 @@ export const PROJECTS_MAP = {
     name: 'Lily',
     value: -10,
     styles: {
-      left: '35%',
+      left: '15%',
     },
     title: 'Mind Support',
     subtitle: 'digital platforms for mental health support.',
@@ -79,7 +85,7 @@ export const DOODLES_MAP = {
     styles: {
       left: '30%',
     },
-    title: 'Photography',
+    title: 'DSLR',
   },
   [DOODLE]: {
     name: 'Star',
@@ -89,11 +95,19 @@ export const DOODLES_MAP = {
     },
     title: 'Doodles',
   },
+  [FUN]: {
+    name: 'Balloon',
+    value: -10,
+    styles: {
+      left: '50%',
+    },
+    title: 'Just for fun',
+  },
   [BLOG]: {
     name: 'Cloud',
     value: -20,
     styles: {
-      left: '20%',
+      left: '30%',
     },
     title: 'Blog',
   },
