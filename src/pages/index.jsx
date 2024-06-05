@@ -2,7 +2,7 @@ import React from 'react';
 import useAssetAppend from '../hooks/useAssetAppend';
 import useAssetLoader from '../hooks/useAssetLoader';
 import hero1 from '../video/hero_1.mp4';
-import hero2 from '../video/hero_2.mp4';
+// import hero2 from '../video/hero_2.mp4';
 import hero3 from '../video/hero_3.mp4';
 import hero4 from '../video/hero_4.mp4';
 
@@ -12,7 +12,7 @@ import hero4 from '../video/hero_4.mp4';
 export default function Home() {
   const videoObj = {
     1: hero1,
-    2: hero2,
+    2: hero3,
     3: hero3,
     4: hero4,
   };
