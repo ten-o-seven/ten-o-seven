@@ -7,9 +7,15 @@ import {useEffect} from 'react';
  * @param {Node} assignProp The first number.
  * @param {Node} setProp The first number.
  */
-export default function useAssetAppend(loaded, assets, assignProp = {}, setProp = {}) {
+export default function useAssetAppend(
+    loaded,
+    assets,
+    assignProp = {},
+    setProp = {},
+) {
   useEffect(()=>{
     if (loaded) {
+      let assetRef;
       assets.forEach(({element, url})=>{
         const src = url.default || url;
         const ref = src.split('/').join('').split('.')[0];
@@ -22,7 +28,9 @@ export default function useAssetAppend(loaded, assets, assignProp = {}, setProp 
         Object.entries(setProp).forEach(([k, v])=>{
           parent.firstChild.setAttribute(k, v);
         });
+        assetRef = parent.firstChild;
       });
+      if (assetRef.play) assetRef.play();
     }
   }, [loaded]);
 }

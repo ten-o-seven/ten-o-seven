@@ -28,9 +28,6 @@ export default function Home() {
         'loop': true,
         'muted': true,
       },
-      {
-        'autoplay': true,
-      },
   );
 
   if (!loaded) {
