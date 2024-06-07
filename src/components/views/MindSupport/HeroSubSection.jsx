@@ -3,7 +3,6 @@ import selfSupport from './images/text_self_support.svg';
 import peerSupport from './images/text_peer_support.svg';
 import heart from './images/heart.svg';
 import timeline from './images/timeline.png';
-import theme from '../../theme';
 
 /**
  * @param {Node} na
@@ -37,9 +36,8 @@ export default function HeroSubSection() {
               <div
                 style={{
                   padding: 30,
-                  backgroundColor: theme.color.gray[400],
-                  borderRadius: 20,
                   width: 210,
+                  border: '2px solid black',
                 }}
               >
                 <img src={selfSupport} />
@@ -52,9 +50,8 @@ export default function HeroSubSection() {
               <div
                 style={{
                   padding: 30,
-                  backgroundColor: theme.color.gray[400],
-                  borderRadius: 20,
                   width: 210,
+                  border: '2px solid black',
                 }}
               >
                 <img src={peerSupport} />

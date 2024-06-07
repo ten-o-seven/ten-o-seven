@@ -17,10 +17,7 @@ import NavBubble from '../../images/NavBubble';
 
 const ContainerVertical = styled.nav`
     z-index: 100;
-    // background-color: rgb(255 255 255 / 0.3);
-    // backdrop-filter: blur(10px);
-    width: 200px;
-    right:0;
+    right: 100px;
 `;
 
 const HomeIcon = styled.img`
@@ -67,7 +64,6 @@ export default function Navigation({displayedPage}) {
     <ContainerVertical
       className='fixed align-self-end full-vh'
       style={{
-        right: 0,
         opacity: navOpacity,
         transition: '0.75s ease-out',
       }}

@@ -12,8 +12,8 @@ import './styles.css';
  * @return {Node} The sum of the two numbers.
  */
 export default function Photography() {
-  let skipNextImage = false;
-  let stackedCount = 0;
+  let adjustedIndex = 0;
+  const skippedMap = {};
   const {loaded, assets, status} = useAssetLoader(imageMap, 'image');
   useAssetAppend(loaded, assets, {className: 'appended-image'});
 
@@ -44,41 +44,61 @@ export default function Photography() {
         </div>
         <div className="flex align-items-start justify-between" style={{flexWrap: 'wrap'}}>
           {imageMap.map(({image, vertical}, index, imgArr)=>{
-            const isRightColumn = (index - stackedCount) % 2 === 1;
-            const shouldStack =
-            (isRightColumn && !!imgArr[index-1]?.vertical && !vertical) ||
-            (!isRightColumn && !!imgArr[index+1]?.vertical && !vertical);
-            if (shouldStack) {
-              skipNextImage = true;
-              stackedCount ++;
-              const ref = image.default.split('/').join('').split('.')[0];
+            const isRightColumn = adjustedIndex % 2 === 1;
+            console.log(index, isRightColumn);
+            if (index===33)console.log('blah', !!imgArr[index+1]?.vertical);
+            const shouldStackNext = isRightColumn && !!imgArr[index-1]?.vertical && !vertical;
+            const shouldStackSkipped = !isRightColumn && !!imgArr[index+1]?.vertical && !vertical;
+
+
+            const ref = image.default.split('/').join('').split('.')[0];
+
+            if (skippedMap[ref]) {
+              adjustedIndex ++;
+              return (null);
+            } else if (shouldStackNext) {
               const refNext = imgArr[index+1]?.image?.default?.split('/')?.join('')?.split('.')[0];
+              skippedMap[refNext] = true;
               return (
                 <div
                   key={image.default}
                   className="flex flex-column justify-between"
                 >
-                  <div>
-                    <FlipImage
-                      id={ref}
-                      backText={textListObj?.[index+1]?.default}
-                      vertical={vertical}
-                    />
-                  </div>
-                  <div>
-                    <FlipImage
-                      id={refNext}
-                      backText={textListObj?.[index+2]?.default}
-                      vertical={vertical}
-                    />
-                  </div>
+                  <FlipImage
+                    id={ref}
+                    backText={textListObj?.[index+1]?.default}
+                    vertical={vertical}
+                  />
+                  <FlipImage
+                    id={refNext}
+                    backText={textListObj?.[index+2]?.default}
+                    vertical={imgArr[index+1]?.vertical}
+                  />
                 </div>
               );
-            } else if (skipNextImage) {
-              skipNextImage = false;
-              return (null);
+            } else if (shouldStackSkipped) {
+              const refNext = imgArr[index+2]?.image?.default?.split('/')?.join('')?.split('.')[0];
+              skippedMap[refNext] = true;
+              return (
+                <div
+                  key={image.default}
+                  className="flex flex-column justify-between"
+                >
+                  <FlipImage
+                    id={ref}
+                    backText={textListObj?.[index+2]?.default}
+                    vertical={vertical}
+                  />
+                  <FlipImage
+                    id={refNext}
+                    backText={textListObj?.[index+3]?.default}
+                    vertical={imgArr[index+2]?.vertical}
+                  />
+                </div>
+              );
             } else {
               const ref = image.default.split('/').join('').split('.')[0];
+              adjustedIndex ++;
               return (
                 <div key={image.default}>
                   <FlipImage

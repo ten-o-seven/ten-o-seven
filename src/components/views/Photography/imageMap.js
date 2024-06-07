@@ -151,7 +151,6 @@ export const imageMap = [
   {
     image: imageListObj[31],
     subject: [PLACES],
-    vertical: true,
   },
   {
     image: imageListObj[32],

@@ -15,9 +15,9 @@ import './styles.css';
  */
 export default function JustForFun() {
   const cardMap = {
-    0: cards0,
+    0: cards2,
     1: cards1,
-    2: cards2,
+    2: cards0,
   };
   const [counter, setCounter] = useState(0);
   let workingCounter = counter;
@@ -51,7 +51,7 @@ export default function JustForFun() {
             />
           </button>
           <img
-            src={cardMap[counter % 3]}
+            src={cardMap[Math.abs(counter % 3)]}
             style={{
               width: 435,
               height: 260,

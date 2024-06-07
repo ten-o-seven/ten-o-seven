@@ -16,7 +16,7 @@ export default function Hero() {
         After winning a grant for their vision, the team began to develop an app that empowers
         individuals to self-help and connect with others who share similar experiences.
         </h3>
-        <div style={{width: '20%', alignSelf: 'flex-start', marginTop: 10}}>
+        <div style={{width: '20%', alignSelf: 'flex-start', marginTop: 20}}>
           <h6 style={{fontWeight: 600}}>Service</h6>
           <p>
             UX/UI Design <br/>

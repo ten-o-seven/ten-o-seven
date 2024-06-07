@@ -90,7 +90,7 @@ export default function Hifi() {
         </div>
       </div>
       <div className="flex flex-column align-items-center" style={{marginTop: 140}}>
-        <h2 style={{fontSize: 36, fontWeight: 400}}>training modules</h2>
+        <h2 style={{fontSize: 36, fontWeight: 400}}>chat</h2>
         <div
           className="flex"
           style={{
