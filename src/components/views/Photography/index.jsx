@@ -45,8 +45,6 @@ export default function Photography() {
         <div className="flex align-items-start justify-between" style={{flexWrap: 'wrap'}}>
           {imageMap.map(({image, vertical}, index, imgArr)=>{
             const isRightColumn = adjustedIndex % 2 === 1;
-            console.log(index, isRightColumn);
-            if (index===33)console.log('blah', !!imgArr[index+1]?.vertical);
             const shouldStackNext = isRightColumn && !!imgArr[index-1]?.vertical && !vertical;
             const shouldStackSkipped = !isRightColumn && !!imgArr[index+1]?.vertical && !vertical;
 
