@@ -1,6 +1,5 @@
 import React from 'react';
 import BoldedText from '../../common/BoldedText';
-import theme from '../../theme';
 import lofiGroupOne from './images/lofi_group_1.png';
 import lofiGroupTwo from './images/lofi_group_2.png';
 import bubble1 from './images/bubble_2_2.png';

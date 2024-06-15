@@ -77,7 +77,6 @@ export default function Photography() {
             } else if (shouldStackSkipped) {
               const refNext = imgArr[index+2]?.image?.default?.split('/')?.join('')?.split('.')[0];
               skippedMap[refNext] = true;
-              if (index === 38) console.log('asdfasdf');
               return (
                 <div
                   key={image.default}
