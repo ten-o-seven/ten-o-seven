@@ -41,10 +41,25 @@ export default function Home() {
   const ref = assets[0].url.split('/').join('').split('.')[0];
 
   return (
-    <div
-      className="full-view"
-      id={ref}
-      style={{overflow: 'hidden'}}
-    />
+    <>
+      <div
+        className="hidden-md-up full-view flex flex-column justify-center"
+        style={{padding: '0 10%'}}
+      >
+        <h2>omg.</h2>
+        <p style={{margin: '0 auto', paddingTop: 20}}>
+          Given that you are on a small device,
+          either your really want to see my work,
+          or you are a workaholic looking at portfolios on a small device...
+          I don&#39;t judge (mostly). This is a safe place (mostly).
+          But the mobile responsive is a work in progress and best viewed on a desktop.
+        </p>
+      </div>
+      <div
+        className="full-view hidden-md-down"
+        id={ref}
+        style={{overflow: 'hidden'}}
+      />
+    </>
   );
 }
