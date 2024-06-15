@@ -12,6 +12,7 @@ export const useStore = () => useContext(StoreContext);
  */
 export default function Store({children, rootValues}) {
   const [displayedPage, setDisplayedPage] = useState(ROUTE_PATH.HOME);
+  const [hasMSAuth, setHasMSAuth] = useState(false);
   const [navOpacity, setNavOpacity] = React.useState(0);
 
   const context = {
@@ -19,6 +20,8 @@ export default function Store({children, rootValues}) {
     setDisplayedPage,
     navOpacity,
     setNavOpacity,
+    hasMSAuth,
+    setHasMSAuth,
     ...rootValues,
   };
 
