@@ -2,6 +2,7 @@ import React from 'react';
 import {string} from 'prop-types';
 import {ROUTE_PATH} from '../constants';
 import styled from '@emotion/styled';
+import resume from '../../files/AZ_Resume.pdf';
 
 const FooterAnchor = styled.a`
     text-decoration: none;
@@ -69,7 +70,7 @@ export default function Footer({pathname}) {
         <div>
           <div className="flex">
             <FooterAnchor
-              href=""
+              href="mailto: zhangaa2020@gmail.com"
               className="flex align-items-center"
               style={{textDecoration: 'none'}}
             >
@@ -94,7 +95,7 @@ export default function Footer({pathname}) {
           </p>
         </div>
         <div>
-          <FooterAnchor href="" className="flex align-items-center">
+          <FooterAnchor href={resume} className="flex align-items-center">
             <p>Resume</p>
           </FooterAnchor>
         </div>

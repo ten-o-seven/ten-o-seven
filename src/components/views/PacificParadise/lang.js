@@ -59,14 +59,14 @@ export const hookCopy = [
     content: [
       'Remove roadblock during the food ordering process to improve customer overall experience. ',
       'Introduce an user friendly app and other incentives to attract customers and decrease their use of third-party food delivery apps.',
-      'a dedicated app for pp customers to manage all take-out order related tasks without resistance.',
+      'A dedicated app for pp customers to manage all take-out order related tasks without resistance.',
     ],
   },
 ];
 
 export const userResearchCopy = {
   title: '01. User Reasearch Summary',
-  content: 'I conducted interviews and identified that the primary users of the Pacific Paradise app are new and existing customers who hope to avoid the wait on the phone or at the restaurant. The research indicates that a shared goal among the customers is to order and acquire meals efficiently according to their schedule. Many are also interested in additional in-app features and promotions.',
+  content: 'I conducted in-person interviews on new and existing PP customers with the focus on learning their existing take-out ordering process in general and from PP. Many customers explained that they were aware of the extra fee collected by third-party apps, but they often experience issues with the restaurant’s website and ordering over the phone. The customers would consider using a dedicated app if it let’s them order and acquire meals efficiently according to their schedule. Many are also interested in additional in-app features and promotions.',
 };
 
 export const opportunitiesCopy = [
@@ -141,7 +141,7 @@ export const lofi = [
   {
     number: numberOne,
     text: home,
-    description: 'The home screen prioritizes major user flows using key access points at the bottom menu bar. Additional features are organized in a hamburger menu, guiding users to secondary app features. PP regulars can navigate to their favorite quickly using tools like the search bar and bookmark. Section titles and filters help guiding customers who are interested in exploring the full menu and additional features the PP app offers.',
+    description: 'The home screen prioritizes major user flows by using key access points in the bottom menu bar. Additional features are organized within a hamburger menu, guiding users to secondary app functionalities. Frequent users can quickly navigate to their favorites using tools like the search bar and bookmarks. Section titles and filters assist customers in exploring the full menu and additional features offered by the PP app.',
     wireframe: lofiOne,
     callout: [
       {
@@ -174,7 +174,7 @@ export const lofi = [
   {
     number: numberTwo,
     text: cart,
-    description: 'Strategically removing the menu bar at the bottom of some screens helps the users focus on the particular task at hand. This also frees up white space for easy arrangement of contents into digestible sections and visual hierarchy on the screen.',
+    description: 'Since the bottom navigation bar isn\'t necessary for all parts of the user flow, removing it from some screens helps users focus on the specific task at hand. This also frees up white space, allowing for easy arrangement of content into digestible sections and enhancing the visual hierarchy on the screen.',
     wireframe: lofiTwo,
     callout: [
       {
@@ -213,7 +213,7 @@ export const lofi = [
     number: numberThree,
     text: status,
     wireframe: lofiThree,
-    description: 'Strategically removing the menu bar at the bottom of some screens helps the users focus on the particular task at hand. This also frees up white space for easy arrangement of contents into digestible sections and visual hierarchy on the screen. ',
+    description: 'Many PP customers dislike being unaware of their place in line and the status of their order. To help manage user expectations, the app should clearly display progress indicators and provide anticipatory helper text to guide users in making informed decisions.',
     callout: [
       {
         emphasis: {first: 'step-by-step'},
@@ -272,7 +272,7 @@ export const highFidelity = [
   {
     number: numberOne,
     text: home,
-    description: 'Based on user feedback, I\'ve made some improvements. I added labels for clarity and organized the menu categories like the physical one. To avoid confusion, I replaced multiple filters with just one button. We also revamped the card layout to show dish details more clearly, including pricing and reviews, for quick reference.',
+    description: 'Based on user feedback, I\'ve made several improvements. I added labels for clarity and organized the menu categories to mirror the physical menu. To avoid confusion, I replaced multiple filters with a single button. Additionally, we revamped the card layout to display dish details more clearly, including pricing and reviews, for quick reference.',
     flow: [
       'I moved the search bar to the top to create space for promotions and marketing materials.',
       'At the request of PP owners to promote restaurant-related merchandise, I have placed a shop icon in the top left corner of the home screen as a secondary feature.',

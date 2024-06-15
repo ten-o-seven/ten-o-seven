@@ -133,57 +133,58 @@ export default function Projects() {
           className="absolute flex flex-column flex-grow"
           style={{height: '90%', width: '100%', top: 0}}
         >
-          {Object.entries(DOODLES_MAP).map(([pathname, {name, value, styles, title}], i)=>{
-            return (
-              <div
-                value={value}
-                data-toggled={!isUiToggled}
-                key={pathname}
-                id={`parallax-${pathname}`}
-                className={'parallax-element relative'}
-                style={{
-                  opacity: isUiToggled ? 0.2 : 1,
-                  marginTop: `${(i+2) * 4}vh`,
-                  transform: 'scale(1.75, 1.75) translateX(0px) translateY(0px)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  ...styles,
-                }}
-                onMouseEnter={() => {
-                  if (!isUiToggled) onMouseEnter(title);
-                }}
-                onMouseLeave={() => {
-                  if (!isUiToggled) onMouseLeave(title);
-                }}
-                onClick={() => {
-                  if (!isUiToggled) onMouseClick(pathname);
-                }}
-              >
-                <Icon
-                  className={'parallax-children animate__animated'}
-                  data-toggled={!isUiToggled}
-                  name={name}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    cursor: isUiToggled ? 'initial' :'pointer',
-                  }}
-                />
-                <div
-                  style={{
-                    display: 'none',
-                    position: 'absolute',
-                    left: '100%',
-                    marginLeft: 10,
-                    width: '300%',
-                    zIndex: -10,
-                  }}
-                >
-                  <h6>{title}</h6>
-                </div>
-              </div>
-            );
-          })}
+          {Object.entries(DOODLES_MAP)
+              .map(([pathname, {name, value, styles, title, subtitle}], i)=>{
+                return (
+                  <div
+                    value={value}
+                    data-toggled={!isUiToggled}
+                    key={pathname}
+                    id={`parallax-${pathname}`}
+                    className={'parallax-element relative'}
+                    style={{
+                      opacity: isUiToggled ? 0.2 : 1,
+                      marginTop: `${(i+2) * 4}vh`,
+                      transform: 'scale(1.75, 1.75) translateX(0px) translateY(0px)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      ...styles,
+                    }}
+                    onMouseEnter={() => {
+                      if (!isUiToggled) onMouseEnter(title, subtitle);
+                    }}
+                    onMouseLeave={() => {
+                      if (!isUiToggled) onMouseLeave(title, subtitle);
+                    }}
+                    onClick={() => {
+                      if (!isUiToggled) onMouseClick(pathname);
+                    }}
+                  >
+                    <Icon
+                      className={'parallax-children animate__animated'}
+                      data-toggled={!isUiToggled}
+                      name={name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        cursor: isUiToggled ? 'initial' :'pointer',
+                      }}
+                    />
+                    <div
+                      style={{
+                        display: 'none',
+                        position: 'absolute',
+                        left: '100%',
+                        marginLeft: 10,
+                        width: '300%',
+                        zIndex: -10,
+                      }}
+                    >
+                      <h6>{title}</h6>
+                    </div>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>

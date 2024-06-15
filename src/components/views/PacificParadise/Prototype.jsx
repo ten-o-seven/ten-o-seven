@@ -21,14 +21,10 @@ export default function Prototype() {
         <h2>Key Lo-Fi Frames</h2>
         <span style={{maxWidth: 950, marginTop: 50}}>
           <p style={{display: 'inline'}}>
-            Taking the wireframes digital and start to think about how all elements
-            layout on screens of different sizes. Combing through everything after
-            setting the basic parameters and dimensions, need to efficiently use the
-            real estate on each screen. avoid crowding and allow users to focus on one
-            task at a time. certain elements needed to be relocated.
-          </p>
-          <p style={{color: theme.color.brand.red, display: 'inline'}}>
-            {' '}Talk about UX and explain these are sample screen to show how I approached.
+            Transitioning wireframes to digital form involves carefully considering the
+            layout of all elements on the screen. After establishing the basic parameters
+            and dimensions, it&quots crucial to efficiently utilize the available real estate.
+            This means avoiding clutter and ensuring users can focus on one task at a time.
           </p>
         </span>
         {lofi.map((row, index)=>{

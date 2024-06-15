@@ -77,6 +77,7 @@ export default function Photography() {
             } else if (shouldStackSkipped) {
               const refNext = imgArr[index+2]?.image?.default?.split('/')?.join('')?.split('.')[0];
               skippedMap[refNext] = true;
+              if (index === 38) console.log('asdfasdf');
               return (
                 <div
                   key={image.default}
@@ -84,12 +85,12 @@ export default function Photography() {
                 >
                   <FlipImage
                     id={ref}
-                    backText={textListObj?.[index+2]?.default}
+                    backText={textListObj?.[index+1]?.default}
                     vertical={vertical}
                   />
                   <FlipImage
                     id={refNext}
-                    backText={textListObj?.[index+3]?.default}
+                    backText={textListObj?.[index+2]?.default}
                     vertical={imgArr[index+2]?.vertical}
                   />
                 </div>

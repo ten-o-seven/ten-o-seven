@@ -74,7 +74,7 @@ export const PROJECTS_MAP = {
       left: '70%',
     },
     title: 'More to Come',
-    subtitle: 'in the mean time, click on me to checkout my doodles',
+    subtitle: 'in the mean time, the UFO to hang out with Clyde.',
   },
 };
 
@@ -86,6 +86,7 @@ export const DOODLES_MAP = {
       left: '30%',
     },
     title: 'DSLR',
+    subtitle: 'give me a camera so I can make someone uncomfortable.',
   },
   [DOODLE]: {
     name: 'Star',
@@ -94,6 +95,7 @@ export const DOODLES_MAP = {
       left: '80%',
     },
     title: 'Doodles',
+    subtitle: 'one of my favorite ways to tell stories.',
   },
   [FUN]: {
     name: 'Balloon',
@@ -102,6 +104,7 @@ export const DOODLES_MAP = {
       left: '50%',
     },
     title: 'Just for fun',
+    subtitle: 'had an idea, and I executed it because why not.',
   },
   [BLOG]: {
     name: 'Cloud',
@@ -110,5 +113,6 @@ export const DOODLES_MAP = {
       left: '30%',
     },
     title: 'Blog',
+    subtitle: 'occasionally, I have something to say.',
   },
 };

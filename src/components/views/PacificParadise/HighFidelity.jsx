@@ -11,14 +11,14 @@ export default function HighFidelity() {
   return (
     <div className="flex align-items-center flex-column" style={{marginTop: 200}} id="hifi">
       <h2>Lo-Fi to Hi-Fi</h2>
-      <p style={{maxWidth: 950, marginTop: 50}}>
+      {/* <p style={{maxWidth: 950, marginTop: 50}}>
         Taking the wireframes digital and start to think about how all elements layout
         on screens of different sizes. Combing through everything after setting the basic
         parameters and dimensions, need to efficiently use the real estate on each screen.
         avoid crowding and allow users to focus on one task at a time. certain elements
         needed to be relocated. I then used the lo-fi prototype in the usability test to
         examine the functionality of the app, prioritizing key actions through the user journey.
-      </p>
+      </p> */}
       {highFidelity.map((row)=>{
         return (
           <div key={row.description} style={{width: '100%', marginTop: 200}}>

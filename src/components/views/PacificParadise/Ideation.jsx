@@ -21,10 +21,18 @@ export default function Ideation() {
       <h4 id="brainstorm">0.3 Ideation</h4>
       <div className="flex flex-column align-items-center">
         <h2 style={{marginTop: 100, marginBottom: 30}}>Brainstorm</h2>
-        <p>Based on the user flow, I sketched out a series of wireframes with basic elements.</p>
+        <p>
+          Base on the findings from the user journey maps,
+          I am able to brainstorm viable solutions which address issues
+          uncovered from the user research.
+        </p>
         <img style={{marginTop: 100}} src={brainstormOne}/>
         <h2 style={{marginTop: 200, marginBottom: 30}} id="flow">User Flow</h2>
-        <p>Based on the user flow, I sketched out a series of wireframes with basic elements. </p>
+        <p>
+          With the big ideas in mind, I can then take a closer look at
+          the key user flow and map out necessary and additional features
+          to implement in the app.
+        </p>
         <img src={brainstormTwo}/>
         <h2 style={{marginTop: 150, marginBottom: 30}} id="paper">Paper Wireframes</h2>
         <p>Based on the user flow, I sketched out a series of wireframes with basic elements. </p>
